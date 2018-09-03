@@ -1,0 +1,18 @@
+Filename: convertedSequencesForBWT/MSNBC.txt_sequences.txt
+m: 455566
+σ: 18
+Memory Size: 1.45193
+91.5493ms total, average: 91.5493ms. Average per query: 0.915493ms. Average query length: 4
+Filename: convertedSequencesForBWT/MSNBC.txt_sequences.txt
+m: 455566
+σ: 18
+Memory Size: 1.45193
+93.6713ms total, average: 93.6713ms. Average per query: 0.936713ms. Average query length: 4
+Filename: convertedSequencesForBWT/MSNBC.txt_sequences.txt
+m: 455566
+σ: 18
+Memory Size: 1.45193
+97.5727ms total, average: 97.5727ms. Average per query: 0.975727ms. Average query length: 4
+
+
+CLOCK TIME accuracy: 1/10 th of the milisec

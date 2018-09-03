@@ -1,0 +1,18 @@
+0
+0
+0
+1410
+0
+794
+0
+8982
+0
+Overall time spent on bws: 11186 ms
+
+Filename: convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+11756ms total, average: 11756ms. Average per query: 1175.6ms. Average query length: 5
+
+95% of time spent on doing backwards search

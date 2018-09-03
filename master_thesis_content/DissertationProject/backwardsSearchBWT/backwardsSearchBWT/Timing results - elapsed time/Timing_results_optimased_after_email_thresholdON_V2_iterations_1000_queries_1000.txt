@@ -1,0 +1,35 @@
+Filename: ./convertedSequencesForBWT/BIBLE.txt_sequences.txt
+m: 823435
+σ: 13906
+Memory Size: 2.60878
+32017ms total, average: 32ms. Average per query: 0.032017ms. Average query length: 5
+Filename: ./convertedSequencesForBWT/BMS1_spmf.txt_sequences.txt
+m: 209239
+σ: 498
+Memory Size: 0.652288
+113855ms total, average: 113ms. Average per query: 0.113855ms. Average query length: 3
+Filename: ./convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+21396ms total, average: 21ms. Average per query: 0.021396ms. Average query length: 5
+Filename: ./convertedSequencesForBWT/Kosarak_converted.txt_sequences.txt
+m: 628372
+σ: 21145
+Memory Size: 2.0632
+19186ms total, average: 19ms. Average per query: 0.019186ms. Average query length: 4
+Filename: ./convertedSequencesForBWT/LEVIATHAN.txt_sequences.txt
+m: 203085
+σ: 9026
+Memory Size: 0.704933
+200254ms total, average: 200ms. Average per query: 0.200254ms. Average query length: 5
+Filename: ./convertedSequencesForBWT/MSNBC.txt_sequences.txt
+m: 455566
+σ: 18
+Memory Size: 1.45193
+13673ms total, average: 13ms. Average per query: 0.013673ms. Average query length: 4
+Filename: ./convertedSequencesForBWT/SIGN.txt_sequences.txt
+m: 38688
+σ: 268
+Memory Size: 0.146234
+15397ms total, average: 15ms. Average per query: 0.015397ms. Average query length: 5

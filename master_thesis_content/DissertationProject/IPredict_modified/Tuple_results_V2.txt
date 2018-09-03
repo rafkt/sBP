@@ -1,0 +1,67 @@
+Filename: ./spmf_Datasets/BIBLE.txt
+2 Tuple: 34074 distinct, 36369 overall
+3 Tuple: 35958 distinct, 36369 overall
+4 Tuple: 36301 distinct, 36369 overall
+5 Tuple: 36367 distinct, 36369 overall
+6 Tuple: 36369 distinct, 36369 overall
+7 Tuple: 36369 distinct, 36369 overall
+8 Tuple: 36369 distinct, 36369 overall
+9 Tuple: 36369 distinct, 36369 overall
+Filename: ./spmf_Datasets/BMS1_spmf.txt
+2 Tuple: 26667 distinct, 26667 overall
+3 Tuple: 15806 distinct, 15806 overall
+4 Tuple: 10428 distinct, 10428 overall
+5 Tuple: 6837 distinct, 6837 overall
+6 Tuple: 4865 distinct, 4865 overall
+7 Tuple: 3645 distinct, 3645 overall
+8 Tuple: 2737 distinct, 2737 overall
+9 Tuple: 2098 distinct, 2098 overall
+Filename: ./spmf_Datasets/FIFA.txt
+2 Tuple: 11843 distinct, 20450 overall
+3 Tuple: 14535 distinct, 20450 overall
+4 Tuple: 16013 distinct, 20450 overall
+5 Tuple: 17148 distinct, 20450 overall
+6 Tuple: 18036 distinct, 20450 overall
+7 Tuple: 18681 distinct, 20450 overall
+8 Tuple: 19063 distinct, 20450 overall
+9 Tuple: 19411 distinct, 20450 overall
+Filename: ./spmf_Datasets/Kosarak_converted.txt
+2 Tuple: 33510 distinct, 59261 overall
+3 Tuple: 34863 distinct, 45134 overall
+4 Tuple: 29907 distinct, 32623 overall
+5 Tuple: 23785 distinct, 24241 overall
+6 Tuple: 19000 distinct, 19061 overall
+7 Tuple: 15909 distinct, 15919 overall
+8 Tuple: 13788 distinct, 13789 overall
+9 Tuple: 12241 distinct, 12241 overall
+Filename: ./spmf_Datasets/LEVIATHAN.txt
+2 Tuple: 4020 distinct, 5834 overall
+3 Tuple: 4506 distinct, 5834 overall
+4 Tuple: 5745 distinct, 5834 overall
+5 Tuple: 5795 distinct, 5834 overall
+6 Tuple: 5810 distinct, 5834 overall
+7 Tuple: 5811 distinct, 5834 overall
+8 Tuple: 5811 distinct, 5834 overall
+9 Tuple: 5811 distinct, 5834 overall
+Filename: ./spmf_Datasets/MSNBC.txt
+2 Tuple: 235 distinct, 31790 overall
+3 Tuple: 1776 distinct, 31790 overall
+4 Tuple: 5749 distinct, 31790 overall
+5 Tuple: 11108 distinct, 31790 overall
+6 Tuple: 16336 distinct, 31790 overall
+7 Tuple: 20516 distinct, 31790 overall
+8 Tuple: 24447 distinct, 31790 overall
+9 Tuple: 26328 distinct, 31790 overall
+Filename: ./spmf_Datasets/SIGN.txt
+2 Tuple: 347 distinct, 730 overall
+3 Tuple: 709 distinct, 730 overall
+4 Tuple: 720 distinct, 730 overall
+5 Tuple: 729 distinct, 730 overall
+6 Tuple: 730 distinct, 730 overall
+7 Tuple: 730 distinct, 730 overall
+8 Tuple: 730 distinct, 730 overall
+9 Tuple: 730 distinct, 730 overall
+Filename: ./spmf_Datasets/mySet_Testing.txt
+2 Tuple: 3 distinct, 4 overall
+3 Tuple: 4 distinct, 4 overall
+4 Tuple: 4 distinct, 4 overall

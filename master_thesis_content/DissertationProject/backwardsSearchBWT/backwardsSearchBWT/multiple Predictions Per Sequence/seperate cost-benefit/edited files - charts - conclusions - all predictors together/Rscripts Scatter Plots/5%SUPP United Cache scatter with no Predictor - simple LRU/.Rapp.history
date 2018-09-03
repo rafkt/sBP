@@ -1,0 +1,12 @@
+install.packages("filehash", repos="http://cran.r-project.org")
+install.packages("tikzDevice", repos="http://R-Forge.R-project.org")
+install.packages( 'tikzDevice' )
+library(dplyr)
+setwd("/Users/rafaelktistakis/Documents/PhD_UoL/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/multiple Predictions Per Sequence/seperate cost-benefit/edited files - charts - conclusions - all predictors together/Rscripts Scatter Plots/5%SUPP United Cache scatter with no Predictor - simple LRU")
+library(dplyr)
+csvFile = read.csv("5%SUPP_100UNITED_CACHE_multiplePredictionPerSequence_multiple_Predictors_CACHE.csv")
+datasets <- select(filter(filter(csvFile, History.Size=="3"), Predictor=="BWT"), Dataset)
+datasets
+csvFile = read.csv("5%SUPP_100UNITED_CACHE_multiplePredictionPerSequence_multiple_Predictors_CACHE.csv")
+datasets <- select(filter(filter(csvFile, History.Size=="3"), Predictor=="BWT"), Dataset)
+datasets

@@ -1,0 +1,184 @@
+Excelsior JET v10.0 Evaluation Version 64-bit (c) Excelsior 1997,2013
+Active Java SE Version 1.7.0_55 (profile 5)
+************************  JET v10.0 EVALUATION **************************
+*  This program cannot be used in a business, commercial, government,  *
+*  or  institutional  environment  except  for  evaluation  purposes.  *
+************************************************************************
+Make project "/Users/rafaelktistakis/Documents/MSc Leicester/MSc-Leicester/Dissertation Project/IPredict_modified/testPrediction.prj"
+#file "/Users/rafaelktistakis/Documents/MSc Leicester/MSc-Leicester/Dissertation Project/IPredict_modified/testPrediction.prj" (line 14): undeclared option "XMS8192M"
+#file "/Users/rafaelktistakis/Documents/MSc Leicester/MSc-Leicester/Dissertation Project/IPredict_modified/testPrediction.prj" (line 15): undeclared option "XMX8192M"
+64-bit Excelsior JET for Windows does not yet support Startup Accelerator
+Reading testPrediction.jar ...  47 classes
+Reading . ...  48 classes
+
+Total compilable classes within classpath entries: 95
+
+------------------------  Parsing Stage  ---------------------------------------
+
+   1/95: testPrediction.jar:/ca/ipredict/controllers/MainController.class
+   2/95: testPrediction.jar:/ca/ipredict/database/Sequence.class
+   3/95: testPrediction.jar:/ca/ipredict/database/Item.class
+   4/95: testPrediction.jar:/ca/ipredict/database/SequenceDatabase.class
+   5/95: testPrediction.jar:/ca/ipredict/database/SequenceStatsGenerator.class
+   6/95: testPrediction.jar:/ca/ipredict/database/DatabaseHelper$Format.class
+   7/95: testPrediction.jar:/ca/ipredict/database/DatabaseHelper.class
+   8/95: testPrediction.jar:/ca/ipredict/helpers/StatsLogger.class
+   9/95: testPrediction.jar:/ca/ipredict/helpers/Bitvector.class
+  10/95: testPrediction.jar:/ca/ipredict/helpers/Algo.class
+  11/95: testPrediction.jar:/ca/ipredict/helpers/Result.class
+  12/95: testPrediction.jar:/ca/ipredict/helpers/ScoreDistribution.class
+  13/95: testPrediction.jar:/ca/ipredict/helpers/MemoryLogger.class
+  14/95: testPrediction.jar:/ca/ipredict/helpers/Stats.class
+  15/95: testPrediction.jar:/ca/ipredict/predictor/Evaluator.class
+  16/95: testPrediction.jar:/ca/ipredict/predictor/Predictor.class
+  17/95: testPrediction.jar:/ca/ipredict/predictor/CPT/Bitvector.class
+  18/95: testPrediction.jar:/ca/ipredict/predictor/CPT/PredictionTree.class
+  19/95: testPrediction.jar:/ca/ipredict/predictor/CPT/CPTHelper.class
+  20/95: testPrediction.jar:/ca/ipredict/predictor/CPT/CountTable.class
+  21/95: testPrediction.jar:/ca/ipredict/predictor/CPT/CPTPredictor.class
+  22/95: testPrediction.jar:/ca/ipredict/predictor/DG/DGNode.class
+  23/95: testPrediction.jar:/ca/ipredict/predictor/DG/DGPredictor.class
+  24/95: testPrediction.jar:/ca/ipredict/predictor/DG/DGArc.class
+  25/95: testPrediction.jar:/ca/ipredict/predictor/LZ78/LZ78Predictor.class
+  26/95: testPrediction.jar:/ca/ipredict/predictor/LZ78/Node.class
+  27/95: testPrediction.jar:/ca/ipredict/predictor/LZ78/ALZ.class
+  28/95: testPrediction.jar:/ca/ipredict/predictor/Markov/MarkovFirstOrderPredictor.class
+  29/95: testPrediction.jar:/ca/ipredict/predictor/Markov/MarkovAllKPredictor.class
+  30/95: testPrediction.jar:/ca/ipredict/predictor/Markov/MarkovState.class
+  31/95: testPrediction.jar:/ca/ipredict/predictor/TDAG/Node.class
+  32/95: testPrediction.jar:/ca/ipredict/predictor/TDAG/TDAGPredictor.class
+  33/95: testPrediction.jar:/ca/ipredict/predictor/profile/BIBLE_WORDProfile.class
+  34/95: testPrediction.jar:/ca/ipredict/predictor/profile/KOSARAKProfile.class
+  35/95: testPrediction.jar:/ca/ipredict/predictor/profile/SIGNProfile.class
+  36/95: testPrediction.jar:/ca/ipredict/predictor/profile/BIBLE_CHARProfile.class
+  37/95: testPrediction.jar:/ca/ipredict/predictor/profile/DefaultProfile.class
+  38/95: testPrediction.jar:/ca/ipredict/predictor/profile/FIFAProfile.class
+  39/95: testPrediction.jar:/ca/ipredict/predictor/profile/Profile.class
+  40/95: testPrediction.jar:/ca/ipredict/predictor/profile/MSNBCProfile.class
+  41/95: testPrediction.jar:/ca/ipredict/predictor/profile/BMSProfile.class
+  42/95: testPrediction.jar:/ca/ipredict/predictor/profile/ProfileManager.class
+  43/95: testPrediction.jar:/rafkt/testing/cpt/spmfToBWTInput.class
+  44/95: testPrediction.jar:/rafkt/testing/cpt/CPT_memory_test.class
+  45/95: testPrediction.jar:/rafkt/testing/cpt/testPrediction.class
+  46/95: testPrediction.jar:/rafkt/testing/cpt/countingNodes.class
+  47/95: testPrediction.jar:/rafkt/testing/cpt/countDistinctPairsTriplesETC.class
+-------------------------------------------------------------------
+files: 47  errors: 0  warnings: 0  notices: 0
+
+------------------------  Codegen Stage  ---------------------------------------
+
+  0% done, 47/47 to go: testPrediction.jar:/rafkt/testing/cpt/countDistinctPairsTriplesETC.class
+errors(0), warnings(0), notes(0); bytes(12802), time  0.52
+  2% done, 46/47 to go: testPrediction.jar:/rafkt/testing/cpt/countingNodes.class
+errors(0), warnings(0), notes(0); bytes(17185), time  0.86
+  4% done, 45/47 to go: testPrediction.jar:/rafkt/testing/cpt/testPrediction.class
+errors(0), warnings(0), notes(0); bytes(10285), time  0.16
+  6% done, 44/47 to go: testPrediction.jar:/rafkt/testing/cpt/CPT_memory_test.class
+errors(0), warnings(0), notes(0); bytes(13753), time  0.36
+  8% done, 43/47 to go: testPrediction.jar:/rafkt/testing/cpt/spmfToBWTInput.class
+errors(0), warnings(0), notes(0); bytes(5461), time  0.04
+ 10% done, 42/47 to go: testPrediction.jar:/ca/ipredict/predictor/profile/ProfileManager.class
+errors(0), warnings(0), notes(0); bytes(6600), time  0.07
+ 12% done, 41/47 to go: testPrediction.jar:/ca/ipredict/predictor/profile/BMSProfile.class
+errors(0), warnings(0), notes(0); bytes(4906), time  0.02
+ 14% done, 40/47 to go: testPrediction.jar:/ca/ipredict/predictor/profile/MSNBCProfile.class
+errors(0), warnings(0), notes(0); bytes(4934), time  0.03
+ 17% done, 39/47 to go: testPrediction.jar:/ca/ipredict/predictor/profile/Profile.class
+errors(0), warnings(0), notes(0); bytes(15869), time  0.36
+ 19% done, 38/47 to go: testPrediction.jar:/ca/ipredict/predictor/profile/FIFAProfile.class
+errors(0), warnings(0), notes(0); bytes(4920), time  0.02
+ 21% done, 37/47 to go: testPrediction.jar:/ca/ipredict/predictor/profile/DefaultProfile.class
+errors(0), warnings(0), notes(0); bytes(3569), time  0.01
+ 23% done, 36/47 to go: testPrediction.jar:/ca/ipredict/predictor/profile/BIBLE_CHARProfile.class
+errors(0), warnings(0), notes(0); bytes(5013), time  0.02
+ 25% done, 35/47 to go: testPrediction.jar:/ca/ipredict/predictor/profile/SIGNProfile.class
+errors(0), warnings(0), notes(0); bytes(4920), time  0.02
+ 27% done, 34/47 to go: testPrediction.jar:/ca/ipredict/predictor/profile/KOSARAKProfile.class
+errors(0), warnings(0), notes(0); bytes(4962), time  0.02
+ 29% done, 33/47 to go: testPrediction.jar:/ca/ipredict/predictor/profile/BIBLE_WORDProfile.class
+errors(0), warnings(0), notes(0); bytes(5013), time  0.02
+ 31% done, 32/47 to go: testPrediction.jar:/ca/ipredict/predictor/TDAG/TDAGPredictor.class
+errors(0), warnings(0), notes(0); bytes(16167), time  0.62
+ 34% done, 31/47 to go: testPrediction.jar:/ca/ipredict/predictor/TDAG/Node.class
+errors(0), warnings(0), notes(0); bytes(8463), time  0.07
+ 36% done, 30/47 to go: testPrediction.jar:/ca/ipredict/predictor/Markov/MarkovState.class
+errors(0), warnings(0), notes(0); bytes(9483), time  0.19
+ 38% done, 29/47 to go: testPrediction.jar:/ca/ipredict/predictor/Markov/MarkovAllKPredictor.class
+errors(0), warnings(0), notes(0); bytes(15659), time  0.43
+ 40% done, 28/47 to go: testPrediction.jar:/ca/ipredict/predictor/Markov/MarkovFirstOrderPredictor.class
+errors(0), warnings(0), notes(0); bytes(9338), time  0.19
+ 42% done, 27/47 to go: testPrediction.jar:/ca/ipredict/predictor/LZ78/ALZ.class
+errors(0), warnings(0), notes(0); bytes(3262), time  0.01
+ 44% done, 26/47 to go: testPrediction.jar:/ca/ipredict/predictor/LZ78/Node.class
+errors(0), warnings(0), notes(0); bytes(6127), time  0.05
+ 46% done, 25/47 to go: testPrediction.jar:/ca/ipredict/predictor/LZ78/LZ78Predictor.class
+errors(0), warnings(0), notes(0); bytes(14034), time  0.57
+ 48% done, 24/47 to go: testPrediction.jar:/ca/ipredict/predictor/DG/DGArc.class
+errors(0), warnings(0), notes(0); bytes(3606), time  0.01
+ 51% done, 23/47 to go: testPrediction.jar:/ca/ipredict/predictor/DG/DGPredictor.class
+errors(0), warnings(0), notes(0); bytes(12537), time  0.39
+ 53% done, 22/47 to go: testPrediction.jar:/ca/ipredict/predictor/DG/DGNode.class
+errors(0), warnings(0), notes(0); bytes(5626), time  0.09
+ 55% done, 21/47 to go: testPrediction.jar:/ca/ipredict/predictor/CPT/CPTPredictor.class
+errors(0), warnings(0), notes(0); bytes(13907), time  0.55
+ 57% done, 20/47 to go: testPrediction.jar:/ca/ipredict/predictor/CPT/CountTable.class
+errors(0), warnings(0), notes(0); bytes(11833), time  0.42
+ 59% done, 19/47 to go: testPrediction.jar:/ca/ipredict/predictor/CPT/CPTHelper.class
+errors(0), warnings(0), notes(0); bytes(10523), time  0.25
+ 61% done, 18/47 to go: testPrediction.jar:/ca/ipredict/predictor/CPT/PredictionTree.class
+errors(0), warnings(0), notes(0); bytes(8647), time  0.11
+ 63% done, 17/47 to go: testPrediction.jar:/ca/ipredict/predictor/CPT/Bitvector.class
+errors(0), warnings(0), notes(0); bytes(9753), time  0.14
+ 65% done, 16/47 to go: testPrediction.jar:/ca/ipredict/predictor/Predictor.class
+errors(0), warnings(0), notes(0); bytes(3009), time  0.00
+ 68% done, 15/47 to go: testPrediction.jar:/ca/ipredict/predictor/Evaluator.class
+errors(0), warnings(0), notes(0); bytes(28772), time  1.29
+ 70% done, 14/47 to go: testPrediction.jar:/ca/ipredict/helpers/Stats.class
+errors(0), warnings(0), notes(0); bytes(17623), time  0.66
+ 72% done, 13/47 to go: testPrediction.jar:/ca/ipredict/helpers/MemoryLogger.class
+errors(0), warnings(0), notes(0); bytes(11074), time  0.12
+ 74% done, 12/47 to go: testPrediction.jar:/ca/ipredict/helpers/ScoreDistribution.class
+errors(0), warnings(0), notes(0); bytes(8422), time  0.13
+ 76% done, 11/47 to go: testPrediction.jar:/ca/ipredict/helpers/Result.class
+errors(0), warnings(0), notes(0); bytes(5235), time  0.04
+ 78% done, 10/47 to go: testPrediction.jar:/ca/ipredict/helpers/Algo.class
+errors(0), warnings(0), notes(0); bytes(8156), time  0.14
+ 80% done, 9/47 to go: testPrediction.jar:/ca/ipredict/helpers/Bitvector.class
+errors(0), warnings(0), notes(0); bytes(9990), time  0.17
+ 82% done, 8/47 to go: testPrediction.jar:/ca/ipredict/helpers/StatsLogger.class
+errors(0), warnings(0), notes(0); bytes(15837), time  0.40
+ 85% done, 7/47 to go: testPrediction.jar:/ca/ipredict/database/DatabaseHelper.class
+errors(0), warnings(0), notes(0); bytes(18069), time  0.57
+ 87% done, 6/47 to go: testPrediction.jar:/ca/ipredict/database/DatabaseHelper$Format.class
+errors(0), warnings(0), notes(0); bytes(10471), time  0.11
+ 89% done, 5/47 to go: testPrediction.jar:/ca/ipredict/database/SequenceStatsGenerator.class
+errors(0), warnings(0), notes(0); bytes(19448), time  0.47
+ 91% done, 4/47 to go: testPrediction.jar:/ca/ipredict/database/SequenceDatabase.class
+errors(0), warnings(0), notes(0); bytes(37673), time  1.67
+ 93% done, 3/47 to go: testPrediction.jar:/ca/ipredict/database/Item.class
+errors(0), warnings(0), notes(0); bytes(5726), time  0.06
+ 95% done, 2/47 to go: testPrediction.jar:/ca/ipredict/database/Sequence.class
+errors(0), warnings(0), notes(0); bytes(14860), time  0.24
+ 97% done, 1/47 to go: testPrediction.jar:/ca/ipredict/controllers/MainController.class
+errors(0), warnings(0), notes(0); bytes(5510), time  0.03
+
+Optimizing compiler statistics
+==============================
+Methods compilation stats:
+  All methods : 227 out of 227  (100%)
+
+
+New "/Users/rafaelktistakis/Documents/MSc Leicester/MSc-Leicester/Dissertation Project/IPredict_modified/testPrediction_jetpdb/nums.clnums" is generated
+Preparing resources for packing ...
+Processing testPrediction.jar ...
+Resources were successfully prepared for packing.
+-------------------------------------------------------------------
+files: 47  errors: 0  warnings: 0  notices: 0
+
+XDS Link Version 2.24.13 Copyright (c) Excelsior 1995-2014.
+No errors, no warnings
+
+Link time 0:01.51
+
+Total compilation time 0:19.61
+

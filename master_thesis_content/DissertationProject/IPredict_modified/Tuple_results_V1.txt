@@ -1,0 +1,77 @@
+Filename: ./spmf_Datasets/BIBLE.txt
+Number of Items: 787066
+Distinct Items: 13905
+2 Tuple: 34074
+3 Tuple: 35958
+4 Tuple: 36301
+5 Tuple: 36367
+6 Tuple: 36369
+7 Tuple: 36369
+8 Tuple: 36369
+9 Tuple: 36369
+Filename: ./spmf_Datasets/BMS1_spmf.txt
+Number of Items: 149638 
+Distinct Items: 497 
+2 Tuple: 26667
+3 Tuple: 15806
+4 Tuple: 10428
+5 Tuple: 6837
+6 Tuple: 4865
+7 Tuple: 3645
+8 Tuple: 2737
+9 Tuple: 2098
+Filename: ./spmf_Datasets/FIFA.txt
+Number of Items: 741092
+Distinct Items: 2990
+2 Tuple: 11843
+3 Tuple: 14535
+4 Tuple: 16013
+5 Tuple: 17148
+6 Tuple: 18036
+7 Tuple: 18681
+8 Tuple: 19063
+9 Tuple: 19411
+Filename: ./spmf_Datasets/Kosarak_converted.txt
+Number of Items: 558373
+Distinct Items: 21144
+2 Tuple: 33510
+3 Tuple: 34863
+4 Tuple: 29907
+5 Tuple: 23785
+6 Tuple: 19000
+7 Tuple: 15909
+8 Tuple: 13788
+9 Tuple: 12241
+Filename: ./spmf_Datasets/LEVIATHAN.txt
+Number of Items: 197251
+Distinct Items: 9025
+2 Tuple: 4020
+3 Tuple: 4506
+4 Tuple: 5745
+5 Tuple: 5795
+6 Tuple: 5810
+7 Tuple: 5811
+8 Tuple: 5811
+9 Tuple: 5811
+Filename: ./spmf_Datasets/MSNBC.txt
+Number of Items: 423776
+Distinct Items: 17
+2 Tuple: 235
+3 Tuple: 1776
+4 Tuple: 5749
+5 Tuple: 11108
+6 Tuple: 16336
+7 Tuple: 20516
+8 Tuple: 24447
+9 Tuple: 26328
+Filename: ./spmf_Datasets/SIGN.txt
+Number of Items: 37958
+Distinct Items: 267
+2 Tuple: 347
+3 Tuple: 709
+4 Tuple: 720
+5 Tuple: 729
+6 Tuple: 730
+7 Tuple: 730
+8 Tuple: 730
+9 Tuple: 730
