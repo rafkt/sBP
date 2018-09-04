@@ -250,3 +250,9 @@ m: 761542
 Memory Size: 2.36789
 max Propability: 1, average Propability: 0.816313
 0.069031s total, average: 0.069031s. Average per query: 6.9031e-05s. Average query length: 4
+Filename: convertedSequencesForBWT/ran_queries_6_length_dissertation_report/MSNBC.txt_sequences.txt
+m: 0
+σ: 0
+Memory Size: 0.000107765
+max Propability: 0, average Propability: nan
+0.00825s total, average: 0.00825s. Average per query: 8.25e-06s. Average query length: 6

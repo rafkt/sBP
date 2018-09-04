@@ -143,14 +143,14 @@ int main(int argc, const char * argv[])
     
     ofstream outputFile;
     
-    int res = access("/Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/Timing_results.txt", R_OK);
+    int res = access("Timing_results.txt", R_OK);
     if (res < 0) {
         if (errno == ENOENT) {
             // file does not exist
-            outputFile.open("/Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/Timing_results.txt");
+            outputFile.open("Timing_results.txt");
         }
     }else{
-        outputFile.open("/Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/Timing_results.txt", ios_base::app);
+        outputFile.open("Timing_results.txt", ios_base::app);
     }
     
     
