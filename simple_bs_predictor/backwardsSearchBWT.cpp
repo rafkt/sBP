@@ -84,72 +84,49 @@ int backwardsSearchBWT::countRange(const int & c, const int & y){
     return countRange(rangeStart, rangeEnd, c);
 }
 
-int backwardsSearchBWT::countRange(int* xy, int size){
-    bool similarSearchON = true;
+int backwardsSearchBWT::countRange(int* xy, int size, int rangeStart, int rangeEnd){
+    bool similarSearchON = false;
     finalStartIndex = -1;
     finalEndIndex = -1;
     finalStartIndexPermuted = -1;
     finalEndIndexPermuted = -1;
-    int rangeStart = 0;
-    int rangeEnd = 0;
+
+    int backtrav = -1;
+    cout << fowawrdTraversal(11) << endl;
+    cout << backwardTraversal(11, backtrav) << endl;
+    cout << "L position of backward Traversal: " << backtrav << endl;
+
+    cout << "Printing a range " << endl;
+
+    counterMap res = scan(0, 11);
+    for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
+        cout << mapIt->first << " " << mapIt->second << endl;
+    }
+
+    cout << "Printing END" << endl;
+
     int rankStartValue, rankEndValue;
     bool flag = false;
     try {
         for (int i = 0; i < size; i++) { //red not reversly because we want countAfter, not countBefore
             int letterPos = alphabet.select(1, xy[i]);
             if (i != 0){
-                rankStartValue = L.rank(rangeStart, xy[i]);
-                rankEndValue = L.rank(rangeEnd + 1, xy[i]);
+                search(xy[i], rangeStart, rangeEnd);
+                rankStartValue = finalStartIndex;
+                rankEndValue = finalEndIndex;
             }
             if (xy[i] == 99999) {
                 stop = true;
                 return 0; // not a normal sequence item
             }
-            if (!flag) {
+            if (!flag && rangeStart == 0 && rangeEnd == 0) {
                 rangeStart = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
                 rangeEnd = alphabetCounters[letterPos] - 1;
                 flag = true;
-                if (size == 3 && xy[i + 2] != 99999 && xy[i + 1] != 99999 && similarSearchON) {
-                    try {
-                        countRangeLastTwoLettersPermuted(rangeStart, rangeEnd, &xy[i]); //pointer to ith position of array .. 
-                    } catch (logic_error e) {
-                    }
-                }else if (size == 2 && xy[i + 1] != 99999 && similarSearchON){
-                    letterPos = alphabet.select(1, xy[i + 1]);
-                    rankStartValue = L.rank(rangeStart, xy[i + 1]);
-                    rankEndValue = L.rank(rangeEnd + 1, xy[i + 1]);
-                    if (rankEndValue - rankStartValue != 0){
-                        int range2Add = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
-                        rangeStart = rankStartValue + range2Add;
-                        rangeEnd = rankEndValue + range2Add - 1;
-                        finalStartIndex = rangeStart;
-                        finalEndIndex = rangeEnd;
-                    }
-                    letterPos = alphabet.select(1, xy[i + 1]);
-                    rangeStart = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
-                    rangeEnd = alphabetCounters[letterPos] - 1;
-                    letterPos = alphabet.select(1, xy[i]);
-                    rankStartValue = L.rank(rangeStart, xy[i]);
-                    rankEndValue = L.rank(rangeEnd + 1, xy[i]);
-                    if (rankEndValue - rankStartValue != 0){
-                        int range2Add = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
-                        rangeStart = rankStartValue + range2Add;
-                        rangeEnd = rankEndValue + range2Add - 1;
-                        finalStartIndexPermuted = rangeStart;
-                        finalEndIndexPermuted = rangeEnd;
-                    }
-                    return 1;
-                }
-            }else if (rankEndValue - rankStartValue != 0){
+           }else if (rankEndValue - rankStartValue != 0){
                 int range2Add = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
                 rangeStart = rankStartValue + range2Add;
                 rangeEnd = rankEndValue + range2Add - 1;
-                if (size > 2 && i == size - 3 && rankEndValue - rankStartValue != 0 && xy[i + 2] != 99999 && xy[i + 1] != 99999 && similarSearchON) {
-                    try {
-                        countRangeLastTwoLettersPermuted(rangeStart, rangeEnd, &xy[i]);
-                    } catch (logic_error e) {
-                    }
-                }
             }else {
                 stop = true;
                 return 0;
@@ -164,9 +141,86 @@ int backwardsSearchBWT::countRange(int* xy, int size){
         stop = true;
         return 0;
     }
-    //cout << "assertion to check: " << subStringOccurences(c + xy, this->original) << endl;
-    //assert(subStringOccurences(c + xy, this->original) == counter);
+    
+
     return 1;
+}
+
+
+int backwardsSearchBWT::search(int c, int rangeStart, int rangeEnd){
+    if (rangeEnd - rangeStart > 0){
+        finalStartIndex = L.rank(rangeStart, c);;
+        finalEndIndex = L.rank(rangeEnd + 1, c);;
+        return 1;//valid input
+    }else return 0; //no valid input
+}
+
+int backwardsSearchBWT::fowawrdTraversal(int index){
+    if (index < 0) return -1;
+    int letterPos = alphabet.select(1, L[index]);
+    int range2Add = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
+    int rangeStart = L.rank(index + 1, L[index]) + range2Add - 1;
+    return L[rangeStart]; 
+}
+
+int backwardsSearchBWT::backwardTraversal(int index, int& back_index){
+    if (index < 0) return -1;
+    int f_index = -1;
+    for(int i = 0; i < alphabetCounters.size(); i++){
+        if (alphabetCounters[i] >= index + 1){
+            f_index = i;
+            break;
+        }
+    }
+   // cout << "dif: " << alphabetCounters[f_index] - alphabetCounters[f_index - 1] << endl;
+    if (f_index == 0){
+        back_index =  L.select(index + 1, alphabet[f_index]);
+    }else{
+        //cout << "L posistion: " << L.select(alphabetCounters[f_index] - alphabetCounters[f_index - 1], alphabet[f_index]) << endl;
+        back_index = L.select(alphabetCounters[f_index] - (index + 1) == 0 ? alphabetCounters[f_index] - alphabetCounters[f_index - 1] : alphabetCounters[f_index] - (index + 1), alphabet[f_index]);
+
+    }
+    return alphabet[f_index];
+}
+
+counterMap backwardsSearchBWT::scan(int rangeStart, int rangeEnd){
+    counterMap mostFrequent;
+    if (rangeStart < 0 || rangeEnd < 0) return mostFrequent;
+    int counter = 0;
+    double threshold = 1.7;
+    int overallRangeLength = rangeEnd - rangeStart + 1;
+    double relay_value = overallRangeLength / (double)alphabet.size();
+    if (relay_value <= threshold){
+        int* range_items = new int[overallRangeLength];
+        int addingCounter = 0;
+        for (int k = 0; k < overallRangeLength; k++) {
+            range_items[addingCounter++] = L[k + rangeStart];
+        }
+        qsort (range_items, overallRangeLength, sizeof(int), compare);
+        int previous_item = range_items[0];
+        for (int i = 0; i < overallRangeLength; i++) {
+            if (range_items[i] == previous_item){
+                counter++;
+            }
+            else{
+
+                mostFrequent.insert({counter, range_items[i - 1]});
+                counter = 1;
+            }
+            previous_item = range_items[i];
+        }
+        if (counter > 0) {
+            mostFrequent.insert({counter, range_items[overallRangeLength - 1]});
+        }
+    }else{
+        for (size_t i = 0; i < alphabet.size(); i++){
+            counter = countRange(rangeStart, rangeEnd, alphabet[i]);
+            mostFrequent.insert({counter, alphabet[i]});
+        }
+    }
+    mostFrequent.insert({-1, overallRangeLength});
+    return mostFrequent;
+
 }
 
 void backwardsSearchBWT::countRangeLastTwoLettersPermuted(int rangeStart, int rangeEnd, int* xy){

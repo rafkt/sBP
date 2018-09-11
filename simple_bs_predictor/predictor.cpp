@@ -7,7 +7,7 @@
 //
 
 #include "predictor.h"
-#include "similar_queries.h"
+//#include "similar_queries.h"
 #include <fstream>
 #include <sys/time.h>
 #include <time.h>
@@ -149,14 +149,14 @@ void predictor::RecursiveDivider(int* query, int qSize, int minSize, aMap& predi
 }
 
 aMap predictor::predict(int* query, int size, int candidatesNumber){
-    bool similarSearchON = similarSearch;
+    bool similarSearchON = false;//similarSearch;
     bool all_empty;
     int** queries;
     int** overallRanges;
     int* ranges;
     int overallRangeLength;
     int rangeArraySize = 0;
-    similar_queries* sq;
+   // similar_queries* sq;
     aMap mostFrequent;
 	
 	//mapIt->first: #times, mapIt->second: wich item, mapIt->first == -1 then mapIt->second: overall times sequence matched
@@ -178,7 +178,7 @@ aMap predictor::predict(int* query, int size, int candidatesNumber){
 //    }
     
     
-    sq = NULL;
+    //sq = NULL;
     if (size == 1) {
         int letterPos = bSBWT->alphabet.select(1, query[0]);
         int rangeStart = letterPos != 0 ? bSBWT->alphabetCounters[letterPos - 1] : 0;
@@ -188,37 +188,37 @@ aMap predictor::predict(int* query, int size, int candidatesNumber){
         overallRanges[0][0] = rangeStart;
         overallRanges[0][1] = rangeEnd;
         rangeArraySize = 1;
-    }else if (similarSearchON){
-        sq = new similar_queries(query, size); // for query bigger than 2 items
-        all_empty = true;
-        queries = sq->queryArray;
-        rangeArraySize = sq->getQueryArraySize() * 2;
-        overallRanges = new int*[rangeArraySize];
-        int i_counter = 0;
-        for (int i = 0; i < sq->getQueryArraySize(); i++){
-            ranges = bSBWT->findRange(queries[i], size);
-            overallRanges[i_counter] = new int[2];
-            overallRanges[i_counter + 1] = new int[2];;
-            overallRanges[i_counter][0] = ranges[0];
-            overallRanges[i_counter][1] = ranges[1];
-            overallRanges[i_counter + 1][0] = ranges[2];
-            overallRanges[i_counter + 1][1] = ranges[3];
-            if (ranges[0] != -1 || ranges[2] != -1) all_empty = false;
-            i_counter += 2;
-            delete [] ranges;
-        }
+    //}else if (similarSearchON){
+        // sq = new similar_queries(query, size); // for query bigger than 2 items
+        // all_empty = true;
+        // queries = sq->queryArray;
+        // rangeArraySize = sq->getQueryArraySize() * 2;
+        // overallRanges = new int*[rangeArraySize];
+        // int i_counter = 0;
+        // for (int i = 0; i < sq->getQueryArraySize(); i++){
+        //     ranges = bSBWT->findRange(queries[i], size);
+        //     overallRanges[i_counter] = new int[2];
+        //     overallRanges[i_counter + 1] = new int[2];;
+        //     overallRanges[i_counter][0] = ranges[0];
+        //     overallRanges[i_counter][1] = ranges[1];
+        //     overallRanges[i_counter + 1][0] = ranges[2];
+        //     overallRanges[i_counter + 1][1] = ranges[3];
+        //     if (ranges[0] != -1 || ranges[2] != -1) all_empty = false;
+        //     i_counter += 2;
+        //     delete [] ranges;
+        // }
         
-        if (all_empty) {
-            for (int i = 0; i < rangeArraySize; i++){
-                delete [] overallRanges[i];
-            }
-            delete [] overallRanges;
-            delete sq;
-            return mostFrequent;//-1;
-        }
+        // if (all_empty) {
+        //     for (int i = 0; i < rangeArraySize; i++){
+        //         delete [] overallRanges[i];
+        //     }
+        //     delete [] overallRanges;
+        //     delete sq;
+        //     return mostFrequent;//-1;
+        // }
         
-        sq->rangesUnion(overallRanges, rangeArraySize);
-        delete sq;
+        // sq->rangesUnion(overallRanges, rangeArraySize);
+        // delete sq;
     }else{
         rangeArraySize = 1;
         overallRanges = new int*[rangeArraySize];

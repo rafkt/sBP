@@ -22,6 +22,8 @@ typedef struct letternode{
 
 typedef map<int,letterNode> myMap;
 
+typedef multimap<float, int> counterMap;
+
 class backwardsSearchBWT{
 public:
     wt_int<> L, alphabet;
@@ -31,13 +33,17 @@ public:
     ~backwardsSearchBWT();
     int countRange(const int &, const int &);
     int countRange(const int &, const int &, const int &);
+    int search(int c, int, int );
+    int fowawrdTraversal(int);
+    int backwardTraversal(int index, int&);
+    counterMap scan(int, int);
     int* findRange(int*, int);
 	int seqNumber;
 private:
     void deleteMap();
 //    int rank(const char &, const int &);
 //    int select(const char &, const int &);
-    int countRange(int*, int size);
+    int countRange(int*, int, int = 0, int = 0);
     void countRangeLastTwoLettersPermuted(int, int, int*);
     int subStringOccurences( const string &, const string &);
     myMap alphabet_tmp;

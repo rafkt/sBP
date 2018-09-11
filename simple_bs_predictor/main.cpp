@@ -7,7 +7,6 @@
 //
 
 #include "predictor.h"
-#include "k_folder.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -107,13 +106,13 @@ int main(int argc, const char * argv[])
 //    cout << c.countBeforeString(1000, &x[0], x.size()) << endl;
     
     
-//    vector<int> x = { 1088, 17, 3};//FIFA: 114 133 148 212 256 300 582 610 - 114 133 148 212 256 300 582 610 30 626 647 99999
-//    //Answer 30
-//    predictor* pr = new predictor(argv[1]);
-//    aMap res = pr->predict(&x[0], x.size(), 10);
-//    for (aMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
-//        cout << mapIt->first << " " << mapIt->second << endl;
-//    }
+   vector<int> x = {2, 10};//FIFA: 114 133 148 212 256 300 582 610 - 114 133 148 212 256 300 582 610 30 626 647 99999
+   //Answer 30
+   predictor* pr = new predictor(argv[1], false, true);
+   aMap res = pr->predict(&x[0], x.size(), 100);
+   for (aMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
+       cout << mapIt->first << " " << mapIt->second << endl;
+   }
 	
     
 //    vector<int> x = { 131, 70  };//FIFA: 114 133 148 212 256 300 582 610 - 114 133 148 212 256 300 582 610 30 626 647 99999
@@ -129,69 +128,69 @@ int main(int argc, const char * argv[])
 //    cout << res << endl;
     
     //createTestQueries(argv[1]);
-    readTestQueries(argv[1]);
+ //    readTestQueries(argv[1]);
     
-    int queries_length = 0;
-    for (int i = 0; i < testQueries.size(); i++) queries_length += testQueries[i].size();
+ //    int queries_length = 0;
+ //    for (int i = 0; i < testQueries.size(); i++) queries_length += testQueries[i].size();
     
-    double currentProb = 0, maxProb = 0, averageProb = 0;
-    int overallResults = 0;
+ //    double currentProb = 0, maxProb = 0, averageProb = 0;
+ //    int overallResults = 0;
     
-    predictor* pr = new predictor(argv[1], false, true);
+ //    predictor* pr = new predictor(argv[1], false, true);
 	
-	//k_folder* evaluator = new k_folder(argv[1], 10);
+	// //k_folder* evaluator = new k_folder(argv[1], 10);
     
-    ofstream outputFile;
+ //    ofstream outputFile;
     
-    int res = access("Timing_results.txt", R_OK);
-    if (res < 0) {
-        if (errno == ENOENT) {
-            // file does not exist
-            outputFile.open("Timing_results.txt");
-        }
-    }else{
-        outputFile.open("Timing_results.txt", ios_base::app);
-    }
+ //    int res = access("Timing_results.txt", R_OK);
+ //    if (res < 0) {
+ //        if (errno == ENOENT) {
+ //            // file does not exist
+ //            outputFile.open("Timing_results.txt");
+ //        }
+ //    }else{
+ //        outputFile.open("Timing_results.txt", ios_base::app);
+ //    }
     
     
-    int queriesNum = 0;
-    double average_query_length = queries_length / testQueries.size();
-    auto begin = clock();
-    uint32_t iterations = 1;
-    for(uint32_t i = 0; i < iterations; ++i)
-    {
-        //if (i % 25 == 0) cout << "iteration: " << i << endl;
-        for (int i = 0; i < testQueries.size(); i++) {
-            aMap res = pr->predict(&testQueries[i][0], testQueries[i].size(), 10);
-            if (res.empty()) {
-                //cout << testQueries[i] << endl;
-                continue;
-            }
-            overallResults = res.begin()->second;
-            //for (aMap::iterator mapIt = res.begin(); mapIt != res.end(); mapIt++) {
-                //cout << mapIt->first << " " << mapIt->second << endl;
-                currentProb = (--(res.end()))->first;
-			cout << currentProb << endl;
-            //}
-            //cout << currentProb << " " << res.begin()->second << endl;
-            currentProb = currentProb / (double) overallResults;
-            averageProb += currentProb;
-            maxProb = currentProb > maxProb ? currentProb : maxProb;
-            res.erase(res.begin(), res.end());
-            queriesNum++;
-        }
-    }
-    auto end = clock();
-    auto duration = ((double)(end - begin))/CLOCKS_PER_SEC;
+ //    int queriesNum = 0;
+ //    double average_query_length = queries_length / testQueries.size();
+ //    auto begin = clock();
+ //    uint32_t iterations = 1;
+ //    for(uint32_t i = 0; i < iterations; ++i)
+ //    {
+ //        //if (i % 25 == 0) cout << "iteration: " << i << endl;
+ //        for (int i = 0; i < testQueries.size(); i++) {
+ //            aMap res = pr->predict(&testQueries[i][0], testQueries[i].size(), 10);
+ //            if (res.empty()) {
+ //                //cout << testQueries[i] << endl;
+ //                continue;
+ //            }
+ //            overallResults = res.begin()->second;
+ //            //for (aMap::iterator mapIt = res.begin(); mapIt != res.end(); mapIt++) {
+ //                //cout << mapIt->first << " " << mapIt->second << endl;
+ //                currentProb = (--(res.end()))->first;
+	// 		cout << currentProb << endl;
+ //            //}
+ //            //cout << currentProb << " " << res.begin()->second << endl;
+ //            currentProb = currentProb / (double) overallResults;
+ //            averageProb += currentProb;
+ //            maxProb = currentProb > maxProb ? currentProb : maxProb;
+ //            res.erase(res.begin(), res.end());
+ //            queriesNum++;
+ //        }
+ //    }
+ //    auto end = clock();
+ //    auto duration = ((double)(end - begin))/CLOCKS_PER_SEC;
     
-    outputFile << "Filename: " << argv[1] << endl;
-    outputFile << "m: " << pr->bSBWT->L.size() << endl;
-    outputFile << "σ: " << pr->bSBWT->alphabet.size() << endl;
-    outputFile << "Memory Size: " << size_in_mega_bytes(pr->bSBWT->L) + size_in_mega_bytes(pr->bSBWT->alphabetCounters) + size_in_mega_bytes(pr->bSBWT->alphabet) << endl;
-    outputFile << "max Propability: " << maxProb << ", average Propability: " << averageProb/ (double) queriesNum << endl;
-    outputFile << duration << "s total, average: " << duration / iterations << "s. Average per query: " << (duration / (double)iterations)/testQueries.size() <<  "s. Average query length: " << average_query_length << endl;
+ //    outputFile << "Filename: " << argv[1] << endl;
+ //    outputFile << "m: " << pr->bSBWT->L.size() << endl;
+ //    outputFile << "σ: " << pr->bSBWT->alphabet.size() << endl;
+ //    outputFile << "Memory Size: " << size_in_mega_bytes(pr->bSBWT->L) + size_in_mega_bytes(pr->bSBWT->alphabetCounters) + size_in_mega_bytes(pr->bSBWT->alphabet) << endl;
+ //    outputFile << "max Propability: " << maxProb << ", average Propability: " << averageProb/ (double) queriesNum << endl;
+ //    outputFile << duration << "s total, average: " << duration / iterations << "s. Average per query: " << (duration / (double)iterations)/testQueries.size() <<  "s. Average query length: " << average_query_length << endl;
     
-    outputFile.close();
+ //    outputFile.close();
     cout << "Done!\n";
     
     delete pr;
