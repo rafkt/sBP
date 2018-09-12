@@ -25,7 +25,7 @@ EXEFLAGS=-o ./program
 EXEFLAGS_KF=-o ./k_fold_run
 EXEFLAGS_TST=-o ./test_validation
 
-	REM=rm -f
+	REM=rm -rf
 	FND_FILES=find . -type f -name
 	REM_FILES=-exec rm {} \;
 	XF=.exe
@@ -66,4 +66,5 @@ csvProducer.o: csvProducer.cpp csvProducer.h
 clean:
 	$(REM) *$(XF)
 	$(REM) *$(IN)
+	$(REM) program sdb.sdsl program.dSYM
 	$(FND_FILES) trainingFile\* $(REM_FILES)

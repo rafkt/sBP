@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string.h>
 #include <map>
+#include <vector>
 
 #include <sdsl/wavelet_trees.hpp>
 
@@ -33,9 +34,12 @@ public:
     ~backwardsSearchBWT();
     int countRange(const int &, const int &);
     int countRange(const int &, const int &, const int &);
-    int search(int c, int, int );
+    int search(int, int, int, int&, int&);
+    int backwardError(int* xy, int);
     int fowawrdTraversal(int);
     int backwardTraversal(int index, int&);
+    void getRange(int, int&, int&);
+    int neighborExpansion(vector<int>, int, int, int, int);
     counterMap scan(int, int);
     int* findRange(int*, int);
 	int seqNumber;
