@@ -39,7 +39,7 @@ public:
     int fowawrdTraversal(int);
     int backwardTraversal(int index, int&);
     void getRange(int, int&, int&);
-    int neighborExpansion(vector<int>, int, int, int, int);
+    int neighborExpansion(vector<int>, int, int, int, int, int);
     counterMap scan(int, int);
     int* findRange(int*, int);
 	int seqNumber;

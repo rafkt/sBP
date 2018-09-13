@@ -94,37 +94,37 @@ int backwardsSearchBWT::countRange(int* xy, int size, int rangeStart, int rangeE
     finalStartIndexPermuted = -1;
     finalEndIndexPermuted = -1;
 
-    int backtrav = -1;
-    cout << fowawrdTraversal(11) << endl;
-    cout << backwardTraversal(11, backtrav) << endl;
-    cout << "L position of backward Traversal: " << backtrav << endl;
+    // int backtrav = -1;
+    // cout << fowawrdTraversal(11) << endl;
+    // cout << backwardTraversal(11, backtrav) << endl;
+    // cout << "L position of backward Traversal: " << backtrav << endl;
 
-    cout << "Printing a range " << endl;
+    // cout << "Printing a range " << endl;
 
-    counterMap res = scan(0, 11);
-    for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
-        cout << mapIt->first << " " << mapIt->second << endl;
-    }
+    // counterMap res = scan(0, 11);
+    // for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
+    //     cout << mapIt->first << " " << mapIt->second << endl;
+    // }
 
-    cout << "Printing END" << endl;
+    // cout << "Printing END" << endl;
 
-    int newRangeStart, newRangeEnd;
-    search(4, 9, 9, newRangeStart, newRangeEnd);
-    cout << "New range: " <<newRangeStart << " " << newRangeEnd << endl;
+    // int newRangeStart, newRangeEnd;
+    // search(4, 9, 9, newRangeStart, newRangeEnd);
+    // cout << "New range: " <<newRangeStart << " " << newRangeEnd << endl;
 
-    cout << "search with errors testing" << endl;
-    vector<int> x = {-2, 2, 10};
-    backwardError(&x[0], x.size());
-    cout << "END-----" << endl;
+    // cout << "search with errors testing" << endl;
+    // vector<int> x = {-2, 2, 10};
+    // backwardError(&x[0], x.size());
+    // cout << "END-----" << endl;
 
     int start, end;
-    vector<int> y = {1, 2, -2, -2};
+    vector<int> y = {1, 2, -2, 4, -2};
     getRange(y[0], start, end);
-    neighborExpansion(y, 1, start, end, 2);
+    neighborExpansion(y, 1, start, end, 1, 1);
 
     
-    getRange(4, start, end);
-    cout << start << " " << end << endl;
+    // getRange(4, start, end);
+    // cout << start << " " << end << endl;
 
     int rankStartValue, rankEndValue;
     bool flag = false;
@@ -238,28 +238,97 @@ int backwardsSearchBWT::backwardError(int* xy, int size){
     return 1;
 }
 
-int backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeStart, int rangeEnd, int subst){//size should be over or equal to 2
-    int newRangeStart, newRangeEnd;
-    for (int i = index; i < xy.size(); i++){
-        if (xy[i] == -2){ //i cannot be 0 for this case - backwardError should have prior been called
-            //go through the range and replace xy[i] with L[j]
-            for (int j = rangeStart; j <= rangeEnd; j++){ 
-                xy[i] = L[j];
-                search(L[j], rangeStart, rangeEnd, newRangeStart, newRangeEnd);
-                neighborExpansion(xy, i + 1, newRangeStart, newRangeEnd, --subst); // 1 2 3 ?
-            }
-        }
+// int backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeStart, int rangeEnd, int subst){//size should be over or equal to 2
+//     int newRangeStart, newRangeEnd;
+//     for (int i = index; i < xy.size(); i++){
+//         if (xy[i] == -2){ //i cannot be 0 for this case - backwardError should have prior been called
+//             //go through the range and replace xy[i] with L[j]
+//             for (int j = rangeStart; j <= rangeEnd; j++){ 
+//                 xy[i] = L[j];
+//                 search(L[j], rangeStart, rangeEnd, newRangeStart, newRangeEnd);
+//                 neighborExpansion(xy, i + 1, newRangeStart, newRangeEnd, --subst); // 1 2 3 ?
+//             }
+//         }
         
-        search(xy[i], rangeStart, rangeEnd, newRangeStart, newRangeEnd);
-        rangeStart = newRangeStart;
-        rangeEnd = newRangeEnd;
-        neighborExpansion(xy, i + 1, rangeStart, rangeEnd, subst);
+//         search(xy[i], rangeStart, rangeEnd, newRangeStart, newRangeEnd);
+//         rangeStart = newRangeStart;
+//         rangeEnd = newRangeEnd;
+//         neighborExpansion(xy, i + 1, rangeStart, rangeEnd, subst);
+//     }
+//     for (int i = 0; i < xy.size(); i++){
+//         cout <<  xy[i] << " ";
+//     }
+//     cout << endl;
+//     cout << "range: " << rangeStart << "," << rangeEnd << endl;
+//     return 1;
+    
+// }
+
+// int backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeStart, int rangeEnd, int subst, int call){//size should be over or equal to 2
+//     int newRangeStart, newRangeEnd;
+//     for (int i = index; i < xy.size(); i++){
+//         if (xy[i] == -2){ //i cannot be 0 for this case - backwardError should have prior been called
+//             //go through the range and replace xy[i] with L[j]
+//             subst--;
+
+//             counterMap res = scan(rangeStart, rangeEnd);
+//             for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
+//                 //cout << mapIt->first << " " << mapIt->second << endl;
+//                 xy[i] = mapIt->second;
+//                 search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd);
+//                 if (i + 1 < xy.size()) neighborExpansion(xy, i + 1, newRangeStart, newRangeEnd, subst, ++call);
+//             }
+
+//             // for (int j = rangeStart; j <= rangeEnd; j++){ 
+//             //     xy[i] = L[j];
+//             //     search(L[j], rangeStart, rangeEnd, newRangeStart, newRangeEnd);
+//             //     if (i + 1 < xy.size()) neighborExpansion(xy, i + 1, newRangeStart, newRangeEnd, subst, ++call);
+//             // }
+//         }
+        
+//         search(xy[i], rangeStart, rangeEnd, newRangeStart, newRangeEnd);
+//         rangeStart = newRangeStart;
+//         rangeEnd = newRangeEnd;
+//     }
+//     //if (subst > 0) return 1;
+//     cout << index << " " << subst << " " << call << " " << endl;
+//     // for (int i = 0; i < xy.size(); i++){
+//     //     cout <<  xy[i] << " ";
+//     // }
+//     // cout << endl;
+//     cout << "range: " << rangeStart << "," << rangeEnd << endl;
+//     return 1;
+    
+// }
+
+
+int backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeStart, int rangeEnd, int subst, int call){//size should be over or equal to 2
+    int newRangeStart, newRangeEnd;
+    if (index == xy.size()){
+        cout << "-range: " << rangeStart << "," << rangeEnd  << " size: " << endl;
+        return 1;
+    }else{
+        if (xy[index] == -2){
+            counterMap res = scan(rangeStart, rangeEnd);
+            for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
+                //cout << mapIt->first << " " << mapIt->second << endl;
+                xy[index] = mapIt->second;
+                search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd);
+                //rangeStart = newRangeStart;
+                //rangeEnd = newRangeEnd;
+                // if (index + 1 == xy.size() - 1) {
+                //     cout << "-range: " << newRangeStart << "," << newRangeEnd  << " size: " << res.size() << endl;
+                // } else 
+                neighborExpansion(xy, index + 1, newRangeStart, newRangeEnd, subst, ++call);
+            }
+        }else{
+            search(xy[index], rangeStart, rangeEnd, newRangeStart, newRangeEnd);
+            rangeStart = newRangeStart;
+            rangeEnd = newRangeEnd;
+            if (index + 1 == xy.size() - 1)  cout << "--range: " << newRangeStart << "," << newRangeEnd  << endl;
+            else neighborExpansion(xy, index + 1, newRangeStart, newRangeEnd, subst, ++call);
+        }
     }
-    for (int i = 0; i < xy.size(); i++){
-        cout <<  xy[i] << " ";
-    }
-    cout << endl;
-    cout << "range: " << rangeStart << "," << rangeEnd << endl;
     return 1;
     
 }
@@ -299,7 +368,7 @@ counterMap backwardsSearchBWT::scan(int rangeStart, int rangeEnd){
             mostFrequent.insert({counter, alphabet[i]});
         }
     }
-    mostFrequent.insert({-1, overallRangeLength});
+    //mostFrequent.insert({-1, overallRangeLength});
     return mostFrequent;
 
 }
