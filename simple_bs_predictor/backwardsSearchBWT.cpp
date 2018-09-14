@@ -88,7 +88,6 @@ int backwardsSearchBWT::countRange(const int & c, const int & y){
 }
 
 int backwardsSearchBWT::countRange(int* xy, int size, int rangeStart, int rangeEnd){
-    bool similarSearchON = false;
     finalStartIndex = -1;
     finalEndIndex = -1;
     finalStartIndexPermuted = -1;
@@ -117,14 +116,43 @@ int backwardsSearchBWT::countRange(int* xy, int size, int rangeStart, int rangeE
     // backwardError(&x[0], x.size());
     // cout << "END-----" << endl;
 
-    int start, end;
-    vector<int> y = {1, 2, -2, 4, -2};
-    getRange(y[0], start, end);
-    neighborExpansion(y, 1, start, end, 1, 1);
-
+    //int start, end;
+    vector<int> y = {3, 4};
+    //getRange(y[0], start, end);
+    //neighborExpansion(y, 1, start, end, 1, 1);
+    //getConsequents(y, 0, 4, 6, 3, -1);
     
     // getRange(4, start, end);
     // cout << start << " " << end << endl;
+
+
+    cout << "trying to test subquery generator" << endl;
+        int _size = 2;
+        for (int i = 0; i < _size; i++){
+            //cout << i << endl;
+            int old_item = y[i];
+            y[i] = -2;
+            for (int item : y) cout << item << " ";
+            cout << endl;
+            y[i] = old_item;
+        }
+
+        if (_size > 2){
+            for (int i = 0; i < _size; i++){
+                for (int j = i + 1; j < _size; j++){
+                    //cout << i << j << endl;
+                    int old_item_1 = y[i];
+                    int old_item_2 = y[j];
+                    y[i] = -2;
+                    y[j] = -2;
+                    for (int item : y) cout << item << " ";
+                    cout << endl;
+                    y[i] = old_item_1;
+                    y[j] = old_item_2;
+                }
+            }
+        }
+    cout << "end of this test" << endl;
 
     int rankStartValue, rankEndValue;
     bool flag = false;
@@ -238,74 +266,16 @@ int backwardsSearchBWT::backwardError(int* xy, int size){
     return 1;
 }
 
-// int backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeStart, int rangeEnd, int subst){//size should be over or equal to 2
-//     int newRangeStart, newRangeEnd;
-//     for (int i = index; i < xy.size(); i++){
-//         if (xy[i] == -2){ //i cannot be 0 for this case - backwardError should have prior been called
-//             //go through the range and replace xy[i] with L[j]
-//             for (int j = rangeStart; j <= rangeEnd; j++){ 
-//                 xy[i] = L[j];
-//                 search(L[j], rangeStart, rangeEnd, newRangeStart, newRangeEnd);
-//                 neighborExpansion(xy, i + 1, newRangeStart, newRangeEnd, --subst); // 1 2 3 ?
-//             }
-//         }
-        
-//         search(xy[i], rangeStart, rangeEnd, newRangeStart, newRangeEnd);
-//         rangeStart = newRangeStart;
-//         rangeEnd = newRangeEnd;
-//         neighborExpansion(xy, i + 1, rangeStart, rangeEnd, subst);
-//     }
-//     for (int i = 0; i < xy.size(); i++){
-//         cout <<  xy[i] << " ";
-//     }
-//     cout << endl;
-//     cout << "range: " << rangeStart << "," << rangeEnd << endl;
-//     return 1;
-    
-// }
-
-// int backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeStart, int rangeEnd, int subst, int call){//size should be over or equal to 2
-//     int newRangeStart, newRangeEnd;
-//     for (int i = index; i < xy.size(); i++){
-//         if (xy[i] == -2){ //i cannot be 0 for this case - backwardError should have prior been called
-//             //go through the range and replace xy[i] with L[j]
-//             subst--;
-
-//             counterMap res = scan(rangeStart, rangeEnd);
-//             for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
-//                 //cout << mapIt->first << " " << mapIt->second << endl;
-//                 xy[i] = mapIt->second;
-//                 search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd);
-//                 if (i + 1 < xy.size()) neighborExpansion(xy, i + 1, newRangeStart, newRangeEnd, subst, ++call);
-//             }
-
-//             // for (int j = rangeStart; j <= rangeEnd; j++){ 
-//             //     xy[i] = L[j];
-//             //     search(L[j], rangeStart, rangeEnd, newRangeStart, newRangeEnd);
-//             //     if (i + 1 < xy.size()) neighborExpansion(xy, i + 1, newRangeStart, newRangeEnd, subst, ++call);
-//             // }
-//         }
-        
-//         search(xy[i], rangeStart, rangeEnd, newRangeStart, newRangeEnd);
-//         rangeStart = newRangeStart;
-//         rangeEnd = newRangeEnd;
-//     }
-//     //if (subst > 0) return 1;
-//     cout << index << " " << subst << " " << call << " " << endl;
-//     // for (int i = 0; i < xy.size(); i++){
-//     //     cout <<  xy[i] << " ";
-//     // }
-//     // cout << endl;
-//     cout << "range: " << rangeStart << "," << rangeEnd << endl;
-//     return 1;
-    
-// }
-
 
 int backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeStart, int rangeEnd, int subst, int call){//size should be over or equal to 2
     int newRangeStart, newRangeEnd;
     if (index == xy.size()){
-        cout << "-range: " << rangeStart << "," << rangeEnd  << " size: " << endl;
+        //cout << "-range: " << rangeStart << "," << rangeEnd  << " size: " << endl;
+        counterMap res = scan(rangeStart, rangeEnd);
+        for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
+            cout << mapIt->second << " ";
+        }
+        cout << endl;
         return 1;
     }else{
         if (xy[index] == -2){
@@ -325,12 +295,39 @@ int backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeSt
             search(xy[index], rangeStart, rangeEnd, newRangeStart, newRangeEnd);
             rangeStart = newRangeStart;
             rangeEnd = newRangeEnd;
-            if (index + 1 == xy.size() - 1)  cout << "--range: " << newRangeStart << "," << newRangeEnd  << endl;
+            if (index == xy.size() - 1)  {
+                //cout << "--range: " << newRangeStart << "," << newRangeEnd  << endl;
+                counterMap res = scan(newRangeStart, newRangeEnd);
+                for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
+                    cout << mapIt->second << " --";
+                }
+                cout << endl;
+            }
             else neighborExpansion(xy, index + 1, newRangeStart, newRangeEnd, subst, ++call);
         }
     }
     return 1;
     
+}
+
+int backwardsSearchBWT::getConsequents(vector<int> xy, int index, int rangeStart, int rangeEnd, int length, int d){//size should be over or equal to 2
+    int newRangeStart, newRangeEnd;
+    if (d > 0) xy.push_back(d);
+    if (index == length){
+        //cout << "-range: " << rangeStart << "," << rangeEnd  << " size: " << endl;
+        for (int i : xy) {
+            cout << i << " ";
+        }
+        cout << endl;
+        return 1;
+    }else{
+        counterMap res = scan(rangeStart, rangeEnd);
+        for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
+            search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd);
+            getConsequents(xy, index + 1, newRangeStart, newRangeEnd, length, mapIt->second);
+        }
+    }
+    return 1;
 }
 
 counterMap backwardsSearchBWT::scan(int rangeStart, int rangeEnd){
@@ -373,52 +370,11 @@ counterMap backwardsSearchBWT::scan(int rangeStart, int rangeEnd){
 
 }
 
-void backwardsSearchBWT::countRangeLastTwoLettersPermuted(int rangeStart, int rangeEnd, int* xy){
-    int letterPosPermuted = alphabet.select(1, xy[2]);
-    int range2AddPermuted = letterPosPermuted != 0 ? alphabetCounters[letterPosPermuted - 1] : 0;
-    int rankStartValuePermuted = L.rank(rangeStart, xy[2]);
-    int rankEndValuePermuted = L.rank(rangeEnd + 1, xy[2]);
-    int rangeStartPermuted = rankStartValuePermuted + range2AddPermuted;
-    int rangeEndPermuted = rankEndValuePermuted + range2AddPermuted - 1;
-    if (rankEndValuePermuted - rankStartValuePermuted != 0) {
-        letterPosPermuted = alphabet.select(1, xy[1]);
-        range2AddPermuted = letterPosPermuted != 0 ? alphabetCounters[letterPosPermuted - 1] : 0;
-        rankStartValuePermuted = L.rank(rangeStartPermuted, xy[1]);
-        rankEndValuePermuted = L.rank(rangeEndPermuted + 1, xy[1]);
-        rangeStartPermuted = rankStartValuePermuted + range2AddPermuted;
-        rangeEndPermuted = rankEndValuePermuted + range2AddPermuted - 1;
-        if (rankEndValuePermuted - rankStartValuePermuted != 0){
-            finalStartIndexPermuted = rangeStartPermuted;
-            finalEndIndexPermuted = rangeEndPermuted;
-        }
-    }
-}
 
 // a simple function that simulates COUNTRANGE
 int backwardsSearchBWT::countRange(const int & j, const int & k, const int & c){
     return L.rank(k + 1, c) - L.rank(j, c);
 }
-
-////trivial rank function
-//int backwardsSearchBWT::rank(const char & c, const int & i){
-//    int counter = 0;
-//    for (int k = 0; k < L.size() && k <= i; k++) {
-//        if (L[k] == c) counter++;
-//    }
-//    return counter;
-//}
-//
-//// trivial select function
-//int countBefore::select(const char & c, const int & i){
-//    int counter = 0;
-//    for (int k = 0; k < L.size(); k++) {
-//        if (L[k] == c){
-//            counter++;
-//            if (counter == i) return k;
-//        }
-//    }
-//    return -1;
-//}
 
 int backwardsSearchBWT::subStringOccurences( const std::string & str, const std::string & obj ) {
     int n = 0;

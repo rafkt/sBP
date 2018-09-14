@@ -54,6 +54,9 @@ similar_queries.o: similar_queries.cpp similar_queries.h
 predictor.o: predictor.cpp predictor.h
 	$(CC) $(OFLAGS) $(FLAGS) $(FLAGS_SDSL_I) predictor.cpp
 
+subseqPredictor.o: subseqPredictor.cpp subseqPredictor.h
+	$(CC) $(OFLAGS) $(FLAGS) $(FLAGS_SDSL_I) subseqPredictor.cpp
+
 k_folder.o: k_folder.cpp k_folder.h LRUcache.o
 	$(CC) $(OFLAGS) $(FLAGS) k_folder.cpp LRUcache.o
 

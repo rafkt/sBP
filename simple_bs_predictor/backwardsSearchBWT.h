@@ -40,6 +40,7 @@ public:
     int backwardTraversal(int index, int&);
     void getRange(int, int&, int&);
     int neighborExpansion(vector<int>, int, int, int, int, int);
+    int getConsequents(vector<int> xy, int index, int rangeStart, int rangeEnd, int length, int d);
     counterMap scan(int, int);
     int* findRange(int*, int);
 	int seqNumber;
@@ -48,7 +49,6 @@ private:
 //    int rank(const char &, const int &);
 //    int select(const char &, const int &);
     int countRange(int*, int, int = 0, int = 0);
-    void countRangeLastTwoLettersPermuted(int, int, int*);
     int subStringOccurences( const string &, const string &);
     myMap alphabet_tmp;
     int finalStartIndex, finalEndIndex, finalStartIndexPermuted, finalEndIndexPermuted;
