@@ -13,7 +13,7 @@
 #include <time.h>
 
 predictor::predictor(const string filename, bool similarSearch, bool threashold): mostFrequentToKeepCounter(0), similarSearch(similarSearch), threashold(threashold){
-    bSBWT = new backwardsSearchBWT(filename, similarSearch);
+    bSBWT = new backwardsSearchBWT(filename);
 }
 
 predictor::~predictor(){

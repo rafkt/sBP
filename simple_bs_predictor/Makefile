@@ -39,8 +39,8 @@ test: testingMain.cpp LRUcache.o
 k_fold: k-folder_evaluator_run.cpp backwardsSearchBWT.o suffixArray.o predictor.o similar_queries.o LRUcache.o k_folder.o csvProducer.o
 	$(CC) $(FLAGS) $(FLAGS_SDSL_I) $(FLAGS_SDSL_L) suffixArray.o similar_queries.o backwardsSearchBWT.o predictor.o LRUcache.o csvProducer.o k_folder.o k-folder_evaluator_run.cpp $(EXEFLAGS_KF) $(LIBS)
 
-main: main.cpp backwardsSearchBWT.o suffixArray.o predictor.o
-	$(CC) $(FLAGS) $(FLAGS_SDSL_I) $(FLAGS_SDSL_L) suffixArray.o backwardsSearchBWT.o predictor.o main.cpp $(EXEFLAGS) $(LIBS)
+main: main.cpp backwardsSearchBWT.o suffixArray.o subseqPredictor.o
+	$(CC) $(FLAGS) $(FLAGS_SDSL_I) $(FLAGS_SDSL_L) suffixArray.o backwardsSearchBWT.o subseqPredictor.o main.cpp $(EXEFLAGS) $(LIBS)
 
 backwardsSearchBWT.o: backwardsSearchBWT.cpp backwardsSearchBWT.h
 	$(CC) $(OFLAGS) $(FLAGS) $(FLAGS_SDSL_I) backwardsSearchBWT.cpp

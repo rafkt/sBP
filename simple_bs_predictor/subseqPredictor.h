@@ -12,19 +12,30 @@
 #include "backwardsSearchBWT.h"
 #include <map>
 
+#include <sdsl/bit_vectors.hpp>
+
 using namespace std;
 
-typedef multimap<float, int> aMap;
+typedef map<int, float> countTable;
 
 class subseqPredictor{
 public:
     backwardsSearchBWT* bSBWT;
-    subseqPredictor(const string, bool, bool);
+    subseqPredictor(const string);
     ~subseqPredictor();
-    int predict(int*, int, int);
-	double itemConfidence(int item);
+    int getBest();
+    int start(int*, int);
+	double itemConfidence(int);
 	int datasetSeqNumber();
 private:
-    int mostFrequentToKeepCounter;
-	bool similarSearch, threashold;
+	sdsl::bit_vector* consequentBits;
+	countTable countTable;
+	bool stop;
+	int prediction;
+	float score;
+	void push(vector<int>, int, int, int);
+	void predict(int*, int, int, int, int);
+    void generateSubqueries(int*, int);
+    int predictionCount;
+	bool threashold;
 };
