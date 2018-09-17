@@ -354,11 +354,11 @@ void backwardsSearchBWT::getConsequents(vector<int> xy, int index, int rangeStar
         predictionCount++;
         return;
     }else{
-        counterMap res = scan(rangeStart, rangeEnd);
         for (int bit_index = rangeStart; bit_index <= rangeEnd; bit_index++) {
             if ((*consequentBits)[bit_index]) return;
             (*consequentBits)[bit_index] = 1;
         }
+        counterMap res = scan(rangeStart, rangeEnd);
         for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
             search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd);
             getConsequents(xy, index + 1, newRangeStart, newRangeEnd, length, mapIt->second, consequentList, predictionCount, consequentBits);
