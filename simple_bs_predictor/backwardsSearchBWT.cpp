@@ -14,7 +14,6 @@
 #include "suffixArray.h"
 #include <stack>
 #include <algorithm>
-#include <set>
 
 using namespace suffixArray;
 
@@ -117,10 +116,23 @@ int backwardsSearchBWT::countRange(int* xy, int size, int rangeStart, int rangeE
     // cout << "END-----" << endl;
 
     //int start, end;
-    //vector<int> y = {3, 4, 5, 6};
+    //vector<int> y;
     //getRange(y[0], start, end);
     //neighborExpansion(y, 1, start, end, 1, 1);
-    //getConsequents(y, 0, 4, 6, 3, -1);
+    
+    // vector<vector<int>> consequentList;
+    // int predictionCount = 0;
+    // sdsl::bit_vector* consequentBits = new bit_vector(L.size(), 0);
+    // getConsequents(y, 0, 0, 1, 5, -1, consequentList, predictionCount, consequentBits);
+    // cout << "consequents" << endl;
+    // for (vector<int> conseq : consequentList){
+    //     for (int item : conseq){cout << item << " ";}
+    //     cout <<  endl;
+    // }
+    // cout << "end" << endl;
+    // cout << (*consequentBits) << endl;
+    // cout << "prediction count: " << predictionCount << endl;
+    // return 1;
     
     // getRange(4, start, end);
     // cout << start << " " << end << endl;
@@ -193,6 +205,17 @@ int backwardsSearchBWT::countRange(int* xy, int size, int rangeStart, int rangeE
     return 1;
 }
 
+int backwardsSearchBWT::searchQuery(int* xy, int size, int& finalStartRange, int& finalEndRange){
+    if (size < 2) return -1;
+    int startRange, endRange;
+    getRange(xy[0], startRange, endRange);
+    for (int i = 1; i < size; i++){
+        if (search(xy[i], startRange, endRange, finalStartRange, finalEndRange) == -1) return -1;
+        startRange = finalStartRange;
+        endRange = finalEndRange;
+    }
+    return 1;
+}
 
 int backwardsSearchBWT::search(int c, int rangeStart, int rangeEnd, int& newRangeStart, int& newRangeEnd){
     if (rangeEnd - rangeStart >= 0){
@@ -241,7 +264,7 @@ void backwardsSearchBWT::getRange(int c, int& rangeStart, int& rangeEnd){
     rangeEnd = alphabetCounters[letterPos] - 1;
 }
 
-int backwardsSearchBWT::backwardError(int* xy, int size){
+int backwardsSearchBWT::backwardError(int* xy, int size, set<int>& substitutedItems){
     //for now, xy will note an error position with -2
     if (size < 2) return -1;
     //std::vector<int> patternVector(size);
@@ -249,7 +272,7 @@ int backwardsSearchBWT::backwardError(int* xy, int size){
     //pattern_stack.push(patternVector);
     //patternVector = pattern_stack.top();
     
-    set<int> substitutedItems;
+    //set<int> substitutedItems;
     int rankItems = L.rank(L.size(), xy[1]);
     for (int j = 0; j < rankItems; j++){
         int index = L.select(j + 1, xy[1]);
@@ -258,9 +281,9 @@ int backwardsSearchBWT::backwardError(int* xy, int size){
         substitutedItems.insert(item2subst);
         
     }
-    for (auto i = substitutedItems.begin(); i != substitutedItems.end(); ++i)
-        cout << *i << ' ';
-    cout << endl;
+    // for (auto i = substitutedItems.begin(); i != substitutedItems.end(); ++i)
+    //     cout << *i << ' ';
+    // cout << endl;
 
     return 1;
 }
@@ -283,7 +306,7 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
             for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
                 //cout << mapIt->first << " " << mapIt->second << endl;
                 xy[index] = mapIt->second;
-                search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd);
+                if (search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) return;
                 //rangeStart = newRangeStart;
                 //rangeEnd = newRangeEnd;
                 // if (index + 1 == xy.size() - 1) {
@@ -292,7 +315,7 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
                 neighborExpansion(xy, index + 1, newRangeStart, newRangeEnd, ranges);
             }
         }else{
-            search(xy[index], rangeStart, rangeEnd, newRangeStart, newRangeEnd);
+            if (search(xy[index], rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) return;
             rangeStart = newRangeStart;
             rangeEnd = newRangeEnd;
             if (index == xy.size() - 1)  {
@@ -322,7 +345,7 @@ void backwardsSearchBWT::getConsequents(vector<int> xy, int index, int rangeStar
         xy.push_back(d);
     }
     if (index == length){
-        //cout << "-range: " << rangeStart << "," << rangeEnd  << " size: " << endl;
+        // cout << "-range: " << rangeStart << "," << rangeEnd  << " size: " << endl;
         // for (int i : xy) {
         //     cout << i << " ";
         // }
@@ -351,34 +374,34 @@ counterMap backwardsSearchBWT::scan(int rangeStart, int rangeEnd){
     double threshold = 1.7;
     int overallRangeLength = rangeEnd - rangeStart + 1;
     double relay_value = overallRangeLength / (double)alphabet.size();
-    if (relay_value <= threshold){
-        int* range_items = new int[overallRangeLength];
-        int addingCounter = 0;
-        for (int k = 0; k < overallRangeLength; k++) {
-            range_items[addingCounter++] = L[k + rangeStart];
-        }
-        qsort (range_items, overallRangeLength, sizeof(int), compare);
-        int previous_item = range_items[0];
-        for (int i = 0; i < overallRangeLength; i++) {
-            if (range_items[i] == previous_item){
-                counter++;
-            }
-            else{
+    // if (relay_value <= threshold){
+    //     int* range_items = new int[overallRangeLength];
+    //     int addingCounter = 0;
+    //     for (int k = 0; k < overallRangeLength; k++) {
+    //         range_items[addingCounter++] = L[k + rangeStart];
+    //     }
+    //     qsort (range_items, overallRangeLength, sizeof(int), compare);
+    //     int previous_item = range_items[0];
+    //     for (int i = 0; i < overallRangeLength; i++) {
+    //         if (range_items[i] == previous_item){
+    //             counter++;
+    //         }
+    //         else{
 
-                mostFrequent.insert({counter, range_items[i - 1]});
-                counter = 1;
-            }
-            previous_item = range_items[i];
-        }
-        if (counter > 0) {
-            mostFrequent.insert({counter, range_items[overallRangeLength - 1]});
-        }
-    }else{
+    //             mostFrequent.insert({counter, range_items[i - 1]});
+    //             counter = 1;
+    //         }
+    //         previous_item = range_items[i];
+    //     }
+    //     if (counter > 0) {
+    //         mostFrequent.insert({counter, range_items[overallRangeLength - 1]});
+    //     }
+    // }else{
         for (size_t i = 0; i < alphabet.size(); i++){
             counter = countRange(rangeStart, rangeEnd, alphabet[i]);
-            mostFrequent.insert({counter, alphabet[i]});
+            if (counter > 0) mostFrequent.insert({counter, alphabet[i]});
         }
-    }
+   //}
     //mostFrequent.insert({-1, overallRangeLength});
     return mostFrequent;
 

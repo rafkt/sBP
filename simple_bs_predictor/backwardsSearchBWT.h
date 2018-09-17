@@ -10,6 +10,7 @@
 #include <string.h>
 #include <map>
 #include <vector>
+#include <set>
 
 #include <sdsl/wavelet_trees.hpp>
 #include <sdsl/bit_vectors.hpp>
@@ -35,8 +36,9 @@ public:
     ~backwardsSearchBWT();
     int countRange(const int &, const int &);
     int countRange(const int &, const int &, const int &);
+    int searchQuery(int*, int, int&, int&);
     int search(int, int, int, int&, int&);
-    int backwardError(int* xy, int);
+    int backwardError(int* xy, int, set<int>&);
     int fowawrdTraversal(int);
     int backwardTraversal(int index, int&);
     void getRange(int, int&, int&);
@@ -45,11 +47,12 @@ public:
     counterMap scan(int, int);
     int* findRange(int*, int);
 	int seqNumber;
+    int countRange(int*, int, int = 0, int = 0);
 private:
     void deleteMap();
 //    int rank(const char &, const int &);
 //    int select(const char &, const int &);
-    int countRange(int*, int, int = 0, int = 0);
+    
     int subStringOccurences( const string &, const string &);
     myMap alphabet_tmp;
     int finalStartIndex, finalEndIndex, finalStartIndexPermuted, finalEndIndexPermuted;

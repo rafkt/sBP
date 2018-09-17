@@ -11,6 +11,7 @@
 #include <fstream>
 #include <sys/time.h>
 #include <time.h>
+#include <set>
 
 #define MAXPREDICTIONCOUNT 10
 
@@ -44,24 +45,73 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 	//constract a bit-vector of size L (from BWT)
 
 	//find all the ranges with neighborExpansion
+
+	cout << "Current query: ";
+	for (int i = 0; i < size; i++){
+		cout << query[i] << " ";
+	}
+	cout << endl;
+
 	int rangeStart = - 1, rangeEnd = -1;
-	bSBWT->getRange(query[0], rangeStart, rangeEnd);
-	vector<pair<int, int>> bs_ranges;
-	vector<int> query_vector;
-	copy(query, query + size, query_vector.begin());
-    bSBWT->neighborExpansion(query_vector, 1, rangeStart, rangeEnd, bs_ranges);
-    vector<vector<int>> consequentList;
-    for (pair<int, int> it : bs_ranges){
-    	vector<int> tmp;
-    	bSBWT->getConsequents(tmp, 0, it.first, it.second, 2, -1, consequentList, predictionCount, consequentBits);
-    }
-    //put all ranges into CT
-    for (vector<int> consequent : consequentList) push(consequent, errors, initialLength, size);
-    
-    if (predictionCount > MAXPREDICTIONCOUNT) {
-    	stop = true;
-    	delete consequentBits;
-    	return;
+	if (query[0] == -2){
+		set<int> firstItemPossibleReplacements;
+		bSBWT->backwardError(query, size, firstItemPossibleReplacements);
+		for (int item : firstItemPossibleReplacements){
+			query[0] = item;
+			//repeated code here - should improve it
+			bSBWT->getRange(query[0], rangeStart, rangeEnd);
+			vector<pair<int, int>> bs_ranges;
+			vector<int> query_vector(size);
+			copy(query, query + size, query_vector.begin());
+		    if (errors > 1){
+		    	bSBWT->neighborExpansion(query_vector, 1, rangeStart, rangeEnd, bs_ranges);
+		    }else{
+		    	//should do a search; if search returns anything then I should add it in the bs_ranges
+		    	int finalStartRange, finalEndRange;
+		    	if (bSBWT->searchQuery(query, size, finalStartRange, finalEndRange)){
+		    		bs_ranges.push_back(make_pair(finalStartRange, finalEndRange));
+		    	}
+		    }
+		    vector<vector<int>> consequentList;
+		    for (pair<int, int> it : bs_ranges){
+		    	vector<int> tmp;
+		    	bSBWT->getConsequents(tmp, 0, it.first, it.second, 2, -1, consequentList, predictionCount, consequentBits);
+		    }
+		    //put all ranges into CT
+		    for (vector<int> consequent : consequentList) push(consequent, errors, initialLength, size);
+		    
+		    if (predictionCount > MAXPREDICTIONCOUNT) {
+		    	stop = true;
+		    	return;
+			}
+			//end of repeated code
+		}
+	}else{
+		bSBWT->getRange(query[0], rangeStart, rangeEnd);
+		vector<pair<int, int>> bs_ranges;
+		vector<int> query_vector(size);
+		copy(query, query + size, query_vector.begin());
+	    if (errors > 0){
+	    	bSBWT->neighborExpansion(query_vector, 1, rangeStart, rangeEnd, bs_ranges);
+	    }else{
+	    	//should do a search; if search returns anything then I should add it in the bs_ranges
+	    	int finalStartRange, finalEndRange;
+	    	if (bSBWT->searchQuery(query, size, finalStartRange, finalEndRange)){
+	    		bs_ranges.push_back(make_pair(finalStartRange, finalEndRange));
+	    	}
+	    }
+	    vector<vector<int>> consequentList;
+	    for (pair<int, int> it : bs_ranges){
+	    	vector<int> tmp;
+	    	bSBWT->getConsequents(tmp, 0, it.first, it.second, 2, -1, consequentList, predictionCount, consequentBits);
+	    }
+	    //put all ranges into CT
+	    for (vector<int> consequent : consequentList) push(consequent, errors, initialLength, size);
+	    
+	    if (predictionCount > MAXPREDICTIONCOUNT) {
+	    	stop = true;
+	    	return;
+		}
 	}
 
 	//for every range that I have found
@@ -72,7 +122,6 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 		//if consequent length > 0 then increase the prediction count
 	//if prediction count > maxPredictioncount then get the most frequent item from the countTable; I have to also set a flag for permanent stop
 	//return he most frequent item from the countTable
-	delete consequentBits;
     return;
 }
 
@@ -81,21 +130,26 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 
 //I need a method that generates all the subqueries. I think that at least for now it will be better organised, this way.
 void subseqPredictor::push(vector<int> consequent, int errors, int initialLength, int subLength){
+	cout << "About to push: " << endl;
+	for (int it : consequent) cout << it << " ";
+	cout << endl;
 	pair<std::map<int, float>::iterator,bool> ret;
 	float current_score = 0.0;
 	for (int i = 0; i < consequent.size(); i++){
 		float weightDistance = 1.0 / (i + 1);
-		float newWeight = ((subLength / (float)initialLength)) + (errors / (float)2) + (1.0) + (weightDistance * 0.0001f);
+		float newWeight = ((subLength / (float)initialLength)) + ((2 - errors) / (float)2) + (1.0) + (weightDistance * 0.0001f);
 		ret = countTable.insert (std::pair<char,int>(consequent[i], newWeight) );
 	  	if (ret.second == false) {
 	  		//item already in the countTable
 	  		current_score = ret.first->second * newWeight;
 		    ret.first->second =  current_score;
+		    cout << "Pushed: " << consequent[i] << " with score: " << current_score << endl;
 		    if (current_score > score){
 		    	score = current_score;
 		    	prediction = consequent[i];
 		    }
 		}else{
+			cout << "Pushed: " << consequent[i] << " with score: " << newWeight << endl;
 			if (newWeight > score){
 		    	score = newWeight;
 		    	prediction = consequent[i];
@@ -109,13 +163,17 @@ int subseqPredictor::getBest(){
 }
 
 int subseqPredictor::start(int* query, int size){ // this function will manage deletion of the first items.
-	consequentBits = new bit_vector(bSBWT->L.size(), 0);; // I have to delete this at the end of this function or before returning
-
+	consequentBits = new bit_vector(bSBWT->L.size(), 0); // I have to delete this at the end of this function or before returning
 	stop = false;
 	prediction = -1; score = -1.0;
 	predictionCount = 0;
 	countTable.clear();
-	for (int k = 0; k < size - 2; k++) {generateSubqueries(&query[k], size - k); if (stop) return getBest();}
+	for (int k = 0; k < size - 2; k++) {
+		predict(&query[k], size - k, MAXPREDICTIONCOUNT, size, 0);
+		if (stop) {delete consequentBits; return getBest();}
+		generateSubqueries(&query[k], size - k); 
+		if (stop) {delete consequentBits; return getBest();}
+	}
 	return getBest();
 }
 
