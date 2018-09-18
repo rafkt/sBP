@@ -168,12 +168,17 @@ int subseqPredictor::start(int* query, int size){ // this function will manage d
 	prediction = -1; score = -1.0;
 	predictionCount = 0;
 	countTable.clear();
+	if (size == 2) {
+		predict(query, size, MAXPREDICTIONCOUNT, size, 0);
+		if (!stop) generateSubqueries(query, size);
+	} else if (size < 2) return getBest();
 	for (int k = 0; k < size - 2; k++) {
 		predict(&query[k], size - k, MAXPREDICTIONCOUNT, size, 0);
 		if (stop) {delete consequentBits; return getBest();}
 		generateSubqueries(&query[k], size - k); 
 		if (stop) {delete consequentBits; return getBest();}
 	}
+	delete consequentBits;
 	return getBest();
 }
 
