@@ -53,14 +53,36 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 	cout << endl;
 
 	int rangeStart = - 1, rangeEnd = -1;
+	set<int> firstItemPossibleReplacements, secondItemPossibleReplacements;
+	vector<pair<int, int>> bs_ranges;
 	if (query[0] == -2){
-		set<int> firstItemPossibleReplacements;
-		bSBWT->backwardError(query, size, firstItemPossibleReplacements);
+		if (errors > 1 && query[1] == -2){
+			bSBWT->backwardError(query, size, secondItemPossibleReplacements);
+			for (int item : secondItemPossibleReplacements){
+				cout << item << endl;
+				query[1] = item;
+				bSBWT->backwardError(query, size, firstItemPossibleReplacements);
+				for (int Fitem : firstItemPossibleReplacements){
+					cout << Fitem << endl;
+					query[0] = item;
+					bSBWT->getRange(query[0], rangeStart, rangeEnd);
+					vector<pair<int, int>> bs_ranges;
+					vector<int> query_vector(size);
+					copy(query, query + size, query_vector.begin());
+
+					int finalStartRange, finalEndRange;
+			    	if (bSBWT->searchQuery(query, size, finalStartRange, finalEndRange) != -1){
+			    		bs_ranges.push_back(make_pair(finalStartRange, finalEndRange));
+			    	}
+				}
+			}
+			firstItemPossibleReplacements.clear(); secondItemPossibleReplacements.clear();
+		}else bSBWT->backwardError(query, size, firstItemPossibleReplacements);
 		for (int item : firstItemPossibleReplacements){
+			cout << item << endl;
 			query[0] = item;
 			//repeated code here - should improve it
 			bSBWT->getRange(query[0], rangeStart, rangeEnd);
-			vector<pair<int, int>> bs_ranges;
 			vector<int> query_vector(size);
 			copy(query, query + size, query_vector.begin());
 		    if (errors > 1){
@@ -68,38 +90,39 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 		    }else{
 		    	//should do a search; if search returns anything then I should add it in the bs_ranges
 		    	int finalStartRange, finalEndRange;
-		    	if (bSBWT->searchQuery(query, size, finalStartRange, finalEndRange)){
+		    	if (bSBWT->searchQuery(query, size, finalStartRange, finalEndRange) != -1){
 		    		bs_ranges.push_back(make_pair(finalStartRange, finalEndRange));
 		    	}
 		    }
-		    vector<vector<int>> consequentList;
-		    for (pair<int, int> it : bs_ranges){
-		    	vector<int> tmp;
-		    	bSBWT->getConsequents(tmp, 0, it.first, it.second, 2, -1, consequentList, predictionCount, consequentBits);
-		    }
-		    //put all ranges into CT
-		    for (vector<int> consequent : consequentList) push(consequent, errors, initialLength, size);
-		    
-		    if (predictionCount > MAXPREDICTIONCOUNT) {
-		    	stop = true;
-		    	return;
-			}
 			//end of repeated code
 		}
+		vector<vector<int>> consequentList;
+	    cout << "Ranges: " << bs_ranges.size() << endl;
+	    for (pair<int, int> it : bs_ranges){
+	    	vector<int> tmp;
+	    	bSBWT->getConsequents(tmp, 0, it.first, it.second, 2, -1, consequentList, predictionCount, consequentBits);
+	    }
+	    //put all ranges into CT
+	    for (vector<int> consequent : consequentList) push(consequent, errors, initialLength, size);
+	    
+	    if (predictionCount > MAXPREDICTIONCOUNT) {
+	    	stop = true;
+	    	return;
+		}
 	}else{
-		bSBWT->getRange(query[0], rangeStart, rangeEnd);
-		vector<pair<int, int>> bs_ranges;
 		vector<int> query_vector(size);
 		copy(query, query + size, query_vector.begin());
 	    if (errors > 0){
-	    	bSBWT->neighborExpansion(query_vector, 1, rangeStart, rangeEnd, bs_ranges);
+	    	bSBWT->getRange(query[0], rangeStart, rangeEnd);
+	    	if (rangeStart != -1 && rangeEnd != -1) bSBWT->neighborExpansion(query_vector, 1, rangeStart, rangeEnd, bs_ranges);
 	    }else{
 	    	//should do a search; if search returns anything then I should add it in the bs_ranges
 	    	int finalStartRange, finalEndRange;
-	    	if (bSBWT->searchQuery(query, size, finalStartRange, finalEndRange)){
+	    	if (bSBWT->searchQuery(query, size, finalStartRange, finalEndRange) != -1){
 	    		bs_ranges.push_back(make_pair(finalStartRange, finalEndRange));
 	    	}
 	    }
+	    cout << "Ranges: " << bs_ranges.size() << endl;
 	    vector<vector<int>> consequentList;
 	    for (pair<int, int> it : bs_ranges){
 	    	vector<int> tmp;
@@ -172,7 +195,7 @@ int subseqPredictor::start(int* query, int size){ // this function will manage d
 		predict(query, size, MAXPREDICTIONCOUNT, size, 0);
 		if (!stop) generateSubqueries(query, size);
 	} else if (size < 2) return getBest();
-	for (int k = 0; k < size - 2; k++) {
+	for (int k = 0; k < size - 1; k++) {
 		predict(&query[k], size - k, MAXPREDICTIONCOUNT, size, 0);
 		if (stop) {delete consequentBits; return getBest();}
 		generateSubqueries(&query[k], size - k); 

@@ -106,10 +106,10 @@ int main(int argc, const char * argv[])
 //    cout << c.countBeforeString(1000, &x[0], x.size()) << endl;
     
     
-   vector<int> x = {1, 2};//FIFA: 114 133 148 212 256 300 582 610 - 114 133 148 212 256 300 582 610 30 626 647 99999
+   vector<int> x = {11, 1, 2, 14};//FIFA: 114 133 148 212 256 300 582 610 - 114 133 148 212 256 300 582 610 30 626 647 99999
    //Answer 30
    subseqPredictor* pr = new subseqPredictor(argv[1]);
-   cout << pr->start(&x[0], x.size()) << endl;
+   cout << "Answer: " << pr->start(&x[0], x.size()) << endl;
    // for (aMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
    //     cout << mapIt->first << " " << mapIt->second << endl;
    // }
