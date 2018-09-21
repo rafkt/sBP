@@ -117,9 +117,9 @@ wt_int<> suffixArray::BWT2WT(){
     
     for (int i = 0; i < sa.size(); i++) {
         v[i] = getBWT(i);
-        cout << v[i] << " ";
+        //cout << v[i] << " ";
     }
-    cout << endl;
+    //cout << endl;
     store_to_file(v, "sdb.sdsl");
     util::clear(v);
     construct(wt, "sdb.sdsl", 0);

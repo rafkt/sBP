@@ -209,16 +209,18 @@ int backwardsSearchBWT::searchQuery(int* xy, int size, int& finalStartRange, int
     if (size < 2) return -1;
     int startRange, endRange;
     getRange(xy[0], startRange, endRange);
+    if (startRange == -1 || endRange == -1) {cout << "NOT FOUND" << endl; return -1;}
     for (int i = 1; i < size; i++){
-        if (search(xy[i], startRange, endRange, finalStartRange, finalEndRange) == -1) return -1;
+        if (search(xy[i], startRange, endRange, finalStartRange, finalEndRange) == -1) {cout << "NOT FOUND" << endl; return -1;}
         startRange = finalStartRange;
         endRange = finalEndRange;
     }
+    cout << "FOUND" << endl;
     return 1;
 }
 
 int backwardsSearchBWT::search(int c, int rangeStart, int rangeEnd, int& newRangeStart, int& newRangeEnd){
-    if (rangeEnd - rangeStart >= 0){
+    if (rangeEnd - rangeStart >= 0 && rangeEnd != -1 && rangeStart != -1){
         int rankStart = L.rank(rangeStart, c);
         int rankEnd = L.rank(rangeEnd + 1, c);
         if (rankEnd - rankStart == 0) return -1; //patern not found
@@ -259,7 +261,13 @@ int backwardsSearchBWT::backwardTraversal(int index, int& back_index){
 }
 
 void backwardsSearchBWT::getRange(int c, int& rangeStart, int& rangeEnd){
-    int letterPos = alphabet.select(1, c);
+    int letterPos;
+    try {
+        letterPos = alphabet.select(1, c);
+    } catch( std::logic_error ){
+        rangeStart = -1; rangeEnd = -1;
+        return;
+    }
     rangeStart = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
     rangeEnd = alphabetCounters[letterPos] - 1;
 }
@@ -273,12 +281,15 @@ int backwardsSearchBWT::backwardError(int* xy, int size, set<int>& substitutedIt
     //patternVector = pattern_stack.top();
     
     //set<int> substitutedItems;
-    int rankItems = L.rank(L.size(), xy[1]);
+    int rankItems, whichIndex;
+    if (xy[1] != -2) {rankItems = L.rank(L.size(), xy[1]); whichIndex = 1;}
+    else {rankItems = L.rank(L.size(), xy[2]); whichIndex = 2;}
     for (int j = 0; j < rankItems; j++){
-        int index = L.select(j + 1, xy[1]);
+        int index = L.select(j + 1, xy[whichIndex]);
         int backtrav_index;
         int item2subst = backwardTraversal(index, backtrav_index);
-        substitutedItems.insert(item2subst);
+        if (item2subst != 99999) substitutedItems.insert(item2subst);
+        else cout << "<-- No 99999 expansion " << endl;
         
     }
     // for (auto i = substitutedItems.begin(); i != substitutedItems.end(); ++i)
@@ -304,9 +315,10 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
         if (xy[index] == -2){
             counterMap res = scan(rangeStart, rangeEnd);
             for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
-                //cout << mapIt->first << " " << mapIt->second << endl;
+                if (mapIt->second == 99999) {cout << "No 99999 expansion " << endl; return;}
+                cout << mapIt->second << endl;
                 xy[index] = mapIt->second;
-                if (search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) return;
+                if (search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) {cout << "NOT FOUND" << endl; return;}
                 //rangeStart = newRangeStart;
                 //rangeEnd = newRangeEnd;
                 // if (index + 1 == xy.size() - 1) {
@@ -315,7 +327,7 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
                 neighborExpansion(xy, index + 1, newRangeStart, newRangeEnd, ranges);
             }
         }else{
-            if (search(xy[index], rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) return;
+            if (search(xy[index], rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) {cout << "NOT FOUND" << endl; return;}
             rangeStart = newRangeStart;
             rangeEnd = newRangeEnd;
             if (index == xy.size() - 1)  {
@@ -338,7 +350,13 @@ void backwardsSearchBWT::getConsequents(vector<int> xy, int index, int rangeStar
     int newRangeStart, newRangeEnd;
     if (d > 0) {
         if (d == 99999) {
+            cout << "Consequent contains 99999; terminating getting more consequents items" << endl;
             if (xy.size() > 0){consequentList.push_back(xy); predictionCount++;}
+            cout << "getConsequent returns: ";
+            for (int i : xy) {
+                cout << i << " ";
+            }
+            cout << endl;
             return;
         }
 
@@ -346,19 +364,20 @@ void backwardsSearchBWT::getConsequents(vector<int> xy, int index, int rangeStar
     }
     if (index == length){
         // cout << "-range: " << rangeStart << "," << rangeEnd  << " size: " << endl;
-        // for (int i : xy) {
-        //     cout << i << " ";
-        // }
-        // cout << endl;
+        cout << "getConsequent returns: ";
+        for (int i : xy) {
+            cout << i << " ";
+        }
+        cout << endl;
         consequentList.push_back(xy);
         predictionCount++;
         return;
     }else{
         for (int bit_index = rangeStart; bit_index <= rangeEnd; bit_index++) {
-            if ((*consequentBits)[bit_index]) return;
+            if ((*consequentBits)[bit_index]) {cout << "Bit Index signaled a return" << endl; return;}
             (*consequentBits)[bit_index] = 1;
         }
-        counterMap res = scan(rangeStart, rangeEnd);
+        //counterMap res = scan(rangeStart, rangeEnd);
         //for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
         for (int i = rangeStart; i <= rangeEnd; i++){
             search(L[i], i, i, newRangeStart, newRangeEnd);
