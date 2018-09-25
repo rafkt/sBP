@@ -209,13 +209,13 @@ int backwardsSearchBWT::searchQuery(int* xy, int size, int& finalStartRange, int
     if (size < 2) return -1;
     int startRange, endRange;
     getRange(xy[0], startRange, endRange);
-    if (startRange == -1 || endRange == -1) {cout << "NOT FOUND" << endl; return -1;}
+    if (startRange == -1 || endRange == -1) {/*cout << "NOT FOUND" << endl;*/ return -1;}
     for (int i = 1; i < size; i++){
-        if (search(xy[i], startRange, endRange, finalStartRange, finalEndRange) == -1) {cout << "NOT FOUND" << endl; return -1;}
+        if (search(xy[i], startRange, endRange, finalStartRange, finalEndRange) == -1) {/*cout << "NOT FOUND" << endl;*/ return -1;}
         startRange = finalStartRange;
         endRange = finalEndRange;
     }
-    cout << "FOUND" << endl;
+    //cout << "FOUND" << endl;
     return 1;
 }
 
@@ -289,7 +289,7 @@ int backwardsSearchBWT::backwardError(int* xy, int size, set<int>& substitutedIt
         int backtrav_index;
         int item2subst = backwardTraversal(index, backtrav_index);
         if (item2subst != 99999) substitutedItems.insert(item2subst);
-        else cout << "<-- No 99999 expansion " << endl;
+        //else cout << "<-- No 99999 expansion " << endl;
         
     }
     // for (auto i = substitutedItems.begin(); i != substitutedItems.end(); ++i)
@@ -315,10 +315,10 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
         if (xy[index] == -2){
             counterMap res = scan(rangeStart, rangeEnd);
             for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
-                if (mapIt->second == 99999) {cout << "No 99999 expansion " << endl; return;}
-                cout << mapIt->second << endl;
+                if (mapIt->second == 99999) {/*cout << "No 99999 expansion " << endl;*/ return;}
+                //cout << mapIt->second << endl;
                 xy[index] = mapIt->second;
-                if (search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) {cout << "NOT FOUND" << endl; return;}
+                if (search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) {/*cout << "NOT FOUND" << endl;*/ return;}
                 //rangeStart = newRangeStart;
                 //rangeEnd = newRangeEnd;
                 // if (index + 1 == xy.size() - 1) {
@@ -327,7 +327,7 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
                 neighborExpansion(xy, index + 1, newRangeStart, newRangeEnd, ranges);
             }
         }else{
-            if (search(xy[index], rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) {cout << "NOT FOUND" << endl; return;}
+            if (search(xy[index], rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) {/*cout << "NOT FOUND" << endl;*/ return;}
             rangeStart = newRangeStart;
             rangeEnd = newRangeEnd;
             if (index == xy.size() - 1)  {
@@ -380,6 +380,8 @@ void backwardsSearchBWT::getConsequents(vector<int> xy, int index, int rangeStar
         //counterMap res = scan(rangeStart, rangeEnd);
         //for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
         for (int i = rangeStart; i <= rangeEnd; i++){
+            // if ((*consequentBits)[i] == 1) continue;
+            // (*consequentBits)[i] = 1;
             search(L[i], i, i, newRangeStart, newRangeEnd);
             //search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd);
             getConsequents(xy, index + 1, newRangeStart, newRangeEnd, length, /*mapIt->second*/ L[i], consequentList, predictionCount, consequentBits);

@@ -16,7 +16,7 @@
 
 using namespace std;
 
-typedef map<int, float> countTable;
+typedef map<int, double> countTable;
 
 class subseqPredictor{
 public:
@@ -32,7 +32,7 @@ private:
 	countTable countTable;
 	bool stop;
 	int prediction;
-	float score;
+	double score;
 	void push(vector<int>, int, int, int);
 	void predict(int*, int, int, int, int);
     void generateSubqueries(int*, int);

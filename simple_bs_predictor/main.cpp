@@ -114,23 +114,24 @@ int main(int argc, const char * argv[])
 //    reverse(x.begin(), x.end()); //query should be given reversed since we want to count after.
 //    cout << c.countBeforeString(1000, &x[0], x.size()) << endl;
 
-    
-    vector<vector<int>> testQueries = readTestQueries(argv[2]);
+    vector<int> x = {506, 512, 338, 362, 493};
+    vector<vector<int>> testQueries;
+    testQueries.push_back(x);
     subseqPredictor* pr = new subseqPredictor(argv[1]);
     for(vector<int> query : testQueries){
-        if (query.size() < 2) {cout << "short query; do we except this?" << endl; continue;}
-        int size = query.size() - 1;// our offset is 1 for now
-        vector<int> finalQuery;
-        if (5 > size){ //our query length should be 5 for now
-            vector<int> q(query.begin(), query.begin() + size);
-            finalQuery = q;
-        }else{
-            vector<int> q(query.begin() + (size - 5), query.begin() + size);
-            finalQuery = q;
-        }
-        for (int i : finalQuery) cout << i << " ";
-        cout << endl;
-        cout << pr->start(&finalQuery[0], finalQuery.size()) << endl;
+        // if (query.size() < 2) {cout << "short query; do we except this?" << endl; continue;}
+        // int size = query.size() - 1;// our offset is 1 for now
+        // vector<int> finalQuery;
+        // if (5 > size){ //our query length should be 5 for now
+        //     vector<int> q(query.begin(), query.begin() + size);
+        //     finalQuery = q;
+        // }else{
+        //     vector<int> q(query.begin() + (size - 5), query.begin() + size);
+        //     finalQuery = q;
+        // }
+        // for (int i : finalQuery) cout << i << " ";
+        // cout << endl;
+        cout << pr->start(&query[0], query.size()) << endl;
         break;
     }
 

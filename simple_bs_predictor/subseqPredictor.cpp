@@ -59,11 +59,11 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 		if (errors > 1 && query[1] == -2){
 			bSBWT->backwardError(query, size, secondItemPossibleReplacements);
 			for (int item : secondItemPossibleReplacements){
-				cout << item << endl;
+				//cout << item << endl;
 				query[1] = item;
 				bSBWT->backwardError(query, size, firstItemPossibleReplacements);
 				for (int Fitem : firstItemPossibleReplacements){
-					cout << Fitem << endl;
+					//cout << Fitem << endl;
 					query[0] = item;
 					bSBWT->getRange(query[0], rangeStart, rangeEnd);
 					vector<pair<int, int>> bs_ranges;
@@ -79,7 +79,7 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 			firstItemPossibleReplacements.clear(); secondItemPossibleReplacements.clear();
 		}else bSBWT->backwardError(query, size, firstItemPossibleReplacements);
 		for (int item : firstItemPossibleReplacements){
-			cout << item << endl;
+			//cout << item << endl;
 			query[0] = item;
 			//repeated code here - should improve it
 			bSBWT->getRange(query[0], rangeStart, rangeEnd);
@@ -97,7 +97,7 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 			//end of repeated code
 		}
 		vector<vector<int>> consequentList;
-	    cout << "Ranges: " << bs_ranges.size() << endl;
+	    //cout << "Ranges: " << bs_ranges.size() << endl;
 	    for (pair<int, int> it : bs_ranges){
 	    	vector<int> tmp;
 	    	bSBWT->getConsequents(tmp, 0, it.first, it.second, 2, -1, consequentList, predictionCount, consequentBits);
@@ -122,7 +122,7 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 	    		bs_ranges.push_back(make_pair(finalStartRange, finalEndRange));
 	    	}
 	    }
-	    cout << "Ranges: " << bs_ranges.size() << endl;
+	    //cout << "Ranges: " << bs_ranges.size() << endl;
 	    vector<vector<int>> consequentList;
 	    for (pair<int, int> it : bs_ranges){
 	    	vector<int> tmp;
@@ -156,14 +156,16 @@ void subseqPredictor::push(vector<int> consequent, int errors, int initialLength
 	cout << "About to push: " << endl;
 	for (int it : consequent) cout << it << " ";
 	cout << endl;
-	pair<std::map<int, float>::iterator,bool> ret;
-	float current_score = 0.0;
+	pair<std::map<int, double>::iterator, bool> ret;
+	double current_score = 0.0;
 	for (int i = 0; i < consequent.size(); i++){
-		float weightDistance = 1.0 / (i + 1);
-		float newWeight = ((subLength / (float)initialLength)) + ((2 - errors) / (float)2) + (1.0) + (weightDistance * 0.0001f);
-		ret = countTable.insert (std::pair<char,int>(consequent[i], newWeight) );
+		double weightDistance = 1.0 / (i + 1);
+		double newWeight = ((subLength / (double)initialLength)) + ((2 - errors) / (double)2) + (1.0) + (weightDistance * 0.0001);
+		cout << (subLength / (double)initialLength) << " " << ((2 - errors) / (double)2) << " " << ((double) weightDistance) << endl;
+		ret = countTable.insert(std::pair<int, double>(consequent[i], newWeight));
 	  	if (ret.second == false) {
 	  		//item already in the countTable
+	  		cout << "Previous score: " << ret.first->second << endl;
 	  		current_score = ret.first->second * newWeight;
 		    ret.first->second =  current_score;
 		    cout << "Pushed: " << consequent[i] << " with score: " << current_score << endl;
@@ -196,6 +198,7 @@ int subseqPredictor::start(int* query, int size){ // this function will manage d
 		if (!stop) generateSubqueries(query, size);
 	} else if (size < 2) return getBest();
 	for (int k = 0; k < size - 1; k++) {
+		predictionCount = 0;
 		predict(&query[k], size - k, MAXPREDICTIONCOUNT, size, 0);
 		if (stop) {delete consequentBits; return getBest();}
 		generateSubqueries(&query[k], size - k); 
@@ -216,9 +219,9 @@ void subseqPredictor::generateSubqueries(int* query, int size){
         predict(query, size, MAXPREDICTIONCOUNT, initialLength, 1);
         //predict; if permanent stop abbort and return answer
         query[i] = old_item;
-        if (stop) return;
+        //if (stop) return;
     }
-
+    if (stop) return;
     if (size > 2){
         for (int i = 0; i < size; i++){
             for (int j = i + 1; j < size; j++){
@@ -235,7 +238,7 @@ void subseqPredictor::generateSubqueries(int* query, int size){
 
                 query[i] = old_item_1;
                 query[j] = old_item_2;
-                if (stop) return;
+                //if (stop) return;
             }
         }
     }
