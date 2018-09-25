@@ -46,11 +46,7 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 
 	//find all the ranges with neighborExpansion
 
-	cout << "Current query: ";
-	for (int i = 0; i < size; i++){
-		cout << query[i] << " ";
-	}
-	cout << endl;
+	
 
 	int rangeStart = - 1, rangeEnd = -1;
 	set<int> firstItemPossibleReplacements, secondItemPossibleReplacements;
@@ -64,9 +60,16 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 				bSBWT->backwardError(query, size, firstItemPossibleReplacements);
 				for (int Fitem : firstItemPossibleReplacements){
 					//cout << Fitem << endl;
-					query[0] = item;
+					query[0] = Fitem;
+
+					// cout << ".Current query: ";
+					// for (int i = 0; i < size; i++){
+					// 	cout << query[i] << " ";
+					// }
+					// cout << endl;
+
+
 					bSBWT->getRange(query[0], rangeStart, rangeEnd);
-					vector<pair<int, int>> bs_ranges;
 					vector<int> query_vector(size);
 					copy(query, query + size, query_vector.begin());
 
@@ -81,6 +84,8 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 		for (int item : firstItemPossibleReplacements){
 			//cout << item << endl;
 			query[0] = item;
+
+
 			//repeated code here - should improve it
 			bSBWT->getRange(query[0], rangeStart, rangeEnd);
 			vector<int> query_vector(size);
@@ -88,6 +93,13 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 		    if (errors > 1){
 		    	bSBWT->neighborExpansion(query_vector, 1, rangeStart, rangeEnd, bs_ranges);
 		    }else{
+
+		  //   	cout << "..Current query: ";
+				// for (int i = 0; i < size; i++){
+				// 	cout << query[i] << " ";
+				// }
+				// cout << endl;
+
 		    	//should do a search; if search returns anything then I should add it in the bs_ranges
 		    	int finalStartRange, finalEndRange;
 		    	if (bSBWT->searchQuery(query, size, finalStartRange, finalEndRange) != -1){
@@ -116,6 +128,14 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 	    	bSBWT->getRange(query[0], rangeStart, rangeEnd);
 	    	if (rangeStart != -1 && rangeEnd != -1) bSBWT->neighborExpansion(query_vector, 1, rangeStart, rangeEnd, bs_ranges);
 	    }else{
+
+	  //   	cout << "...Current query: ";
+			// for (int i = 0; i < size; i++){
+			// 	cout << query[i] << " ";
+			// }
+			// cout << endl;
+
+
 	    	//should do a search; if search returns anything then I should add it in the bs_ranges
 	    	int finalStartRange, finalEndRange;
 	    	if (bSBWT->searchQuery(query, size, finalStartRange, finalEndRange) != -1){
@@ -153,28 +173,28 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 
 //I need a method that generates all the subqueries. I think that at least for now it will be better organised, this way.
 void subseqPredictor::push(vector<int> consequent, int errors, int initialLength, int subLength){
-	cout << "About to push: " << endl;
-	for (int it : consequent) cout << it << " ";
-	cout << endl;
+	//cout << "About to push: " << endl;
+	//for (int it : consequent) cout << it << " ";
+	//cout << endl;
 	pair<std::map<int, double>::iterator, bool> ret;
 	double current_score = 0.0;
 	for (int i = 0; i < consequent.size(); i++){
 		double weightDistance = 1.0 / (i + 1);
-		double newWeight = ((subLength / (double)initialLength)) + ((2 - errors) / (double)2) + (1.0) + (weightDistance * 0.0001);
-		cout << (subLength / (double)initialLength) << " " << ((2 - errors) / (double)2) << " " << ((double) weightDistance) << endl;
+		double newWeight = ((subLength / (double)initialLength)) + ((2 - errors) / (double)2) + (1.0) + (weightDistance);
+		//cout << (subLength / (double)initialLength) << " " << ((2 - errors) / (double)2) << " " << ((double) weightDistance) << endl;
 		ret = countTable.insert(std::pair<int, double>(consequent[i], newWeight));
 	  	if (ret.second == false) {
 	  		//item already in the countTable
-	  		cout << "Previous score: " << ret.first->second << endl;
+	  		//cout << "Previous score: " << ret.first->second << endl;
 	  		current_score = ret.first->second * newWeight;
 		    ret.first->second =  current_score;
-		    cout << "Pushed: " << consequent[i] << " with score: " << current_score << endl;
+		    //cout << "Pushed: " << consequent[i] << " with score: " << current_score << endl;
 		    if (current_score > score){
 		    	score = current_score;
 		    	prediction = consequent[i];
 		    }
 		}else{
-			cout << "Pushed: " << consequent[i] << " with score: " << newWeight << endl;
+			//cout << "Pushed: " << consequent[i] << " with score: " << newWeight << endl;
 			if (newWeight > score){
 		    	score = newWeight;
 		    	prediction = consequent[i];

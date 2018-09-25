@@ -304,6 +304,8 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
     int newRangeStart, newRangeEnd;
     if (index == xy.size()){
         //cout << "-range: " << rangeStart << "," << rangeEnd  << " size: " << endl;
+        // for (int item : xy) cout << item << " ";
+        // cout << "." << endl;
         //counterMap res = scan(rangeStart, rangeEnd);
         ranges.push_back(make_pair(rangeStart, rangeEnd));
         // for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
@@ -314,10 +316,16 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
     }else{
         if (xy[index] == -2){
             counterMap res = scan(rangeStart, rangeEnd);
+            // for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
+            //     cout << mapIt->second << " ";
+            // }
+            // cout << endl;
             for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
-                if (mapIt->second == 99999) {/*cout << "No 99999 expansion " << endl;*/ return;}
+                if (mapIt->second == 99999) {/*cout << "No 99999 expansion " << endl;*/ continue;}
                 //cout << mapIt->second << endl;
                 xy[index] = mapIt->second;
+                // for (int item : xy) cout << item << " ";
+                // cout << ">" << endl;
                 if (search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) {/*cout << "NOT FOUND" << endl;*/ return;}
                 //rangeStart = newRangeStart;
                 //rangeEnd = newRangeEnd;
@@ -333,11 +341,8 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
             if (index == xy.size() - 1)  {
                 //cout << "--range: " << newRangeStart << "," << newRangeEnd  << endl;
                 ranges.push_back(make_pair(newRangeStart, newRangeEnd));
-                // counterMap res = scan(newRangeStart, newRangeEnd);
-                // for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
-                //     cout << mapIt->second << " --";
-                // }
-                // cout << endl;
+                // for (int item : xy) cout << item << " ";
+                // cout << ".." << endl;
             }
             else neighborExpansion(xy, index + 1, newRangeStart, newRangeEnd, ranges);
         }
@@ -350,13 +355,13 @@ void backwardsSearchBWT::getConsequents(vector<int> xy, int index, int rangeStar
     int newRangeStart, newRangeEnd;
     if (d > 0) {
         if (d == 99999) {
-            cout << "Consequent contains 99999; terminating getting more consequents items" << endl;
+            //cout << "Consequent contains 99999; terminating getting more consequents items" << endl;
             if (xy.size() > 0){consequentList.push_back(xy); predictionCount++;}
-            cout << "getConsequent returns: ";
-            for (int i : xy) {
-                cout << i << " ";
-            }
-            cout << endl;
+            // cout << "getConsequent returns: ";
+            // for (int i : xy) {
+            //     cout << i << " ";
+            // }
+            // cout << endl;
             return;
         }
 
@@ -364,17 +369,17 @@ void backwardsSearchBWT::getConsequents(vector<int> xy, int index, int rangeStar
     }
     if (index == length){
         // cout << "-range: " << rangeStart << "," << rangeEnd  << " size: " << endl;
-        cout << "getConsequent returns: ";
-        for (int i : xy) {
-            cout << i << " ";
-        }
-        cout << endl;
+        // cout << "getConsequent returns: ";
+        // for (int i : xy) {
+        //     cout << i << " ";
+        // }
+        // cout << endl;
         consequentList.push_back(xy);
         predictionCount++;
         return;
     }else{
         for (int bit_index = rangeStart; bit_index <= rangeEnd; bit_index++) {
-            if ((*consequentBits)[bit_index]) {cout << "Bit Index signaled a return" << endl; return;}
+            if ((*consequentBits)[bit_index]) {/*cout << "Bit Index signaled a return" << endl;*/ return;}
             (*consequentBits)[bit_index] = 1;
         }
         //counterMap res = scan(rangeStart, rangeEnd);
