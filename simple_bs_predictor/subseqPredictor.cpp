@@ -73,7 +73,6 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 					// cout << endl;
 
 
-					bSBWT->getRange(query[0], rangeStart, rangeEnd);
 					vector<int> query_vector(size);
 					copy(query, query + size, query_vector.begin());
 
@@ -91,10 +90,10 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 
 
 			//repeated code here - should improve it
-			bSBWT->getRange(query[0], rangeStart, rangeEnd);
 			vector<int> query_vector(size);
 			copy(query, query + size, query_vector.begin());
 		    if (errors > 1){
+		    	bSBWT->getRange(query[0], rangeStart, rangeEnd);
 		    	bSBWT->neighborExpansion(query_vector, 1, rangeStart, rangeEnd, bs_ranges);
 		    }else{
 

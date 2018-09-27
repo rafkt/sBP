@@ -176,12 +176,35 @@ int backwardsSearchBWT::fowawrdTraversal(int index){
 int backwardsSearchBWT::backwardTraversal(int index, int& back_index){
     if (index < 0) return -1;
     int f_index = -1;
-    for(int i = 0; i < alphabetCounters.size(); i++){
-        if (alphabetCounters[i] >= index + 1){
-            f_index = i;
-            break;
+    //will replace the for loop below <linear search> with binary search
+    // for(int i = 0; i < alphabetCounters.size(); i++){
+    //     if (alphabetCounters[i] >= index + 1){
+    //         f_index = i;
+    //         break;
+    //     }
+    // }
+    //binary search below
+
+    int low = 0, high = alphabetCounters.size(); // numElems is the size of the array i.e arr.size() 
+    while (low != high) {
+        int mid = (low + high) / 2; // Or a fancy way to avoid int overflow
+        if (alphabetCounters[mid] < index + 1) {
+            /* This index, and everything below it, must not be the first element
+             * greater than what we're looking for because this element is no greater
+             * than the element.
+             */
+            low = mid + 1;
+        }
+        else {
+            /* This element is at least as large as the element, so anything after it can't
+             * be the first element that's at least as large.
+             */
+            high = mid;
         }
     }
+    //Now, low and high both point to the element in question.
+    f_index = low;
+
    // cout << "dif: " << alphabetCounters[f_index] - alphabetCounters[f_index - 1] << endl;
     if (f_index == 0){
         back_index =  L.select(index + 1, alphabet[f_index]);
