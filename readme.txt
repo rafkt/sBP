@@ -15,8 +15,9 @@ Under ./validity_datasets you will find a couple more datasets to try; But for n
 
 Current Work:
 
-1. Working on scan function under backwardSearchBWT.cpp; Current implementation depends on alphabet size
-2. Working on backwardTraversal function; It uses linear search. I will convert the search to a binary search
-3. predict method under subseqPredictor.cpp has some un-needed getRange calls; I will get rid of them
+1. DONE -> Working on scan function under backwardSearchBWT.cpp; Current implementation depends on alphabet size
+2. DONE -> Working on backwardTraversal function; It uses linear search. I will convert the search to a binary search
+3. DONE -> predict method under subseqPredictor.cpp has some un-needed getRange calls; I will get rid of them
 4. Under subseqPredictor.cpp I will put a couple of counters that will report (average per query) how many sub-queries searches have been done, how many ranges obtained and how many consequents eventually returned
 5. Will repeat a run for Fifa or Kosarak
+6. Will quickly check if prediction results remain valid and no new bugs introduced
