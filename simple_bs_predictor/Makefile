@@ -31,7 +31,9 @@ EXEFLAGS_TST=-o ./test_validation
 	XF=.exe
 	IN=.o
 
-all: main test k_fold
+all: main 
+#
+#all: test k_fold
 
 test: testingMain.cpp LRUcache.o
 	$(CC) $(FLAGS) LRUcache.o testingMain.cpp $(EXEFLAGS_TST)

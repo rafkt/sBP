@@ -25,7 +25,7 @@ typedef struct letternode{
 
 typedef map<int,letterNode> myMap;
 
-typedef multimap<float, int> counterMap;
+typedef map<int, int> counterMap;
 
 class backwardsSearchBWT{
 public:

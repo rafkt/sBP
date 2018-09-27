@@ -254,12 +254,12 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
             // }
             // cout << endl;
             for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
-                if (mapIt->second == 99999) {/*cout << "No 99999 expansion " << endl;*/ continue;}
+                if (mapIt->first == 99999) {/*cout << "No 99999 expansion " << endl;*/ continue;}
                 //cout << mapIt->second << endl;
-                xy[index] = mapIt->second;
+                xy[index] = mapIt->first;
                 // for (int item : xy) cout << item << " ";
                 // cout << ">" << endl;
-                if (search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) {/*cout << "NOT FOUND" << endl;*/ return;}
+                if (search(mapIt->first, rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) {/*cout << "NOT FOUND" << endl;*/ return;}
                 //rangeStart = newRangeStart;
                 //rangeEnd = newRangeEnd;
                 // if (index + 1 == xy.size() - 1) {
@@ -331,38 +331,23 @@ void backwardsSearchBWT::getConsequents(vector<int> xy, int index, int rangeStar
 counterMap backwardsSearchBWT::scan(int rangeStart, int rangeEnd){
     counterMap mostFrequent;
     if (rangeStart < 0 || rangeEnd < 0) return mostFrequent;
-    int counter = 0;
     double threshold = 1.7;
+    pair<counterMap::iterator, bool> ret;
     int overallRangeLength = rangeEnd - rangeStart + 1;
     double relay_value = overallRangeLength / (double)alphabet.size();
-    // if (relay_value <= threshold){
-    //     int* range_items = new int[overallRangeLength];
-    //     int addingCounter = 0;
-    //     for (int k = 0; k < overallRangeLength; k++) {
-    //         range_items[addingCounter++] = L[k + rangeStart];
-    //     }
-    //     qsort (range_items, overallRangeLength, sizeof(int), compare);
-    //     int previous_item = range_items[0];
-    //     for (int i = 0; i < overallRangeLength; i++) {
-    //         if (range_items[i] == previous_item){
-    //             counter++;
-    //         }
-    //         else{
-
-    //             mostFrequent.insert({counter, range_items[i - 1]});
-    //             counter = 1;
-    //         }
-    //         previous_item = range_items[i];
-    //     }
-    //     if (counter > 0) {
-    //         mostFrequent.insert({counter, range_items[overallRangeLength - 1]});
-    //     }
-    // }else{
-        for (size_t i = 0; i < alphabet.size(); i++){
-            counter = countRange(rangeStart, rangeEnd, alphabet[i]);
-            if (counter > 0) mostFrequent.insert({counter, alphabet[i]});
+    if (relay_value <= threshold){ // this threshold was based on research that was done in my master thesis
+        for (int i = rangeStart; i <= rangeEnd; i++){
+            ret = mostFrequent.insert(std::pair<int, int>(L[i], 1));
+            if (ret.second == false){
+                ret.first->second = ret.first->second + 1;
+            }
         }
-   //}
+    }else{
+        for (size_t i = 0; i < alphabet.size(); i++){
+            int counter = countRange(rangeStart, rangeEnd, alphabet[i]);
+            if (counter > 0) mostFrequent.insert({alphabet[i], counter});
+        }
+   }
     //mostFrequent.insert({-1, overallRangeLength});
     return mostFrequent;
 
