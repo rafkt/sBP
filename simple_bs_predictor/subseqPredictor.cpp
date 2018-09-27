@@ -15,6 +15,10 @@
 
 #define MAXPREDICTIONCOUNT 10
 
+float subseqPredictor::get_memory(){
+	return bSBWT->sizeInMegabytes();
+}
+
 subseqPredictor::subseqPredictor(const string filename){
     bSBWT = new backwardsSearchBWT(filename);
 }

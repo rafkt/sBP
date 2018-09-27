@@ -48,6 +48,7 @@ public:
     int* findRange(int*, int);
 	int seqNumber;
     int countRange(int*, int, int = 0, int = 0);
+    float sizeInMegabytes();
 private:
     void deleteMap();
 //    int rank(const char &, const int &);

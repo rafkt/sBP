@@ -17,6 +17,10 @@
 
 using namespace suffixArray;
 
+float backwardsSearchBWT::sizeInMegabytes(){
+    return size_in_mega_bytes(L) + size_in_mega_bytes(alphabet) + size_in_mega_bytes(alphabetCounters);
+}
+
 
 backwardsSearchBWT::backwardsSearchBWT(const string filename){
     letterNode l;
@@ -92,78 +96,7 @@ int backwardsSearchBWT::countRange(int* xy, int size, int rangeStart, int rangeE
     finalStartIndexPermuted = -1;
     finalEndIndexPermuted = -1;
 
-    // int backtrav = -1;
-    // cout << fowawrdTraversal(11) << endl;
-    // cout << backwardTraversal(11, backtrav) << endl;
-    // cout << "L position of backward Traversal: " << backtrav << endl;
-
-    // cout << "Printing a range " << endl;
-
-    // counterMap res = scan(0, 11);
-    // for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
-    //     cout << mapIt->first << " " << mapIt->second << endl;
-    // }
-
-    // cout << "Printing END" << endl;
-
-    // int newRangeStart, newRangeEnd;
-    // search(4, 9, 9, newRangeStart, newRangeEnd);
-    // cout << "New range: " <<newRangeStart << " " << newRangeEnd << endl;
-
-    // cout << "search with errors testing" << endl;
-    // vector<int> x = {-2, 2, 10};
-    // backwardError(&x[0], x.size());
-    // cout << "END-----" << endl;
-
-    //int start, end;
-    //vector<int> y;
-    //getRange(y[0], start, end);
-    //neighborExpansion(y, 1, start, end, 1, 1);
     
-    // vector<vector<int>> consequentList;
-    // int predictionCount = 0;
-    // sdsl::bit_vector* consequentBits = new bit_vector(L.size(), 0);
-    // getConsequents(y, 0, 0, 1, 5, -1, consequentList, predictionCount, consequentBits);
-    // cout << "consequents" << endl;
-    // for (vector<int> conseq : consequentList){
-    //     for (int item : conseq){cout << item << " ";}
-    //     cout <<  endl;
-    // }
-    // cout << "end" << endl;
-    // cout << (*consequentBits) << endl;
-    // cout << "prediction count: " << predictionCount << endl;
-    // return 1;
-    
-    // getRange(4, start, end);
-    // cout << start << " " << end << endl;
-
-    // cout << "trying to test subquery generator" << endl;
-    //     int _size = 2;
-    //     for (int i = 0; i < _size; i++){
-    //         //cout << i << endl;
-    //         int old_item = y[i];
-    //         y[i] = -2;
-    //         for (int item : y) cout << item << " ";
-    //         cout << endl;
-    //         y[i] = old_item;
-    //     }
-
-    //     if (_size > 2){
-    //         for (int i = 0; i < _size; i++){
-    //             for (int j = i + 1; j < _size; j++){
-    //                 //cout << i << j << endl;
-    //                 int old_item_1 = y[i];
-    //                 int old_item_2 = y[j];
-    //                 y[i] = -2;
-    //                 y[j] = -2;
-    //                 for (int item : y) cout << item << " ";
-    //                 cout << endl;
-    //                 y[i] = old_item_1;
-    //                 y[j] = old_item_2;
-    //             }
-    //         }
-    //     }
-    // cout << "end of this test" << endl;
 
     int rankStartValue, rankEndValue;
     bool flag = false;

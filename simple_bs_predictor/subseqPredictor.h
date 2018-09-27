@@ -27,6 +27,7 @@ public:
     int start(int*, int);
 	double itemConfidence(int);
 	int datasetSeqNumber();
+	float get_memory();
 private:
 	sdsl::bit_vector* consequentBits;
 	countTable countTable;
