@@ -73,70 +73,70 @@ backwardsSearchBWT::~backwardsSearchBWT(){
     deleteMap();
 }
 
-int* backwardsSearchBWT::findRange(int* query, int size){
-    countRange(query, size);
-    int* ranges = new int[4];
-    ranges[0] = finalStartIndex;
-    ranges[1] = finalEndIndex;
-    ranges[2] = finalStartIndexPermuted;
-    ranges[3] = finalEndIndexPermuted;
-    return ranges;
-}
+// int* backwardsSearchBWT::findRange(int* query, int size){
+//     countRange(query, size);
+//     int* ranges = new int[4];
+//     ranges[0] = finalStartIndex;
+//     ranges[1] = finalEndIndex;
+//     ranges[2] = finalStartIndexPermuted;
+//     ranges[3] = finalEndIndexPermuted;
+//     return ranges;
+// }
 
-int backwardsSearchBWT::countRange(const int & c, const int & y){
-    int letterPos = alphabet.select(1, y);
-    int rangeStart = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
-    int rangeEnd = alphabetCounters[letterPos] - 1;
-    return countRange(rangeStart, rangeEnd, c);
-}
+// int backwardsSearchBWT::countRange(const int & c, const int & y){
+//     int letterPos = alphabet.select(1, y);
+//     int rangeStart = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
+//     int rangeEnd = alphabetCounters[letterPos] - 1;
+//     return countRange(rangeStart, rangeEnd, c);
+// }
 
-int backwardsSearchBWT::countRange(int* xy, int size, int rangeStart, int rangeEnd){
-    finalStartIndex = -1;
-    finalEndIndex = -1;
-    finalStartIndexPermuted = -1;
-    finalEndIndexPermuted = -1;
+// int backwardsSearchBWT::countRange(int* xy, int size, int rangeStart, int rangeEnd){
+//     finalStartIndex = -1;
+//     finalEndIndex = -1;
+//     finalStartIndexPermuted = -1;
+//     finalEndIndexPermuted = -1;
 
     
 
-    int rankStartValue, rankEndValue;
-    bool flag = false;
-    try {
-        for (int i = 0; i < size; i++) { //red not reversly because we want countAfter, not countBefore
-            int letterPos = alphabet.select(1, xy[i]);
-            if (i != 0){
-                rankStartValue = L.rank(rangeStart, xy[i]);
-                rankEndValue = L.rank(rangeEnd + 1, xy[i]);
-            }
-            if (xy[i] == 99999) {
-                stop = true;
-                return 0; // not a normal sequence item
-            }
-            if (!flag && rangeStart == 0 && rangeEnd == 0) {
-                rangeStart = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
-                rangeEnd = alphabetCounters[letterPos] - 1;
-                flag = true;
-           }else if (rankEndValue - rankStartValue != 0){
-                int range2Add = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
-                rangeStart = rankStartValue + range2Add;
-                rangeEnd = rankEndValue + range2Add - 1;
-            }else {
-                stop = true;
-                return 0;
-            }
-            if (i == size - 1) {
-                finalStartIndex = rangeStart;
-                finalEndIndex = rangeEnd;
-                return 1;
-            }
-        }
-    } catch (logic_error e) {
-        stop = true;
-        return 0;
-    }
+//     int rankStartValue, rankEndValue;
+//     bool flag = false;
+//     try {
+//         for (int i = 0; i < size; i++) { //red not reversly because we want countAfter, not countBefore
+//             int letterPos = alphabet.select(1, xy[i]);
+//             if (i != 0){
+//                 rankStartValue = L.rank(rangeStart, xy[i]);
+//                 rankEndValue = L.rank(rangeEnd + 1, xy[i]);
+//             }
+//             if (xy[i] == 99999) {
+//                 stop = true;
+//                 return 0; // not a normal sequence item
+//             }
+//             if (!flag && rangeStart == 0 && rangeEnd == 0) {
+//                 rangeStart = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
+//                 rangeEnd = alphabetCounters[letterPos] - 1;
+//                 flag = true;
+//            }else if (rankEndValue - rankStartValue != 0){
+//                 int range2Add = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
+//                 rangeStart = rankStartValue + range2Add;
+//                 rangeEnd = rankEndValue + range2Add - 1;
+//             }else {
+//                 stop = true;
+//                 return 0;
+//             }
+//             if (i == size - 1) {
+//                 finalStartIndex = rangeStart;
+//                 finalEndIndex = rangeEnd;
+//                 return 1;
+//             }
+//         }
+//     } catch (logic_error e) {
+//         stop = true;
+//         return 0;
+//     }
     
 
-    return 1;
-}
+//     return 1;
+// }
 
 int backwardsSearchBWT::searchQuery(int* xy, int size, int& finalStartRange, int& finalEndRange){
     if (size < 2) return -1;
@@ -359,13 +359,13 @@ int backwardsSearchBWT::countRange(const int & j, const int & k, const int & c){
     return L.rank(k + 1, c) - L.rank(j, c);
 }
 
-int backwardsSearchBWT::subStringOccurences( const std::string & str, const std::string & obj ) {
-    int n = 0;
-    std::string ::size_type pos = 0;
-    while( (pos = obj.find( str, pos ))
-          != std::string::npos ) {
-    	n++;
-    	pos += str.size();
-    }
-    return n;
-}
+// int backwardsSearchBWT::subStringOccurences( const std::string & str, const std::string & obj ) {
+//     int n = 0;
+//     std::string ::size_type pos = 0;
+//     while( (pos = obj.find( str, pos ))
+//           != std::string::npos ) {
+//     	n++;
+//     	pos += str.size();
+//     }
+//     return n;
+// }

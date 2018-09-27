@@ -34,7 +34,7 @@ public:
     bool stop;
     backwardsSearchBWT(const string);
     ~backwardsSearchBWT();
-    int countRange(const int &, const int &);
+    //int countRange(const int &, const int &);
     int countRange(const int &, const int &, const int &);
     int searchQuery(int*, int, int&, int&);
     int search(int, int, int, int&, int&);
@@ -45,16 +45,16 @@ public:
     void neighborExpansion(vector<int>, int, int, int, vector<pair<int, int>>&);
     void getConsequents(vector<int> xy, int index, int rangeStart, int rangeEnd, int length, int d, vector<vector<int>>&, int&, sdsl::bit_vector*);
     counterMap scan(int, int);
-    int* findRange(int*, int);
+    //int* findRange(int*, int);
 	int seqNumber;
-    int countRange(int*, int, int = 0, int = 0);
+    //int countRange(int*, int, int = 0, int = 0);
     float sizeInMegabytes();
 private:
     void deleteMap();
 //    int rank(const char &, const int &);
 //    int select(const char &, const int &);
     
-    int subStringOccurences( const string &, const string &);
+    //int subStringOccurences( const string &, const string &);
     myMap alphabet_tmp;
     int finalStartIndex, finalEndIndex, finalStartIndexPermuted, finalEndIndexPermuted;
 };
