@@ -2,6 +2,11 @@ The base implementation of the subseq predictor is in folder sBP/simple_bs_predi
 
 Any changes for my current workflow  will be posted here.
 
+Core source files:
+backwardSearchBWT.cpp is all about offering the main BWT functionalities. Perhaps this will be the file with most optimisations (and/or more crucial bugs). 
+subseqPredictor.cpp implements the predictor by generating all the sub-queries and calling the different BWT functions to search for patterns and obtain consequents.
+suffixArray.cpp implements a suffix array and generated the BWT which is put in an sdsl WT at the end. This file has remained the same since my master Thesis
+
 Use make all command to compile from source code, using the provided Makefile (it is required to have pre-installed sdsl-lite).
 Run with: ./program ../validity_datasets/FIFA.training.txt ../validity_datasets/queries.Fifa.txt in order to train on FIFA.training.txt and use queries from quries.Fifa.txt
 The execution will report memory usage and summary of the test time for the entire set of queries.
