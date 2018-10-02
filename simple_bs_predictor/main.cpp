@@ -132,8 +132,8 @@ int main(int argc, const char * argv[])
         // }
         // for (int i : finalQuery) cout << i << " ";
         // cout << endl;
-        pr->start(&query[0], query.size());
-        //break;
+        cout << pr->start(&query[0], query.size()) << endl;
+        break;
     }
     auto end = clock();
     auto duration = ((double)(end - begin))/CLOCKS_PER_SEC;
