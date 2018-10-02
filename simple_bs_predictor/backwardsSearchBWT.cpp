@@ -334,15 +334,15 @@ void backwardsSearchBWT::getConsequents(vector<int> xy, int index, int rangeStar
         predictionCount++;
         return;
     }else{
-        for (int bit_index = rangeStart; bit_index <= rangeEnd; bit_index++) {
-            if ((*consequentBits)[bit_index]) {/*cout << "Bit Index signaled a return" << endl;*/ return;}
-            (*consequentBits)[bit_index] = 1;
-        }
+        // for (int bit_index = rangeStart; bit_index <= rangeEnd; bit_index++) {
+        //     if ((*consequentBits)[bit_index]) {/*cout << "Bit Index signaled a return" << endl;*/ return;}
+        //     (*consequentBits)[bit_index] = 1;
+        // }
         //counterMap res = scan(rangeStart, rangeEnd);
         //for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
         for (int i = rangeStart; i <= rangeEnd; i++){
-            // if ((*consequentBits)[i] == 1) continue;
-            // (*consequentBits)[i] = 1;
+            if ((*consequentBits)[i] == 1) continue;
+            (*consequentBits)[i] = 1;
             search(L[i], i, i, newRangeStart, newRangeEnd);
             //search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd);
             getConsequents(xy, index + 1, newRangeStart, newRangeEnd, length, /*mapIt->second*/ L[i], consequentList, predictionCount, consequentBits);

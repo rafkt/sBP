@@ -136,8 +136,9 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 		}
 
 		//excluding ranges
-		for (pair<int, int> range : exclude_bs_ranges)
-			for (int r = range.first; r <= range.second; r++) (*consequentBits)[r] = 1;
+		for (pair<int, int> range : exclude_bs_ranges){
+			for (int r = range.first; r <= range.second; r++) { (*consequentBits)[r] = 1;}
+		}
 		//end of excluding ranges
 
 
