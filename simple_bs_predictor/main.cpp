@@ -115,10 +115,18 @@ int main(int argc, const char * argv[])
 //    cout << c.countBeforeString(1000, &x[0], x.size()) << endl;
 
     
+    cerr << "Reading test queries..." << endl;
     vector<vector<int>> testQueries = readTestQueries(argv[2]);
-    subseqPredictor* pr = new subseqPredictor(argv[1]);
-
+    cerr << testQueries.size() << " test queries read in." << endl;
+    cerr << "Constructing subseqPredictor..." << endl;
     auto begin = clock();
+    subseqPredictor* pr = new subseqPredictor(argv[1]);
+    auto end = clock();
+    auto duration = ((double)(end - begin))/CLOCKS_PER_SEC;
+    cout << "Duration: " << duration << endl;
+    cerr << "subseqPredictor constructed." << endl;
+
+    begin = clock();
     for(vector<int> query : testQueries){
        // if (query.size() < 2) {cout << "short query; do we except this?" << endl; continue;}
         // int size = query.size() - 1;// our offset is 1 for now
@@ -135,8 +143,8 @@ int main(int argc, const char * argv[])
         pr->start(&query[0], query.size());
         //break;
     }
-    auto end = clock();
-    auto duration = ((double)(end - begin))/CLOCKS_PER_SEC;
+    end = clock();
+    duration = ((double)(end - begin))/CLOCKS_PER_SEC;
     cout << "Memory: " << pr->get_memory() << endl;
     cout << "Duration: " << duration << endl;
 
