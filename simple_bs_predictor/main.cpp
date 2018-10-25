@@ -137,8 +137,9 @@ int main(int argc, const char * argv[])
     }
     auto end = clock();
     auto duration = ((double)(end - begin))/CLOCKS_PER_SEC;
-    cout << "Memory: " << pr->get_memory() << endl;
-    cout << "Duration: " << duration << endl;
+    // cout << argv[1] << endl;
+    // cout << "Memory: " << pr->get_memory() << endl;
+    // cout << "Duration: " << duration << endl;
 
    //vector<int> x = {1, 2};//FIFA: 114 133 148 212 256 300 582 610 - 114 133 148 212 256 300 582 610 30 626 647 99999
    //Answer 30
@@ -225,7 +226,7 @@ int main(int argc, const char * argv[])
  //    outputFile << duration << "s total, average: " << duration / iterations << "s. Average per query: " << (duration / (double)iterations)/testQueries.size() <<  "s. Average query length: " << average_query_length << endl;
     
  //    outputFile.close();
-    cout << "Done!\n";
+ //   cout << "Done!\n";
     
     delete pr;
 	//delete evaluator;
