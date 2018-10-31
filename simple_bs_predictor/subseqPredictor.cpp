@@ -207,9 +207,9 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 
 //I need a method that generates all the subqueries. I think that at least for now it will be better organised, this way.
 void subseqPredictor::push(vector<int> consequent, int errors, int initialLength, int subLength){
-	//cout << "About to push: " << endl;
-	//for (int it : consequent) cout << it << " ";
-	//cout << endl;
+	cout << "About to push: " << endl;
+	for (int it : consequent) cout << it << " ";
+	cout << endl;
 	pair<std::map<int, double>::iterator, bool> ret;
 	double current_score = 0.0;
 	for (int i = 0; i < consequent.size(); i++){
@@ -219,16 +219,16 @@ void subseqPredictor::push(vector<int> consequent, int errors, int initialLength
 		ret = countTable.insert(std::pair<int, double>(consequent[i], newWeight));
 	  	if (ret.second == false) {
 	  		//item already in the countTable
-	  		//cout << "Previous score: " << ret.first->second << endl;
+	  		cout << "Previous score: " << ret.first->second << endl;
 	  		current_score = ret.first->second * newWeight;
 		    ret.first->second =  current_score;
-		    //cout << "Pushed: " << consequent[i] << " with score: " << current_score << endl;
+		    cout << "Pushed: " << consequent[i] << " with score: " << current_score << endl;
 		    if (current_score > score){
 		    	score = current_score;
 		    	prediction = consequent[i];
 		    }
 		}else{
-			//cout << "Pushed: " << consequent[i] << " with score: " << newWeight << endl;
+			cout << "Pushed: " << consequent[i] << " with score: " << newWeight << endl;
 			if (newWeight > score){
 		    	score = newWeight;
 		    	prediction = consequent[i];
