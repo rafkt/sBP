@@ -49,6 +49,8 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 	//constract a bit-vector of size L (from BWT)
 
 	//find all the ranges with neighborExpansion
+	bool flag = false;
+	if (size >= 3) if (query[2] == 5943) flag = true;
 
 	int rangeStart = - 1, rangeEnd = -1;
 	set<int> firstItemPossibleReplacements, secondItemPossibleReplacements;
@@ -78,6 +80,9 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 					exclude_query_vector[1] = 99999; // -2 99999 a b c
 					if (bSBWT->searchQuery(&(exclude_query_vector[1]), size - 1, rangeStart, rangeEnd) != -1){
 			    		exclude_bs_ranges.push_back(make_pair(rangeStart, rangeEnd));
+			    		if (flag) cout << "found 99 a b c" << endl;
+			    	} else{
+			    		if (flag) cout << "not found 99 a b c" << endl;
 			    	}
 
 					
@@ -85,14 +90,21 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 					exclude_query_vector[1] = -2; // 99999 -2 a b c
 					bSBWT->getRange(exclude_query_vector[0], rangeStart, rangeEnd);
 					bSBWT->neighborExpansion(exclude_query_vector, 1, rangeStart, rangeEnd, exclude_bs_ranges);
+					if (flag && exclude_bs_ranges.size() == 0) cout << "No ranges to exclude" << endl;
 
 
 
 					int finalStartRange, finalEndRange;
 			    	if (bSBWT->searchQuery(&(query[2]), size - 2, finalStartRange, finalEndRange) != -1){
 			    		bs_ranges.push_back(make_pair(finalStartRange, finalEndRange));
+			    	}else{
+			    		if (flag){
+			    			cout << "query: ";
+				    		for (int q = 0; q < size - 2; q++) cout << query[2 + q] << " ";
+				    		cout << " Not found" << endl;
+			    		}
+
 			    	}
-			    		
 		// 		}
 		// 	}
 		// 	firstItemPossibleReplacements.clear(); secondItemPossibleReplacements.clear();
@@ -142,7 +154,7 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 
 
 		vector<vector<int>> consequentList;
-	    //cout << " : Ranges : " << bs_ranges.size() << endl;
+	    cout << " : Ranges : " << bs_ranges.size() << endl;
 	    for (pair<int, int> it : bs_ranges){
 	    	vector<int> tmp;
 	    	bSBWT->getConsequents(tmp, 0, it.first, it.second, 2, -1, consequentList, predictionCount, consequentBits);
@@ -175,7 +187,7 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 	    		bs_ranges.push_back(make_pair(finalStartRange, finalEndRange));
 	    	}
 	    }
-	    //cout << ": Ranges : " << bs_ranges.size() << endl;
+	    cout << ": Ranges : " << bs_ranges.size() << endl;
 	    vector<vector<int>> consequentList;
 	    for (pair<int, int> it : bs_ranges){
 	    	vector<int> tmp;
@@ -269,7 +281,7 @@ void subseqPredictor::generateSubqueries(int* query, int size){
         query[i] = -2;
         // for (int item : y) cout << item << " ";
         // cout << endl;
-        //for (int q = 0; q < size; q++) cout << query[q] << " ";
+        for (int q = 0; q < size; q++) cout << query[q] << " ";
         //cout << endl;
         predict(query, size, MAXPREDICTIONCOUNT, initialLength, 1);
         //predict; if permanent stop abbort and return answer
@@ -287,7 +299,7 @@ void subseqPredictor::generateSubqueries(int* query, int size){
                 query[j] = -2;
                 // for (int item : y) cout << item << " ";
                 // cout << endl;
-                //for (int q = 0; q < size; q++) cout << query[q] << " ";
+                for (int q = 0; q < size; q++) cout << query[q] << " ";
         		//cout << endl;
                 predict(query, size, MAXPREDICTIONCOUNT, initialLength, 2);
                 //predict; if permanent stop abbort and return answer

@@ -139,9 +139,11 @@ backwardsSearchBWT::~backwardsSearchBWT(){
 // }
 
 int backwardsSearchBWT::searchQuery(int* xy, int size, int& finalStartRange, int& finalEndRange){
-    if (size < 2) return -1;
+    if (size < 1) return -1;
     int startRange, endRange;
     getRange(xy[0], startRange, endRange);
+    finalStartRange = startRange;
+    finalEndRange = endRange;
     if (startRange == -1 || endRange == -1) {/*cout << "NOT FOUND" << endl;*/ return -1;}
     for (int i = 1; i < size; i++){
         if (search(xy[i], startRange, endRange, finalStartRange, finalEndRange) == -1) {/*cout << "NOT FOUND" << endl;*/ return -1;}
