@@ -1,0 +1,9 @@
+File Name,Nodes Number,Number of Sequences,Number of items,Distinct Items in Dataset
+spmf_Datasets/mySet_Testing.txt,6,3,12,6
+spmf_Datasets/BIBLE.txt,659804,36369,787066,13905
+spmf_Datasets/BMS1_spmf.txt,59087,59600,149637,497
+spmf_Datasets/FIFA.txt,675228,20450,741092,2990
+spmf_Datasets/Kosarak_converted.txt,411398,69998,558371,21144
+spmf_Datasets/LEVIATHAN.txt,183205,5834,197251,9025
+spmf_Datasets/MSNBC.txt,236798,31790,423776,17
+spmf_Datasets/SIGN.txt,36838,730,37958,267

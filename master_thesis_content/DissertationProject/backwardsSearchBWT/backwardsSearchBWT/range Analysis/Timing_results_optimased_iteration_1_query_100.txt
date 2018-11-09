@@ -1,0 +1,49 @@
+Filename: ./convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+range average: 28
+Memory Size: 2.36789 MB
+Compact input size: 20 bits
+4408ms total, average: 4408ms. Average per query: 44ms. Average query length: 4
+Filename: ./convertedSequencesForBWT/BIBLE.txt_sequences.txt
+m: 823435
+σ: 13906
+range average: 8
+Memory Size: 2.60878 MB
+Compact input size: 20 bits
+13466ms total, average: 13466ms. Average per query: 134ms. Average query length: 5
+Filename: ./convertedSequencesForBWT/BMS1_spmf.txt_sequences.txt
+m: 209239
+σ: 498
+range average: 31
+Memory Size: 0.652288 MB
+Compact input size: 18 bits
+678ms total, average: 678ms. Average per query: 6ms. Average query length: 3
+Filename: ./convertedSequencesForBWT/Kosarak_converted.txt_sequences.txt
+m: 628372
+σ: 21145
+range average: 187
+Memory Size: 2.0632 MB
+Compact input size: 20 bits
+6973ms total, average: 6973ms. Average per query: 69ms. Average query length: 5
+Filename: ./convertedSequencesForBWT/LEVIATHAN.txt_sequences.txt
+m: 203085
+σ: 9026
+range average: 36
+Memory Size: 0.704933 MB
+Compact input size: 18 bits
+4190ms total, average: 4190ms. Average per query: 41ms. Average query length: 4
+Filename: ./convertedSequencesForBWT/MSNBC.txt_sequences.txt
+m: 455566
+σ: 18
+range average: 1748
+Memory Size: 1.45193 MB
+Compact input size: 19 bits
+39994ms total, average: 39994ms. Average per query: 399ms. Average query length: 4
+Filename: ./convertedSequencesForBWT/SIGN.txt_sequences.txt
+m: 38688
+σ: 268
+range average: 3
+Memory Size: 0.146234 MB
+Compact input size: 16 bits
+337ms total, average: 337ms. Average per query: 3ms. Average query length: 5

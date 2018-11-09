@@ -1,0 +1,16 @@
+BWT - 1000 random queries, 100 iterations
+Filename: ./convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+3.67397s total, average: 0.0367397s. Average per query: 3.67397e-05s. Average query length: 5
+
+CPT - 1000 random queries, 100 iterations
+Filename: ./convertedSequencesForBWT/FIFA.txt_sequences.txt
+Overall: 925181.869ms Average: 9251.81869ms Averagely per query: 9.25181869ms
+
+Java Garbage Collection time for 1 iteration: 0.5982079 sec
+
+
+Memory Size: 2.36789 MB (for BWT)
+Memory Size, estimated: 20.7 MB (for CPT prediction Tree only)

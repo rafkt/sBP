@@ -1,0 +1,9 @@
+File Name,Nodes Number,Overall Children Number,Number of Sequences,Number of Items,Distinct Items,Most common children number per node,Max children per node,Number of nodes with max children
+./spmf_Datasets/BIBLE.txt,659804,659804,36369,787066,13905,1,697,1
+./spmf_Datasets/BMS1_spmf.txt,59087,59087,59601,149638,497,1,443,1
+./spmf_Datasets/FIFA.txt,675228,675228,20450,741092,2990,1,1234,1
+./spmf_Datasets/Kosarak_converted.txt,411398,411398,69999,558373,21144,1,4539,1
+./spmf_Datasets/LEVIATHAN.txt,183205,183205,5834,197251,9025,1,351,1
+./spmf_Datasets/MSNBC.txt,236798,236798,31790,423776,17,1,17,1
+./spmf_Datasets/mySet_Testing.txt,6,6,3,12,6,1,2,1
+./spmf_Datasets/SIGN.txt,36838,36838,730,37958,267,1,87,1

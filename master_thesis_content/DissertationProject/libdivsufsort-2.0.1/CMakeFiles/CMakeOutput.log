@@ -1,0 +1,451 @@
+The system is: Darwin - 13.2.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is AppleClang, found in "/Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/3.0.0/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3249080517/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3249080517.dir/build.make CMakeFiles/cmTryCompileExec3249080517.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3249080517.dir/testCCompiler.c.o
+/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3249080517.dir/testCCompiler.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec3249080517
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3249080517.dir/link.txt --verbose=1
+/usr/bin/cc    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec3249080517.dir/testCCompiler.c.o  -o cmTryCompileExec3249080517  
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec716773310/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec716773310.dir/build.make CMakeFiles/cmTryCompileExec716773310.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec716773310.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec716773310.dir/CMakeCCompilerABI.c.o   -c /usr/local/Cellar/cmake/3.0.0/share/cmake/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec716773310
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec716773310.dir/link.txt --verbose=1
+/usr/bin/cc    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -v -Wl,-v CMakeFiles/cmTryCompileExec716773310.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec716773310   
+Apple LLVM version 5.1 (clang-503.0.40) (based on LLVM 3.4svn)
+Target: x86_64-apple-darwin13.2.0
+Thread model: posix
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.9.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -o cmTryCompileExec716773310 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTryCompileExec716773310.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/5.1/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-236.4
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 armv6m armv7m armv7em
+Library search paths:
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib
+Framework search paths:
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec716773310/fast"]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec716773310.dir/build.make CMakeFiles/cmTryCompileExec716773310.dir/build]
+  ignore line: [/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec716773310.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec716773310.dir/CMakeCCompilerABI.c.o   -c /usr/local/Cellar/cmake/3.0.0/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec716773310]
+  ignore line: [/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec716773310.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -v -Wl,-v CMakeFiles/cmTryCompileExec716773310.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec716773310   ]
+  ignore line: [Apple LLVM version 5.1 (clang-503.0.40) (based on LLVM 3.4svn)]
+  ignore line: [Target: x86_64-apple-darwin13.2.0]
+  ignore line: [Thread model: posix]
+  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.9.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -o cmTryCompileExec716773310 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTryCompileExec716773310.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/5.1/lib/darwin/libclang_rt.osx.a]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.9.0] ==> ignore
+    arg [-syslibroot] ==> ignore
+    arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec716773310] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec716773310.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lSystem] ==> lib [System]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/5.1/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/5.1/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib]
+  Framework search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/]
+  remove lib [System]
+  collapse lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/5.1/lib/darwin/libclang_rt.osx.a] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib]
+  collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks]
+  implicit libs: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.osx.a]
+  implicit dirs: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib]
+  implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks]
+
+
+Performing C SOURCE FILE Test HAVE_UNKNOWN_WALL succeded with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2422728327/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2422728327.dir/build.make CMakeFiles/cmTryCompileExec2422728327.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2422728327.dir/src.c.o
+/usr/bin/cc   -DHAVE_UNKNOWN_WALL -Wall -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2422728327.dir/src.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec2422728327
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2422728327.dir/link.txt --verbose=1
+/usr/bin/cc   -DHAVE_UNKNOWN_WALL -Wall -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec2422728327.dir/src.c.o  -o cmTryCompileExec2422728327  
+
+Source file was:
+int main() { return 0; }
+Performing C SOURCE FILE Test HAVE_UNKNOWN_FOMIT_FRAME_POINTER succeded with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec796326182/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec796326182.dir/build.make CMakeFiles/cmTryCompileExec796326182.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec796326182.dir/src.c.o
+/usr/bin/cc   -Wall -DHAVE_UNKNOWN_FOMIT_FRAME_POINTER -fomit-frame-pointer -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec796326182.dir/src.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec796326182
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec796326182.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall -DHAVE_UNKNOWN_FOMIT_FRAME_POINTER -fomit-frame-pointer -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec796326182.dir/src.c.o  -o cmTryCompileExec796326182  
+
+Source file was:
+int main() { return 0; }
+Determining if the include file inttypes.h exists passed with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2043841667/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2043841667.dir/build.make CMakeFiles/cmTryCompileExec2043841667.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2043841667.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2043841667.dir/CheckIncludeFile.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec2043841667
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2043841667.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec2043841667.dir/CheckIncludeFile.c.o  -o cmTryCompileExec2043841667  
+
+
+Determining if the include file memory.h exists passed with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec139477604/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec139477604.dir/build.make CMakeFiles/cmTryCompileExec139477604.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec139477604.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec139477604.dir/CheckIncludeFile.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec139477604
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec139477604.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec139477604.dir/CheckIncludeFile.c.o  -o cmTryCompileExec139477604  
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2429715412/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2429715412.dir/build.make CMakeFiles/cmTryCompileExec2429715412.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2429715412.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2429715412.dir/CheckIncludeFile.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec2429715412
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2429715412.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec2429715412.dir/CheckIncludeFile.c.o  -o cmTryCompileExec2429715412  
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec4149994353/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec4149994353.dir/build.make CMakeFiles/cmTryCompileExec4149994353.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4149994353.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec4149994353.dir/CheckIncludeFile.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec4149994353
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4149994353.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec4149994353.dir/CheckIncludeFile.c.o  -o cmTryCompileExec4149994353  
+
+
+Determining if the include file stdlib.h exists passed with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3993379160/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3993379160.dir/build.make CMakeFiles/cmTryCompileExec3993379160.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3993379160.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3993379160.dir/CheckIncludeFile.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec3993379160
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3993379160.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec3993379160.dir/CheckIncludeFile.c.o  -o cmTryCompileExec3993379160  
+
+
+Determining if the include file string.h exists passed with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec534756283/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec534756283.dir/build.make CMakeFiles/cmTryCompileExec534756283.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec534756283.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec534756283.dir/CheckIncludeFile.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec534756283
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec534756283.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec534756283.dir/CheckIncludeFile.c.o  -o cmTryCompileExec534756283  
+
+
+Determining if the include file strings.h exists passed with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1809450706/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1809450706.dir/build.make CMakeFiles/cmTryCompileExec1809450706.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1809450706.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1809450706.dir/CheckIncludeFile.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec1809450706
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1809450706.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec1809450706.dir/CheckIncludeFile.c.o  -o cmTryCompileExec1809450706  
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1124070655/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1124070655.dir/build.make CMakeFiles/cmTryCompileExec1124070655.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1124070655.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1124070655.dir/CheckIncludeFile.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec1124070655
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1124070655.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec1124070655.dir/CheckIncludeFile.c.o  -o cmTryCompileExec1124070655  
+
+
+Determining size of off_t passed with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec554022556/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec554022556.dir/build.make CMakeFiles/cmTryCompileExec554022556.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec554022556.dir/SIZEOF_OFF_T.c.o
+/usr/bin/cc  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec554022556.dir/SIZEOF_OFF_T.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CheckTypeSize/SIZEOF_OFF_T.c
+Linking C executable cmTryCompileExec554022556
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec554022556.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec554022556.dir/SIZEOF_OFF_T.c.o  -o cmTryCompileExec554022556  
+
+
+Determining if the fseeko exist passed with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec148527492/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec148527492.dir/build.make CMakeFiles/cmTryCompileExec148527492.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec148527492.dir/CheckSymbolExists.c.o
+/usr/bin/cc  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec148527492.dir/CheckSymbolExists.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec148527492
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec148527492.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec148527492.dir/CheckSymbolExists.c.o  -o cmTryCompileExec148527492  
+
+File /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef fseeko
+  return ((int*)(&fseeko))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the ftello exist passed with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec494384677/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec494384677.dir/build.make CMakeFiles/cmTryCompileExec494384677.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec494384677.dir/CheckSymbolExists.c.o
+/usr/bin/cc  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec494384677.dir/CheckSymbolExists.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec494384677
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec494384677.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec494384677.dir/CheckSymbolExists.c.o  -o cmTryCompileExec494384677  
+
+File /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef ftello
+  return ((int*)(&ftello))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the PRIdMAX exist passed with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec910041464/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec910041464.dir/build.make CMakeFiles/cmTryCompileExec910041464.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec910041464.dir/CheckSymbolExists.c.o
+/usr/bin/cc  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec910041464.dir/CheckSymbolExists.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec910041464
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec910041464.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec910041464.dir/CheckSymbolExists.c.o  -o cmTryCompileExec910041464  
+
+File /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <inttypes.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef PRIdMAX
+  return ((int*)(&PRIdMAX))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C SOURCE FILE Test HAVE_INLINE succeded with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec887753314/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec887753314.dir/build.make CMakeFiles/cmTryCompileExec887753314.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec887753314.dir/src.c.o
+/usr/bin/cc   -Wall -DHAVE_INLINE -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec887753314.dir/src.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec887753314
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec887753314.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall -DHAVE_INLINE -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec887753314.dir/src.c.o  -o cmTryCompileExec887753314  
+
+Source file was:
+inline void func(); void func() { } int main() { func(); return 0; }
+Performing C SOURCE FILE Test HAVE___INLINE succeded with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1356711440/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1356711440.dir/build.make CMakeFiles/cmTryCompileExec1356711440.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1356711440.dir/src.c.o
+/usr/bin/cc   -Wall -DHAVE___INLINE -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1356711440.dir/src.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec1356711440
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1356711440.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall -DHAVE___INLINE -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec1356711440.dir/src.c.o  -o cmTryCompileExec1356711440  
+
+Source file was:
+__inline void func(); void func() { } int main() { func(); return 0; }
+Performing C SOURCE FILE Test HAVE___INLINE__ succeded with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2334643299/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2334643299.dir/build.make CMakeFiles/cmTryCompileExec2334643299.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2334643299.dir/src.c.o
+/usr/bin/cc   -Wall -DHAVE___INLINE__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2334643299.dir/src.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTryCompileExec2334643299
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2334643299.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall -DHAVE___INLINE__ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec2334643299.dir/src.c.o  -o cmTryCompileExec2334643299  
+
+Source file was:
+__inline__ void func(); void func() { } int main() { func(); return 0; }
+Performing C SOURCE FILE Test HAVE___DECLSPEC_DLLEXPORT_ succeded with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec620566365/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec620566365.dir/build.make CMakeFiles/cmTryCompileExec620566365.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec620566365.dir/src.c.o
+/usr/bin/cc   -Wall -DHAVE___DECLSPEC_DLLEXPORT_ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec620566365.dir/src.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/src.c
+/Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/src.c:1:12: warning: __declspec attribute 'dllexport' is not supported [-Wignored-attributes]
+__declspec(dllexport) void func(); void func() { } int main() { func(); return 0; }
+           ^
+1 warning generated.
+Linking C executable cmTryCompileExec620566365
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec620566365.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall -DHAVE___DECLSPEC_DLLEXPORT_ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec620566365.dir/src.c.o  -o cmTryCompileExec620566365  
+
+Source file was:
+__declspec(dllexport) void func(); void func() { } int main() { func(); return 0; }
+Performing C SOURCE FILE Test HAVE___DECLSPEC_DLLIMPORT_ succeded with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3394105786/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3394105786.dir/build.make CMakeFiles/cmTryCompileExec3394105786.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3394105786.dir/src.c.o
+/usr/bin/cc   -Wall -DHAVE___DECLSPEC_DLLIMPORT_ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3394105786.dir/src.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/src.c
+/Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/src.c:1:12: warning: __declspec attribute 'dllimport' is not supported [-Wignored-attributes]
+__declspec(dllimport) void func(); void func() { } int main() { func(); return 0; }
+           ^
+1 warning generated.
+Linking C executable cmTryCompileExec3394105786
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3394105786.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall -DHAVE___DECLSPEC_DLLIMPORT_ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec3394105786.dir/src.c.o  -o cmTryCompileExec3394105786  
+
+Source file was:
+__declspec(dllimport) void func(); void func() { } int main() { func(); return 0; }
+Determining size of uint8_t passed with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2163888874/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2163888874.dir/build.make CMakeFiles/cmTryCompileExec2163888874.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2163888874.dir/UINT8_T.c.o
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2163888874.dir/UINT8_T.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CheckTypeSize/UINT8_T.c
+Linking C executable cmTryCompileExec2163888874
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2163888874.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec2163888874.dir/UINT8_T.c.o  -o cmTryCompileExec2163888874  
+
+
+Determining size of int32_t passed with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2949271043/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2949271043.dir/build.make CMakeFiles/cmTryCompileExec2949271043.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2949271043.dir/INT32_T.c.o
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2949271043.dir/INT32_T.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CheckTypeSize/INT32_T.c
+Linking C executable cmTryCompileExec2949271043
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2949271043.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec2949271043.dir/INT32_T.c.o  -o cmTryCompileExec2949271043  
+
+
+Determining if the PRId32 exist passed with the following output:
+Change Dir: /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3343786076/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3343786076.dir/build.make CMakeFiles/cmTryCompileExec3343786076.dir/build
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_progress_report /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3343786076.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3343786076.dir/CheckSymbolExists.c.o   -c /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec3343786076
+/usr/local/Cellar/cmake/3.0.0/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3343786076.dir/link.txt --verbose=1
+/usr/bin/cc   -Wall  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec3343786076.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3343786076  
+
+File /Users/rafaelktistakis/Desktop/libdivsufsort-2.0.1/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <inttypes.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef PRId32
+  return ((int*)(&PRId32))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

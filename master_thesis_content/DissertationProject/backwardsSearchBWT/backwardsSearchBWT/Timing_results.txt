@@ -1,0 +1,258 @@
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 0, average Propability: 0.816313
+0.080722s total, average: 0.080722s. Average per query: 8.0722e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.058269s total, average: 0.058269s. Average per query: 5.8269e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.059259s total, average: 0.059259s. Average per query: 5.9259e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.064274s total, average: 0.064274s. Average per query: 6.4274e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.060486s total, average: 0.060486s. Average per query: 6.0486e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.061089s total, average: 0.061089s. Average per query: 6.1089e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.06306s total, average: 0.06306s. Average per query: 6.306e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.059162s total, average: 0.059162s. Average per query: 5.9162e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.061004s total, average: 0.061004s. Average per query: 6.1004e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.056917s total, average: 0.056917s. Average per query: 5.6917e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.059061s total, average: 0.059061s. Average per query: 5.9061e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.056232s total, average: 0.056232s. Average per query: 5.6232e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.066206s total, average: 0.066206s. Average per query: 6.6206e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.060363s total, average: 0.060363s. Average per query: 6.0363e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.061144s total, average: 0.061144s. Average per query: 6.1144e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.057265s total, average: 0.057265s. Average per query: 5.7265e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.060546s total, average: 0.060546s. Average per query: 6.0546e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.062396s total, average: 0.062396s. Average per query: 6.2396e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.077226s total, average: 0.077226s. Average per query: 7.7226e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.062973s total, average: 0.062973s. Average per query: 6.2973e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.067583s total, average: 0.067583s. Average per query: 6.7583e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.072955s total, average: 0.072955s. Average per query: 7.2955e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.070392s total, average: 0.070392s. Average per query: 7.0392e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.059587s total, average: 0.059587s. Average per query: 5.9587e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.078729s total, average: 0.078729s. Average per query: 7.8729e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.076704s total, average: 0.076704s. Average per query: 7.6704e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.064089s total, average: 0.064089s. Average per query: 6.4089e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.073331s total, average: 0.073331s. Average per query: 7.3331e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.066622s total, average: 0.066622s. Average per query: 6.6622e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.062261s total, average: 0.062261s. Average per query: 6.2261e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.062958s total, average: 0.062958s. Average per query: 6.2958e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.066519s total, average: 0.066519s. Average per query: 6.6519e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.062911s total, average: 0.062911s. Average per query: 6.2911e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.065052s total, average: 0.065052s. Average per query: 6.5052e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.057119s total, average: 0.057119s. Average per query: 5.7119e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.063723s total, average: 0.063723s. Average per query: 6.3723e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.060889s total, average: 0.060889s. Average per query: 6.0889e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.053688s total, average: 0.053688s. Average per query: 5.3688e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.073851s total, average: 0.073851s. Average per query: 7.3851e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.058043s total, average: 0.058043s. Average per query: 5.8043e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.06245s total, average: 0.06245s. Average per query: 6.245e-05s. Average query length: 4
+Filename: /Users/rafaelktistakis/Documents/PhD_UoL/DissertationProject/backwardsSearchBWT/backwardsSearchBWT/convertedSequencesForBWT/FIFA.txt_sequences.txt
+m: 761542
+σ: 2991
+Memory Size: 2.36789
+max Propability: 1, average Propability: 0.816313
+0.069031s total, average: 0.069031s. Average per query: 6.9031e-05s. Average query length: 4
+Filename: convertedSequencesForBWT/ran_queries_6_length_dissertation_report/MSNBC.txt_sequences.txt
+m: 0
+σ: 0
+Memory Size: 0.000107765
+max Propability: 0, average Propability: nan
+0.00825s total, average: 0.00825s. Average per query: 8.25e-06s. Average query length: 6

@@ -1,0 +1,47 @@
+%%Excelsior JET v10.0 project file
+
+-compilewithfixedheap-
+-genstackalloc+
+-genstacktrace-
+-global-
+-gui-
+-ignoreclassduplication+
+-ignorememberabsence+
+-inline+
+-multiapp-
+-splashgetfrommanifest-
+-startonfirstthread+
+-xms8192m-
+-xmx8192m-
+
+-apptype=Plain
+-classabsence=HANDLE
+-compilerheap=1744830464
+-inlinelimit=100
+-inlinetolimit=1000
+-javacommandline:=java -verbose:gc -Xmx8192M -Xms8192M -jar testPrediction.jar ./spmf_Datasets/FIFA.txt Ran_queries.txt
+-jetcplastpage:=PageCompile
+-jetrt=Desktop
+-jetvmprop=-Djet.gc.heaplimit:8589934592 -Djet.stack.trace
+-main=rafkt/testing/cpt/testPrediction
+-outputdir=.
+-outputname=testPrediction
+-runarguments=./spmf_Datasets/FIFA.txt Ran_queries.txt
+-saprofmode=NONE
+-stacklimit=134217728
+
+
+
+
+!classpathentry ./testPrediction.jar
+  -pack=noncompiled
+  -protect=all
+  -optimize=autodetect
+!end
+!classpathentry .
+  -pack=none
+  -protect=all
+  -optimize=autodetect
+!end
+
+

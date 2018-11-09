@@ -1,0 +1,907 @@
+About to push: 
+470 6015 
+Pushed: 470 with score: 3
+Pushed: 6015 with score: 2.5
+About to push: 
+1486 227 
+Pushed: 1486 with score: 3
+Pushed: 227 with score: 2.5
+About to push: 
+6894 2147 
+Pushed: 6894 with score: 3
+Pushed: 2147 with score: 2.5
+About to push: 
+1487 3493 
+Pushed: 1487 with score: 3
+Pushed: 3493 with score: 2.5
+About to push: 
+266 8511 
+Pushed: 266 with score: 3
+Pushed: 8511 with score: 2.5
+About to push: 
+4783 266 
+Pushed: 4783 with score: 3
+Previous score: 3
+About to push: 
+8511 2147 
+Previous score: 2.5
+Previous score: 2.5
+About to push: 
+266 
+Previous score: 7.5
+About to push: 
+793 
+Pushed: 793 with score: 3
+About to push: 
+4783 
+Previous score: 3
+About to push: 
+6840 6894 
+Pushed: 6840 with score: 3
+Previous score: 3
+About to push: 
+793 
+Previous score: 3
+About to push: 
+6894 9693 
+Previous score: 7.5
+Pushed: 9693 with score: 2.5
+About to push: 
+1817 
+Pushed: 1817 with score: 3
+About to push: 
+3145 266 
+Pushed: 3145 with score: 3
+Previous score: 22.5
+About to push: 
+316 
+Pushed: 316 with score: 3
+About to push: 
+266 2826 
+Previous score: 56.25
+Pushed: 2826 with score: 2.5
+About to push: 
+473 1011 
+Pushed: 473 with score: 3
+Pushed: 1011 with score: 2.5
+About to push: 
+1170 3493 
+Pushed: 1170 with score: 3
+Previous score: 2.5
+About to push: 
+266 6894 
+Previous score: 168.75
+Previous score: 22.5
+About to push: 
+266 2185 
+Previous score: 506.25
+Pushed: 2185 with score: 2.5
+About to push: 
+472 473 
+Pushed: 472 with score: 3
+Previous score: 3
+About to push: 
+1926 266 
+Pushed: 1926 with score: 3
+Previous score: 1518.75
+About to push: 
+10915 1014 
+Pushed: 10915 with score: 3
+Pushed: 1014 with score: 2.5
+About to push: 
+2147 9715 
+Previous score: 6.25
+Pushed: 9715 with score: 2.5
+About to push: 
+6840 316 
+Previous score: 3
+Previous score: 3
+About to push: 
+6161 2147 
+Pushed: 6161 with score: 3
+Previous score: 18.75
+About to push: 
+10089 1656 
+Pushed: 10089 with score: 3
+Pushed: 1656 with score: 2.5
+About to push: 
+5232 1487 
+Pushed: 5232 with score: 3
+Previous score: 3
+About to push: 
+3729 793 
+Pushed: 3729 with score: 3
+Previous score: 9
+About to push: 
+3145 1170 
+Previous score: 3
+Previous score: 3
+About to push: 
+1926 266 
+Previous score: 3
+Previous score: 3796.88
+About to push: 
+266 1752 
+Previous score: 9492.19
+Pushed: 1752 with score: 2.5
+About to push: 
+266 
+Previous score: 28476.6
+About to push: 
+3145 1656 
+Previous score: 9
+Previous score: 2.5
+About to push: 
+1656 4982 
+Previous score: 6.25
+Pushed: 4982 with score: 2.5
+About to push: 
+3145 1656 
+Previous score: 27
+Previous score: 18.75
+About to push: 
+3145 3306 
+Previous score: 81
+Pushed: 3306 with score: 2.5
+About to push: 
+9693 137 
+Previous score: 2.5
+Pushed: 137 with score: 2.5
+About to push: 
+740 791 
+Pushed: 740 with score: 3
+Pushed: 791 with score: 2.5
+About to push: 
+473 678 
+Previous score: 7.5
+Pushed: 678 with score: 2.5
+About to push: 
+1656 266 
+Previous score: 46.875
+Previous score: 85429.7
+About to push: 
+1656 266 
+Previous score: 140.625
+Previous score: 213574
+About to push: 
+3145 266 
+Previous score: 243
+Previous score: 533936
+About to push: 
+1170 1818 
+Previous score: 7.5
+Pushed: 1818 with score: 2.5
+About to push: 
+2096 1818 
+Pushed: 2096 with score: 3
+Previous score: 2.5
+About to push: 
+10915 9460 
+Previous score: 3
+Pushed: 9460 with score: 2.5
+About to push: 
+3132 3729 
+Pushed: 3132 with score: 3
+Previous score: 3
+About to push: 
+10089 
+Previous score: 3
+About to push: 
+3306 266 
+Previous score: 2.5
+Previous score: 1.33484e+06
+About to push: 
+3132 5718 
+Previous score: 3
+Pushed: 5718 with score: 2.5
+About to push: 
+678 
+Previous score: 2.5
+About to push: 
+3132 1926 
+Previous score: 9
+Previous score: 9
+About to push: 
+3729 1928 
+Previous score: 7.5
+Pushed: 1928 with score: 2.5
+About to push: 
+6840 266 
+Previous score: 9
+Previous score: 3.3371e+06
+About to push: 
+5718 2984 
+Previous score: 2.5
+Pushed: 2984 with score: 2.5
+About to push: 
+1752 4938 
+Previous score: 2.5
+Pushed: 4938 with score: 2.5
+About to push: 
+1926 2984 
+Previous score: 22.5
+Previous score: 2.5
+About to push: 
+3145 1656 
+Previous score: 729
+Previous score: 421.875
+About to push: 
+1926 1656 
+Previous score: 67.5
+Previous score: 1054.69
+About to push: 
+6161 3132 
+Previous score: 3
+Previous score: 27
+About to push: 
+791 678 
+Previous score: 2.5
+Previous score: 7.5
+About to push: 
+1928 
+Previous score: 2.5
+About to push: 
+8511 2147 
+Previous score: 7.5
+Previous score: 46.875
+About to push: 
+10915 
+Previous score: 9
+About to push: 
+2984 472 
+Previous score: 6.25
+Previous score: 3
+About to push: 
+10915 3145 
+Previous score: 27
+Previous score: 2187
+About to push: 
+1656 473 
+Previous score: 2636.72
+Previous score: 22.5
+About to push: 
+3145 2984 
+Previous score: 5467.5
+Previous score: 18.75
+About to push: 
+10915 1926 
+Previous score: 81
+Previous score: 202.5
+About to push: 
+266 316 
+Previous score: 8.34274e+06
+Previous score: 7.5
+About to push: 
+316 
+Previous score: 18.75
+About to push: 
+3145 5232 
+Previous score: 16402.5
+Previous score: 3
+About to push: 
+10915 5718 
+Previous score: 243
+Previous score: 7.5
+About to push: 
+3145 266 
+Previous score: 49207.5
+Previous score: 2.50282e+07
+About to push: 
+9710 
+Pushed: 9710 with score: 3
+About to push: 
+1926 9710 
+Previous score: 506.25
+Previous score: 3
+About to push: 
+1752 
+Previous score: 7.5
+About to push: 
+3145 266 
+Previous score: 147622
+Previous score: 6.25706e+07
+About to push: 
+1927 6464 
+Pushed: 1927 with score: 3
+Pushed: 6464 with score: 2.5
+About to push: 
+9438 740 
+Pushed: 9438 with score: 3
+Previous score: 3
+About to push: 
+6161 1487 
+Previous score: 9
+Previous score: 7.5
+About to push: 
+1926 
+Previous score: 1518.75
+About to push: 
+2185 
+Previous score: 2.5
+About to push: 
+5718 10089 
+Previous score: 18.75
+Previous score: 9
+About to push: 
+316 
+Previous score: 56.25
+About to push: 
+24109 22812 
+Pushed: 24109 with score: 3
+Pushed: 22812 with score: 2.5
+About to push: 
+316 499 
+Previous score: 168.75
+Pushed: 499 with score: 2.5
+About to push: 
+10915 6408 
+Previous score: 729
+Pushed: 6408 with score: 2.5
+About to push: 
+10915 
+Previous score: 2187
+About to push: 
+137 5130 
+Previous score: 2.5
+Pushed: 5130 with score: 2.5
+About to push: 
+4893 1007 
+Pushed: 4893 with score: 3
+Pushed: 1007 with score: 2.5
+About to push: 
+3195 
+Pushed: 3195 with score: 3
+About to push: 
+3383 266 
+Pushed: 3383 with score: 3
+Previous score: 1.56426e+08
+About to push: 
+316 
+Previous score: 506.25
+About to push: 
+12914 
+Pushed: 12914 with score: 3
+About to push: 
+12914 
+Previous score: 3
+About to push: 
+316 499 
+Previous score: 1518.75
+Previous score: 2.5
+About to push: 
+2826 1818 
+Previous score: 2.5
+Previous score: 6.25
+About to push: 
+3195 
+Previous score: 3
+About to push: 
+678 
+Previous score: 18.75
+About to push: 
+3195 12914 
+Previous score: 9
+Previous score: 9
+About to push: 
+266 3729 
+Previous score: 3.91066e+08
+Previous score: 22.5
+About to push: 
+1926 
+Previous score: 4556.25
+About to push: 
+3383 8826 
+Previous score: 3
+Pushed: 8826 with score: 2.5
+About to push: 
+1008 839 
+Pushed: 1008 with score: 3
+Pushed: 839 with score: 2.5
+About to push: 
+3972 3145 
+Pushed: 3972 with score: 3
+Previous score: 442868
+About to push: 
+7370 4569 
+Pushed: 7370 with score: 3
+Pushed: 4569 with score: 2.5
+About to push: 
+1926 5718 
+Previous score: 13668.8
+Previous score: 56.25
+About to push: 
+4970 473 
+Pushed: 4970 with score: 3
+Previous score: 56.25
+About to push: 
+137 4667 
+Previous score: 7.5
+Pushed: 4667 with score: 2.5
+About to push: 
+5718 16469 
+Previous score: 140.625
+Pushed: 16469 with score: 2.5
+About to push: 
+2146 677 
+Pushed: 2146 with score: 3
+Pushed: 677 with score: 2.5
+About to push: 
+4612 13376 
+Pushed: 4612 with score: 3
+Pushed: 13376 with score: 2.5
+About to push: 
+2096 474 
+Previous score: 3
+Pushed: 474 with score: 2.5
+About to push: 
+839 3383 
+Previous score: 2.5
+Previous score: 9
+About to push: 
+677 927 
+Previous score: 2.5
+Pushed: 927 with score: 2.5
+About to push: 
+4970 4509 
+Previous score: 3
+Pushed: 4509 with score: 2.5
+About to push: 
+1012 
+Pushed: 1012 with score: 3
+About to push: 
+1656 793 
+Previous score: 7910.16
+Previous score: 22.5
+About to push: 
+266 
+Previous score: 1.1732e+09
+About to push: 
+1927 1012 
+Previous score: 3
+Previous score: 3
+About to push: 
+793 
+Previous score: 56.25
+About to push: 
+886 
+Pushed: 886 with score: 3
+About to push: 
+316 678 
+Previous score: 4556.25
+Previous score: 56.25
+About to push: 
+2984 
+Previous score: 46.875
+About to push: 
+564 678 
+Pushed: 564 with score: 3
+Previous score: 140.625
+About to push: 
+2318 3131 
+Pushed: 2318 with score: 3
+Pushed: 3131 with score: 2.5
+About to push: 
+4612 3195 
+Previous score: 3
+Previous score: 27
+About to push: 
+677 3660 
+Previous score: 7.5
+Pushed: 3660 with score: 2.5
+About to push: 
+473 678 
+Previous score: 140.625
+Previous score: 351.562
+About to push: 
+839 4796 
+Previous score: 7.5
+Pushed: 4796 with score: 2.5
+About to push: 
+4970 839 
+Previous score: 9
+Previous score: 22.5
+About to push: 
+4971 
+Pushed: 4971 with score: 3
+About to push: 
+7486 
+Pushed: 7486 with score: 3
+About to push: 
+1170 3104 
+Previous score: 22.5
+Pushed: 3104 with score: 2.5
+About to push: 
+5984 1926 
+Pushed: 5984 with score: 3
+Previous score: 41006.2
+About to push: 
+1038 473 
+Pushed: 1038 with score: 3
+Previous score: 421.875
+About to push: 
+316 
+Previous score: 13668.8
+About to push: 
+7540 3132 
+Pushed: 7540 with score: 3
+Previous score: 67.5
+About to push: 
+3383 2146 
+Previous score: 22.5
+Previous score: 3
+About to push: 
+473 4612 
+Previous score: 1054.69
+Previous score: 9
+About to push: 
+3145 499 
+Previous score: 1.10717e+06
+Previous score: 6.25
+About to push: 
+3416 4926 
+Pushed: 3416 with score: 3
+Pushed: 4926 with score: 2.5
+About to push: 
+12428 4904 
+Pushed: 12428 with score: 3
+Pushed: 4904 with score: 2.5
+About to push: 
+677 8695 
+Previous score: 22.5
+Pushed: 8695 with score: 2.5
+About to push: 
+10893 3195 
+Pushed: 10893 with score: 3
+Previous score: 67.5
+About to push: 
+1006 499 
+Pushed: 1006 with score: 3
+Previous score: 15.625
+About to push: 
+10200 9700 
+Pushed: 10200 with score: 3
+Pushed: 9700 with score: 2.5
+About to push: 
+8890 316 
+Pushed: 8890 with score: 3
+Previous score: 41006.2
+About to push: 
+3383 1926 
+Previous score: 67.5
+Previous score: 102516
+About to push: 
+4901 2819 
+Pushed: 4901 with score: 3
+Pushed: 2819 with score: 2.5
+About to push: 
+2146 226 
+Previous score: 7.5
+Pushed: 226 with score: 2.5
+About to push: 
+474 1011 
+Previous score: 2.5
+Previous score: 2.5
+About to push: 
+3960 4970 
+Pushed: 3960 with score: 3
+Previous score: 27
+About to push: 
+316 
+Previous score: 102516
+About to push: 
+5984 1009 
+Previous score: 3
+Pushed: 1009 with score: 2.5
+About to push: 
+3093 3130 
+Pushed: 3093 with score: 3
+Pushed: 3130 with score: 2.5
+About to push: 
+4509 1818 
+Previous score: 2.5
+Previous score: 15.625
+About to push: 
+4908 677 
+Pushed: 4908 with score: 3
+Previous score: 67.5
+About to push: 
+10893 3195 
+Previous score: 3
+Previous score: 168.75
+About to push: 
+316 3195 
+Previous score: 307547
+Previous score: 421.875
+About to push: 
+3153 837 
+Pushed: 3153 with score: 3
+Pushed: 837 with score: 2.5
+About to push: 
+2335 3093 
+Pushed: 2335 with score: 3
+Previous score: 3
+About to push: 
+2335 3093 
+Previous score: 3
+Previous score: 7.5
+About to push: 
+2335 3093 
+Previous score: 9
+Previous score: 18.75
+About to push: 
+2335 3093 
+Previous score: 27
+Previous score: 46.875
+About to push: 
+3093 3130 
+Previous score: 117.188
+Previous score: 2.5
+About to push: 
+3093 3130 
+Previous score: 351.562
+Previous score: 6.25
+About to push: 
+8494 3354 
+Pushed: 8494 with score: 3
+Pushed: 3354 with score: 2.5
+About to push: 
+10770 2826 
+Pushed: 10770 with score: 3
+Previous score: 7.5
+About to push: 
+4926 7540 
+Previous score: 2.5
+Previous score: 3
+About to push: 
+1014 
+Previous score: 2.5
+About to push: 
+2251 6137 
+Pushed: 2251 with score: 3
+Pushed: 6137 with score: 2.5
+About to push: 
+4895 2335 
+Pushed: 4895 with score: 3
+Previous score: 81
+About to push: 
+4895 2335 
+Previous score: 3
+Previous score: 202.5
+About to push: 
+4895 2335 
+Previous score: 9
+Previous score: 506.25
+About to push: 
+4895 2335 
+Previous score: 27
+Previous score: 1265.62
+About to push: 
+4895 2335 
+Previous score: 81
+Previous score: 3164.06
+About to push: 
+4895 2335 
+Previous score: 243
+Previous score: 7910.16
+About to push: 
+4895 2335 
+Previous score: 729
+Previous score: 19775.4
+About to push: 
+4895 2335 
+Previous score: 2187
+Previous score: 49438.5
+About to push: 
+4895 2335 
+Previous score: 6561
+Previous score: 123596
+About to push: 
+4895 2335 
+Previous score: 19683
+Previous score: 308990
+About to push: 
+4895 2335 
+Previous score: 59049
+Previous score: 772476
+About to push: 
+1560 3145 
+Pushed: 1560 with score: 3
+Previous score: 3.32151e+06
+About to push: 
+4922 
+Pushed: 4922 with score: 3
+About to push: 
+5984 5985 
+Previous score: 9
+Pushed: 5985 with score: 2.5
+About to push: 
+2335 3093 
+Previous score: 1.93119e+06
+Previous score: 1054.69
+About to push: 
+2147 4971 
+Previous score: 117.188
+Previous score: 3
+About to push: 
+1485 2251 
+Pushed: 1485 with score: 3
+Previous score: 3
+About to push: 
+2335 3130 
+Previous score: 5.79357e+06
+Previous score: 15.625
+About to push: 
+4680 2018 
+Pushed: 4680 with score: 3
+Pushed: 2018 with score: 2.5
+About to push: 
+1566 470 
+Pushed: 1566 with score: 3
+Previous score: 3
+About to push: 
+2826 473 
+Previous score: 18.75
+Previous score: 3164.06
+About to push: 
+3462 473 
+Pushed: 3462 with score: 3
+Previous score: 7910.16
+About to push: 
+5984 3145 
+Previous score: 27
+Previous score: 8.30377e+06
+About to push: 
+2318 564 
+Previous score: 3
+Previous score: 3
+About to push: 
+11481 2948 
+Pushed: 11481 with score: 3
+Pushed: 2948 with score: 2.5
+About to push: 
+1560 2251 
+Previous score: 3
+Previous score: 7.5
+About to push: 
+1011 
+Previous score: 6.25
+About to push: 
+470 473 
+Previous score: 7.5
+Previous score: 19775.4
+About to push: 
+2819 839 
+Previous score: 2.5
+Previous score: 56.25
+About to push: 
+5129 472 
+Pushed: 5129 with score: 3
+Previous score: 7.5
+About to push: 
+4926 2826 
+Previous score: 7.5
+Previous score: 56.25
+About to push: 
+2826 
+Previous score: 140.625
+About to push: 
+677 4926 
+Previous score: 168.75
+Previous score: 22.5
+About to push: 
+1560 8034 
+Previous score: 9
+Pushed: 8034 with score: 2.5
+About to push: 
+1038 3538 
+Previous score: 3
+Pushed: 3538 with score: 2.5
+About to push: 
+5984 2146 
+Previous score: 81
+Previous score: 22.5
+About to push: 
+227 740 
+Previous score: 2.5
+Previous score: 7.5
+About to push: 
+144 1566 
+Pushed: 144 with score: 3
+Previous score: 3
+About to push: 
+6015 1926 
+Previous score: 2.5
+Previous score: 256289
+About to push: 
+2335 564 
+Previous score: 1.73807e+07
+Previous score: 7.5
+About to push: 
+2826 
+Previous score: 421.875
+About to push: 
+245 144 
+Pushed: 245 with score: 3
+Previous score: 3
+About to push: 
+2335 6073 
+Previous score: 5.21421e+07
+Pushed: 6073 with score: 2.5
+About to push: 
+144 1560 
+Previous score: 7.5
+Previous score: 27
+About to push: 
+316 
+Previous score: 922641
+About to push: 
+468 4614 
+Pushed: 468 with score: 3
+Pushed: 4614 with score: 2.5
+About to push: 
+245 144 
+Previous score: 3
+Previous score: 22.5
+About to push: 
+4614 2251 
+Previous score: 2.5
+Previous score: 18.75
+About to push: 
+144 1485 
+Previous score: 56.25
+Previous score: 3
+About to push: 
+2251 1008 
+Previous score: 46.875
+Previous score: 3
+About to push: 
+886 
+Previous score: 3
+About to push: 
+473 316 
+Previous score: 49438.5
+Previous score: 2.76792e+06
+About to push: 
+4612 
+Previous score: 22.5
+About to push: 
+2184 740 
+Pushed: 2184 with score: 3
+Previous score: 18.75
+About to push: 
+4982 6137 
+Previous score: 2.5
+Previous score: 2.5
+About to push: 
+496 498 
+Pushed: 496 with score: 3
+Pushed: 498 with score: 2.5
+About to push: 
+4926 1816 
+Previous score: 56.25
+Pushed: 1816 with score: 2.5
+About to push: 
+469 1560 
+Pushed: 469 with score: 3
+Previous score: 67.5
+About to push: 
+1560 470 
+Previous score: 168.75
+Previous score: 22.5
+About to push: 
+1566 470 
+Previous score: 7.5
+Previous score: 56.25
+About to push: 
+470 2251 
+Previous score: 140.625
+Previous score: 140.625
+About to push: 
+2335 1926 
+Previous score: 1.56426e+08
+Previous score: 640723
+About to push: 
+470 6073 
+Previous score: 421.875
+Previous score: 2.5
+266

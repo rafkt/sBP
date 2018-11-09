@@ -1,0 +1,31 @@
+Starting - nothing stored
+##### Heap utilisation statistics [KB] #####
+Used Memory:1378 KBytes
+Free Memory:81629 KBytes
+Total Memory:83008 KBytes
+Max Memory:2088640 KBytes
+GC called
+##### Heap utilisation statistics [KB] #####
+Used Memory:697 KBytes
+Free Memory:82310 KBytes
+Total Memory:83008 KBytes
+Max Memory:2088640 KBytes
+GC called
+GC called
+Stored: CPT.II, CPT.LT, CPT.PT, Sequences
+##### Heap utilisation statistics [KB] #####
+Used Memory:168272 KBytes
+Free Memory:147087 KBytes
+Total Memory:315360 KBytes
+Max Memory:2088640 KBytes
+GC called
+GC called
+GC called
+Cleared: CPT.II, CPT.LT, Sequences
+On Memory: CPT.PT
+keep in mind that from CPT prediction removed int nodeNumber for more accurate results
+##### Heap utilisation statistics [KB] #####
+Used Memory:97904 KBytes
+Free Memory:217455 KBytes
+Total Memory:315360 KBytes
+Max Memory:2088640 KBytes
