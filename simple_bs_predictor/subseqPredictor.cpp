@@ -13,7 +13,7 @@
 #include <time.h>
 #include <set>
 
-#define MAXPREDICTIONCOUNT 15
+#define MAXPREDICTIONCOUNT 0
 
 float subseqPredictor::get_memory(){
 	return bSBWT->sizeInMegabytes();

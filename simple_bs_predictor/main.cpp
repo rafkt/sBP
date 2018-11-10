@@ -132,14 +132,14 @@ int main(int argc, const char * argv[])
         // }
         // for (int i : finalQuery) cout << i << " ";
         // cout << endl;
-        cout << pr->start(&query[0], query.size()) << endl;
+        pr->start(&query[0], query.size());
         //break;
     }
     auto end = clock();
     auto duration = ((double)(end - begin))/CLOCKS_PER_SEC;
     // cout << argv[1] << endl;
-    // cout << "Memory: " << pr->get_memory() << endl;
-    // cout << "Duration: " << duration << endl;
+    cout << "Memory: " << pr->get_memory() << endl;
+    cout << "Duration: " << duration << endl;
 
    //vector<int> x = {1, 2};//FIFA: 114 133 148 212 256 300 582 610 - 114 133 148 212 256 300 582 610 30 626 647 99999
    //Answer 30
