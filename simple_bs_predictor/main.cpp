@@ -137,7 +137,7 @@ int main(int argc, const char * argv[])
     }
     auto end = clock();
     auto duration = ((double)(end - begin))/CLOCKS_PER_SEC;
-    // cout << argv[1] << endl;
+    cout << argv[1] << endl;
     cout << "Memory: " << pr->get_memory() << endl;
     cout << "Duration: " << duration << endl;
 

@@ -1,0 +1,672 @@
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE0.fold.0.training.txt
+Memory: 0.214672
+Duration: 0.61021
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE1.fold.0.training.txt
+Memory: 0.649195
+Duration: 0.346868
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE2.fold.0.training.txt
+Memory: 0.65468
+Duration: 0.193282
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE3.fold.0.training.txt
+Memory: 0.66057
+Duration: 0.206357
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE4.fold.0.training.txt
+Memory: 0.153164
+Duration: 0.185796
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE5.fold.0.training.txt
+Memory: 1.75953
+Duration: 1.00765
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE6.fold.0.training.txt
+Memory: 0.398067
+Duration: 0.621561
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE7.fold.0.training.txt
+Memory: 0.901535
+Duration: 0.333776
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE8.fold.0.training.txt
+Memory: 0.506422
+Duration: 0.528449
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE9.fold.0.training.txt
+Memory: 0.417221
+Duration: 1.1486
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE10.fold.0.training.txt
+Memory: 0.560326
+Duration: 0.471663
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE11.fold.0.training.txt
+Memory: 0.223532
+Duration: 2.11023
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE12.fold.0.training.txt
+Memory: 0.524839
+Duration: 0.186574
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE13.fold.0.training.txt
+Memory: 0.159389
+Duration: 0.759844
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE14.fold.0.training.txt
+Memory: 0.652044
+Duration: 4.31725
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE15.fold.0.training.txt
+Memory: 0.643167
+Duration: 0.301657
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE0.fold.1.training.txt
+Memory: 0.215038
+Duration: 0.532072
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE1.fold.1.training.txt
+Memory: 0.645268
+Duration: 0.362231
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE2.fold.1.training.txt
+Memory: 0.653121
+Duration: 0.178105
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE3.fold.1.training.txt
+Memory: 0.659699
+Duration: 0.148878
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE4.fold.1.training.txt
+Memory: 0.153233
+Duration: 0.154903
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE5.fold.1.training.txt
+Memory: 1.7713
+Duration: 1.02678
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE6.fold.1.training.txt
+Memory: 0.399908
+Duration: 0.534071
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE7.fold.1.training.txt
+Memory: 0.901314
+Duration: 0.383857
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE8.fold.1.training.txt
+Memory: 0.505467
+Duration: 0.663985
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE9.fold.1.training.txt
+Memory: 0.418917
+Duration: 1.5358
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE10.fold.1.training.txt
+Memory: 0.560356
+Duration: 0.526388
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE11.fold.1.training.txt
+Memory: 0.22289
+Duration: 2.26737
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE12.fold.1.training.txt
+Memory: 0.524374
+Duration: 0.189974
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE13.fold.1.training.txt
+Memory: 0.159556
+Duration: 0.724058
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE14.fold.1.training.txt
+Memory: 0.655107
+Duration: 4.12168
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE15.fold.1.training.txt
+Memory: 0.645138
+Duration: 0.253492
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE0.fold.2.training.txt
+Memory: 0.214939
+Duration: 0.516088
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE1.fold.2.training.txt
+Memory: 0.646598
+Duration: 0.354941
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE2.fold.2.training.txt
+Memory: 0.652595
+Duration: 0.192449
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE3.fold.2.training.txt
+Memory: 0.656277
+Duration: 0.161752
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE4.fold.2.training.txt
+Memory: 0.153187
+Duration: 0.149366
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE5.fold.2.training.txt
+Memory: 1.76409
+Duration: 0.858735
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE6.fold.2.training.txt
+Memory: 0.400718
+Duration: 0.70814
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE7.fold.2.training.txt
+Memory: 0.901154
+Duration: 0.359613
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE8.fold.2.training.txt
+Memory: 0.505757
+Duration: 0.539569
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE9.fold.2.training.txt
+Memory: 0.417542
+Duration: 1.56897
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE10.fold.2.training.txt
+Memory: 0.560516
+Duration: 0.457622
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE11.fold.2.training.txt
+Memory: 0.223356
+Duration: 1.78546
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE12.fold.2.training.txt
+Memory: 0.527055
+Duration: 0.189421
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE13.fold.2.training.txt
+Memory: 0.159381
+Duration: 0.680578
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE14.fold.2.training.txt
+Memory: 0.651869
+Duration: 4.29434
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE15.fold.2.training.txt
+Memory: 0.645696
+Duration: 0.267315
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE0.fold.3.training.txt
+Memory: 0.215451
+Duration: 0.547348
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE1.fold.3.training.txt
+Memory: 0.645558
+Duration: 0.341693
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE2.fold.3.training.txt
+Memory: 0.652953
+Duration: 0.266967
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE3.fold.3.training.txt
+Memory: 0.660662
+Duration: 0.140395
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE4.fold.3.training.txt
+Memory: 0.153065
+Duration: 0.15555
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE5.fold.3.training.txt
+Memory: 1.76433
+Duration: 1.04853
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE6.fold.3.training.txt
+Memory: 0.398969
+Duration: 0.678457
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE7.fold.3.training.txt
+Memory: 0.90107
+Duration: 0.437681
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE8.fold.3.training.txt
+Memory: 0.506231
+Duration: 0.547564
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE9.fold.3.training.txt
+Memory: 0.419673
+Duration: 1.38558
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE10.fold.3.training.txt
+Memory: 0.560661
+Duration: 0.523032
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE11.fold.3.training.txt
+Memory: 0.22302
+Duration: 2.04376
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE12.fold.3.training.txt
+Memory: 0.522288
+Duration: 0.18634
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE13.fold.3.training.txt
+Memory: 0.159244
+Duration: 0.693913
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE14.fold.3.training.txt
+Memory: 0.655887
+Duration: 4.85955
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE15.fold.3.training.txt
+Memory: 0.644825
+Duration: 0.281575
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE0.fold.4.training.txt
+Memory: 0.214825
+Duration: 0.539566
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE1.fold.4.training.txt
+Memory: 0.648347
+Duration: 0.354767
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE2.fold.4.training.txt
+Memory: 0.654612
+Duration: 0.176059
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE3.fold.4.training.txt
+Memory: 0.660601
+Duration: 0.153743
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE4.fold.4.training.txt
+Memory: 0.153286
+Duration: 0.163898
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE5.fold.4.training.txt
+Memory: 1.75756
+Duration: 0.955831
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE6.fold.4.training.txt
+Memory: 0.40042
+Duration: 0.516163
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE7.fold.4.training.txt
+Memory: 0.901299
+Duration: 0.35619
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE8.fold.4.training.txt
+Memory: 0.505795
+Duration: 0.574854
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE9.fold.4.training.txt
+Memory: 0.419161
+Duration: 1.79564
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE10.fold.4.training.txt
+Memory: 0.560356
+Duration: 0.493725
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE11.fold.4.training.txt
+Memory: 0.223065
+Duration: 2.07178
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE12.fold.4.training.txt
+Memory: 0.527643
+Duration: 0.192619
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE13.fold.4.training.txt
+Memory: 0.159495
+Duration: 0.687441
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE14.fold.4.training.txt
+Memory: 0.654917
+Duration: 4.4299
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE15.fold.4.training.txt
+Memory: 0.644527
+Duration: 0.285643
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE0.fold.5.training.txt
+Memory: 0.215054
+Duration: 0.528489
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE1.fold.5.training.txt
+Memory: 0.645765
+Duration: 0.322791
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE2.fold.5.training.txt
+Memory: 0.652319
+Duration: 0.177441
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE3.fold.5.training.txt
+Memory: 0.662152
+Duration: 0.156266
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE4.fold.5.training.txt
+Memory: 0.153133
+Duration: 0.158821
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE5.fold.5.training.txt
+Memory: 1.76336
+Duration: 1.16415
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE6.fold.5.training.txt
+Memory: 0.40019
+Duration: 0.531755
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE7.fold.5.training.txt
+Memory: 0.901971
+Duration: 0.320009
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE8.fold.5.training.txt
+Memory: 0.506742
+Duration: 0.499555
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE9.fold.5.training.txt
+Memory: 0.418978
+Duration: 1.40692
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE10.fold.5.training.txt
+Memory: 0.560088
+Duration: 0.517066
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE11.fold.5.training.txt
+Memory: 0.223187
+Duration: 1.99928
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE12.fold.5.training.txt
+Memory: 0.523877
+Duration: 0.200612
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE13.fold.5.training.txt
+Memory: 0.159373
+Duration: 0.698782
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE14.fold.5.training.txt
+Memory: 0.650256
+Duration: 4.18356
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE15.fold.5.training.txt
+Memory: 0.647835
+Duration: 0.230132
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE0.fold.6.training.txt
+Memory: 0.215665
+Duration: 0.571309
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE1.fold.6.training.txt
+Memory: 0.648385
+Duration: 0.331208
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE2.fold.6.training.txt
+Memory: 0.655025
+Duration: 0.222512
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE3.fold.6.training.txt
+Memory: 0.65821
+Duration: 0.142801
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE4.fold.6.training.txt
+Memory: 0.153233
+Duration: 0.163737
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE5.fold.6.training.txt
+Memory: 1.76495
+Duration: 1.1089
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE6.fold.6.training.txt
+Memory: 0.400558
+Duration: 0.640837
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE7.fold.6.training.txt
+Memory: 0.90058
+Duration: 0.308459
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE8.fold.6.training.txt
+Memory: 0.505307
+Duration: 0.5021
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE9.fold.6.training.txt
+Memory: 0.4168
+Duration: 1.66715
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE10.fold.6.training.txt
+Memory: 0.560463
+Duration: 0.483117
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE11.fold.6.training.txt
+Memory: 0.222959
+Duration: 2.05858
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE12.fold.6.training.txt
+Memory: 0.525023
+Duration: 0.180041
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE13.fold.6.training.txt
+Memory: 0.159381
+Duration: 0.69366
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE14.fold.6.training.txt
+Memory: 0.653091
+Duration: 3.80823
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE15.fold.6.training.txt
+Memory: 0.643954
+Duration: 0.254638
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE0.fold.7.training.txt
+Memory: 0.214756
+Duration: 0.524065
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE1.fold.7.training.txt
+Memory: 0.649615
+Duration: 0.339623
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE2.fold.7.training.txt
+Memory: 0.653358
+Duration: 0.183658
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE3.fold.7.training.txt
+Memory: 0.663321
+Duration: 0.164658
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE4.fold.7.training.txt
+Memory: 0.153248
+Duration: 0.153131
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE5.fold.7.training.txt
+Memory: 1.76427
+Duration: 0.80271
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE6.fold.7.training.txt
+Memory: 0.399174
+Duration: 0.57041
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE7.fold.7.training.txt
+Memory: 0.901306
+Duration: 0.349235
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE8.fold.7.training.txt
+Memory: 0.506422
+Duration: 0.482876
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE9.fold.7.training.txt
+Memory: 0.419406
+Duration: 1.386
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE10.fold.7.training.txt
+Memory: 0.560547
+Duration: 0.51356
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE11.fold.7.training.txt
+Memory: 0.223471
+Duration: 1.82748
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE12.fold.7.training.txt
+Memory: 0.528576
+Duration: 0.181076
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE13.fold.7.training.txt
+Memory: 0.159503
+Duration: 0.698051
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE14.fold.7.training.txt
+Memory: 0.652587
+Duration: 4.13744
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE15.fold.7.training.txt
+Memory: 0.641983
+Duration: 0.241932
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE0.fold.8.training.txt
+Memory: 0.215398
+Duration: 0.594373
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE1.fold.8.training.txt
+Memory: 0.647415
+Duration: 0.334128
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE2.fold.8.training.txt
+Memory: 0.652625
+Duration: 0.219446
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE3.fold.8.training.txt
+Memory: 0.660501
+Duration: 0.152624
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE4.fold.8.training.txt
+Memory: 0.153126
+Duration: 0.158137
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE5.fold.8.training.txt
+Memory: 1.75263
+Duration: 0.949485
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE6.fold.8.training.txt
+Memory: 0.400634
+Duration: 0.715998
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE7.fold.8.training.txt
+Memory: 0.901245
+Duration: 0.374037
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE8.fold.8.training.txt
+Memory: 0.505811
+Duration: 0.503045
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE9.fold.8.training.txt
+Memory: 0.417458
+Duration: 1.47629
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE10.fold.8.training.txt
+Memory: 0.560471
+Duration: 0.462152
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE11.fold.8.training.txt
+Memory: 0.223172
+Duration: 1.8263
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE12.fold.8.training.txt
+Memory: 0.524359
+Duration: 0.197705
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE13.fold.8.training.txt
+Memory: 0.159404
+Duration: 0.765406
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE14.fold.8.training.txt
+Memory: 0.653886
+Duration: 3.7899
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE15.fold.8.training.txt
+Memory: 0.64413
+Duration: 0.270157
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE0.fold.9.training.txt
+Memory: 0.214985
+Duration: 0.567123
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE1.fold.9.training.txt
+Memory: 0.646246
+Duration: 0.348779
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE2.fold.9.training.txt
+Memory: 0.650196
+Duration: 0.177116
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE3.fold.9.training.txt
+Memory: 0.650554
+Duration: 0.151904
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE4.fold.9.training.txt
+Memory: 0.15324
+Duration: 0.165746
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE5.fold.9.training.txt
+Memory: 1.75642
+Duration: 1.0629
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE6.fold.9.training.txt
+Memory: 0.400802
+Duration: 0.517005
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE7.fold.9.training.txt
+Memory: 0.901047
+Duration: 0.395996
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE8.fold.9.training.txt
+Memory: 0.507346
+Duration: 0.562928
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE9.fold.9.training.txt
+Memory: 0.417038
+Duration: 1.27117
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE10.fold.9.training.txt
+Memory: 0.56041
+Duration: 0.497213
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE11.fold.9.training.txt
+Memory: 0.223027
+Duration: 2.12695
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE12.fold.9.training.txt
+Memory: 0.526283
+Duration: 0.18276
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE13.fold.9.training.txt
+Memory: 0.159442
+Duration: 0.715326
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE14.fold.9.training.txt
+Memory: 0.653297
+Duration: 3.7787
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE15.fold.9.training.txt
+Memory: 0.646406
+Duration: 0.264228
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE0.fold.10.training.txt
+Memory: 0.215046
+Duration: 0.554314
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE1.fold.10.training.txt
+Memory: 0.647522
+Duration: 0.323179
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE2.fold.10.training.txt
+Memory: 0.653871
+Duration: 0.174854
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE3.fold.10.training.txt
+Memory: 0.66135
+Duration: 0.137829
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE4.fold.10.training.txt
+Memory: 0.153454
+Duration: 0.152085
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE5.fold.10.training.txt
+Memory: 1.75401
+Duration: 1.01148
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE6.fold.10.training.txt
+Memory: 0.402368
+Duration: 0.650669
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE7.fold.10.training.txt
+Memory: 0.900978
+Duration: 0.339746
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE8.fold.10.training.txt
+Memory: 0.504818
+Duration: 0.51437
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE9.fold.10.training.txt
+Memory: 0.42224
+Duration: 1.36156
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE10.fold.10.training.txt
+Memory: 0.560707
+Duration: 0.509717
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE11.fold.10.training.txt
+Memory: 0.223394
+Duration: 2.03326
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE12.fold.10.training.txt
+Memory: 0.527773
+Duration: 0.176347
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE13.fold.10.training.txt
+Memory: 0.159434
+Duration: 0.768721
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE14.fold.10.training.txt
+Memory: 0.656773
+Duration: 3.65788
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE15.fold.10.training.txt
+Memory: 0.643435
+Duration: 0.28133
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE0.fold.11.training.txt
+Memory: 0.215015
+Duration: 0.544661
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE1.fold.11.training.txt
+Memory: 0.650249
+Duration: 0.346754
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE2.fold.11.training.txt
+Memory: 0.651861
+Duration: 0.249491
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE3.fold.11.training.txt
+Memory: 0.656659
+Duration: 0.142291
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE4.fold.11.training.txt
+Memory: 0.153217
+Duration: 0.169908
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE5.fold.11.training.txt
+Memory: 1.75978
+Duration: 0.895232
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE6.fold.11.training.txt
+Memory: 0.400558
+Duration: 0.670706
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE7.fold.11.training.txt
+Memory: 0.90058
+Duration: 0.35349
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE8.fold.11.training.txt
+Memory: 0.506704
+Duration: 0.510791
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE9.fold.11.training.txt
+Memory: 0.419871
+Duration: 1.30045
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE10.fold.11.training.txt
+Memory: 0.560249
+Duration: 0.48827
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE11.fold.11.training.txt
+Memory: 0.223425
+Duration: 1.95987
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE12.fold.11.training.txt
+Memory: 0.52775
+Duration: 0.200981
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE13.fold.11.training.txt
+Memory: 0.159427
+Duration: 0.691844
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE14.fold.11.training.txt
+Memory: 0.653313
+Duration: 4.40894
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE15.fold.11.training.txt
+Memory: 0.64536
+Duration: 0.256422
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE0.fold.12.training.txt
+Memory: 0.21513
+Duration: 0.534362
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE1.fold.12.training.txt
+Memory: 0.650257
+Duration: 0.352897
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE2.fold.12.training.txt
+Memory: 0.652037
+Duration: 0.193184
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE3.fold.12.training.txt
+Memory: 0.659386
+Duration: 0.13299
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE4.fold.12.training.txt
+Memory: 0.153316
+Duration: 0.167627
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE5.fold.12.training.txt
+Memory: 1.75543
+Duration: 1.03107
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE6.fold.12.training.txt
+Memory: 0.401642
+Duration: 0.550266
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE7.fold.12.training.txt
+Memory: 0.901268
+Duration: 0.349592
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE8.fold.12.training.txt
+Memory: 0.507178
+Duration: 0.593766
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE9.fold.12.training.txt
+Memory: 0.419589
+Duration: 1.47686
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE10.fold.12.training.txt
+Memory: 0.560065
+Duration: 0.533299
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE11.fold.12.training.txt
+Memory: 0.213437
+Duration: 2.1114
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE12.fold.12.training.txt
+Memory: 0.525879
+Duration: 0.183111
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE13.fold.12.training.txt
+Memory: 0.159472
+Duration: 0.79663
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE14.fold.12.training.txt
+Memory: 0.655054
+Duration: 4.03244
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE15.fold.12.training.txt
+Memory: 0.643038
+Duration: 0.268115
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE0.fold.13.training.txt
+Memory: 0.215054
+Duration: 0.565428
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE1.fold.13.training.txt
+Memory: 0.649202
+Duration: 0.330855
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE2.fold.13.training.txt
+Memory: 0.65452
+Duration: 0.177208
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE3.fold.13.training.txt
+Memory: 0.662702
+Duration: 0.166916
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE4.fold.13.training.txt
+Memory: 0.14313
+Duration: 0.169341
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE5.fold.13.training.txt
+Memory: 1.76131
+Duration: 0.85385
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE6.fold.13.training.txt
+Memory: 0.396432
+Duration: 0.52832
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE7.fold.13.training.txt
+Memory: 0.900955
+Duration: 0.361792
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE8.fold.13.training.txt
+Memory: 0.506681
+Duration: 0.473231
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE9.fold.13.training.txt
+Memory: 0.415548
+Duration: 1.5268
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE10.fold.13.training.txt
+Memory: 0.56041
+Duration: 0.515415
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE11.fold.13.training.txt
+Memory: 0.223027
+Duration: 1.96718
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE12.fold.13.training.txt
+Memory: 0.528041
+Duration: 0.1845
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE13.fold.13.training.txt
+Memory: 0.159396
+Duration: 0.688929
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE14.fold.13.training.txt
+Memory: 0.651035
+Duration: 4.06875
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/SPICE15.fold.13.training.txt
+Memory: 0.643695
+Duration: 0.251827
