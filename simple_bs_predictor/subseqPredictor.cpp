@@ -49,6 +49,7 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 	//constract a bit-vector of size L (from BWT)
 
 	//find all the ranges with neighborExpansion
+	vector<pair<int, int>> retrieved_ranges;
 
 	int rangeStart = - 1, rangeEnd = -1;
 	set<int> firstItemPossibleReplacements, secondItemPossibleReplacements;
@@ -58,6 +59,7 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 		
 		vector<int> exclude_query_vector(size);
 		copy(query, query + size, exclude_query_vector.begin());
+
 
 		if (errors > 1 && query[1] == -2){
 		// 	bSBWT->backwardError(query, size, secondItemPossibleReplacements);
@@ -75,17 +77,24 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 		// 			// }
 		// 			// cout << endl;
 
+
 					exclude_query_vector[1] = 99999; // -2 99999 a b c
 					if (bSBWT->searchQuery(&(exclude_query_vector[1]), size - 1, rangeStart, rangeEnd) != -1){
 			    		exclude_bs_ranges.push_back(make_pair(rangeStart, rangeEnd));
 			    	}
 
 					
+
+					
 					exclude_query_vector[0] = 99999;
 					exclude_query_vector[1] = -2; // 99999 -2 a b c
-					bSBWT->getRange(exclude_query_vector[0], rangeStart, rangeEnd);
-					bSBWT->neighborExpansion(exclude_query_vector, 1, rangeStart, rangeEnd, exclude_bs_ranges);
-
+					retrieved_ranges = cashed_ranges[exclude_query_vector];
+					if (retrieved_ranges.size() == 0){
+						bSBWT->getRange(exclude_query_vector[0], rangeStart, rangeEnd);
+						bSBWT->neighborExpansion(exclude_query_vector, 1, rangeStart, rangeEnd, retrieved_ranges);
+						cashed_ranges[exclude_query_vector] = retrieved_ranges;
+					}
+					exclude_bs_ranges.insert(exclude_bs_ranges.end(), retrieved_ranges.begin(), retrieved_ranges.end());
 
 
 					int finalStartRange, finalEndRange;
@@ -108,12 +117,22 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 			copy(&(query[1]), query + size, query_vector.begin());
 		    if (errors > 1){
 
-		    	bSBWT->getRange(exclude_query_vector[0], rangeStart, rangeEnd);
-				bSBWT->neighborExpansion(exclude_query_vector, 1, rangeStart, rangeEnd, exclude_bs_ranges);
-				
+				if (cashed_ranges[exclude_query_vector].size() == 0) {
+					bSBWT->getRange(exclude_query_vector[0], rangeStart, rangeEnd);
+					bSBWT->neighborExpansion(exclude_query_vector, 1, rangeStart, rangeEnd, exclude_bs_ranges);
+					cashed_ranges[exclude_query_vector] = exclude_bs_ranges;
+				}else{
+					exclude_bs_ranges = cashed_ranges[exclude_query_vector];
+				}
 
-		    	bSBWT->getRange(query[1], rangeStart, rangeEnd); // -2 a b  -2 c
-		    	bSBWT->neighborExpansion(query_vector, 1, rangeStart, rangeEnd, bs_ranges); // a b -2 c
+				if (cashed_ranges[query_vector].size() == 0){
+					bSBWT->getRange(query[1], rangeStart, rangeEnd); // -2 a b  -2 c
+		    		bSBWT->neighborExpansion(query_vector, 1, rangeStart, rangeEnd, bs_ranges); // a b -2 c
+		    		cashed_ranges[query_vector] = bs_ranges;
+				}else{
+					bs_ranges = cashed_ranges[query_vector];
+				}
+		    	
 		    }else{
 				if (bSBWT->searchQuery(&(exclude_query_vector[0]), size, rangeStart, rangeEnd) != -1){
 		    		exclude_bs_ranges.push_back(make_pair(rangeStart, rangeEnd));
@@ -159,7 +178,14 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 		copy(query, query + size, query_vector.begin());
 	    if (errors > 0){
 	    	bSBWT->getRange(query[0], rangeStart, rangeEnd);
-	    	if (rangeStart != -1 && rangeEnd != -1) bSBWT->neighborExpansion(query_vector, 1, rangeStart, rangeEnd, bs_ranges);
+	    	if (rangeStart != -1 && rangeEnd != -1){
+	    		if (cashed_ranges[query_vector].size() == 0){
+	    			bSBWT->neighborExpansion(query_vector, 1, rangeStart, rangeEnd, bs_ranges);
+	    			cashed_ranges[query_vector] = bs_ranges;
+	    		}else{
+	    			bs_ranges = cashed_ranges[query_vector];
+	    		}
+	    	}
 	    }else{
 
 	  //   	cout << "...Current query: ";
@@ -242,6 +268,7 @@ int subseqPredictor::getBest(){
 
 int subseqPredictor::start(int* query, int size){ // this function will manage deletion of the first items.
 	consequentBits = new bit_vector(bSBWT->L.size(), 0); // I have to delete this at the end of this function or before returning
+	cashed_ranges.clear();
 	stop = false;
 	prediction = -1; score = -1.0;
 	predictionCount = 0;

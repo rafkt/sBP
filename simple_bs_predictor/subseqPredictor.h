@@ -17,6 +17,7 @@
 using namespace std;
 
 typedef map<int, double> countTable;
+typedef map<vector<int>, vector<pair<int, int>>> cashed_ranges_map;
 
 class subseqPredictor{
 public:
@@ -39,4 +40,5 @@ private:
     void generateSubqueries(int*, int);
     int predictionCount;
 	bool threashold;
+	cashed_ranges_map cashed_ranges;
 };
