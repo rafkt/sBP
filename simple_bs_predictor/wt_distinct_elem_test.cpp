@@ -21,6 +21,9 @@ int main(){
 	wt_int<> L;
 
 	int_vector<> v = {3,2,1,0,2,1,3,4,1,1,1,3,2,3}; // 0,2,1,3
+	//int_vector definition: int_vector<>(n,x,l), with n equals size, x default integer value, l width of integer (has no effect for w > 0).
+	//so for my case: int_vetor<>(L.size(), 0, L.size()) LplusOne
+	//access with: LplusOne[index]
 
 	construct_im(L, v);
 
@@ -41,6 +44,15 @@ int main(){
 	for (int i = 0 ; i < cs.size(); i ++){
 		cout << rank_c_j[i] << endl;
 	}
+
+	int_vector<>* LplusOne = new int_vector<>(L.size(), 0, L.size());
+
+	(*LplusOne)[3] = L.size() - 1;
+
+	for(uint64_t i : *LplusOne) cout << i << " ";
+	cout << endl;
+
+	delete LplusOne;
 
 	return 0;
 }
