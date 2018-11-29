@@ -30,6 +30,7 @@ typedef map<int, int> counterMap;
 class backwardsSearchBWT{
 public:
     wt_int<> L, alphabet;
+    int_vector<>* LplusOne;
     int_vector<> alphabetCounters;
     bool stop;
     backwardsSearchBWT(const string);
@@ -39,12 +40,14 @@ public:
     int searchQuery(int*, int, int&, int&);
     int search(int, int, int, int&, int&);
     int backwardError(int* xy, int, set<int>&);
-    int fowawrdTraversal(int);
+    int fowawrdTraversal(int, int&);
     int backwardTraversal(int index, int&);
     void getRange(int, int&, int&);
     void neighborExpansion(vector<int>, int, int, int, vector<pair<int, int>>&);
     void getConsequents(vector<int> xy, int index, int rangeStart, int rangeEnd, int length, int d, vector<vector<int>>&, int&, sdsl::bit_vector*);
+    void getQuickConsequents(int, int, vector<vector<int>>&, int&, sdsl::bit_vector*);
     counterMap scan(int, int);
+    vector<uint64_t> wtIntervalScan(int, int, uint64_t&);
     //int* findRange(int*, int);
 	int seqNumber;
     //int countRange(int*, int, int = 0, int = 0);
@@ -56,5 +59,6 @@ private:
     
     //int subStringOccurences( const string &, const string &);
     myMap alphabet_tmp;
+
     int finalStartIndex, finalEndIndex, finalStartIndexPermuted, finalEndIndexPermuted;
 };

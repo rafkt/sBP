@@ -18,7 +18,7 @@
 using namespace suffixArray;
 
 float backwardsSearchBWT::sizeInMegabytes(){
-    return size_in_mega_bytes(L) + size_in_mega_bytes(alphabet) + size_in_mega_bytes(alphabetCounters);
+    return size_in_mega_bytes(L) + size_in_mega_bytes(alphabet) + size_in_mega_bytes(alphabetCounters) + size_in_mega_bytes(*LplusOne);
 }
 
 
@@ -56,6 +56,15 @@ backwardsSearchBWT::backwardsSearchBWT(const string filename){
     util::bit_compress(this->alphabetCounters);
     assert(this->alphabetCounters.size() == this->L.sigma);
     assert(this->L.sigma == this->alphabet.size());
+
+    LplusOne = new int_vector<>(L.size(), 0, L.size());
+    int newRangeStart = -1;
+    for (int i = 0; i < L.size(); i++){
+        int return_val = fowawrdTraversal(i, newRangeStart);
+        assert(return_val != -1);
+        (*LplusOne)[i] = newRangeStart;
+    }
+
     clearALL();
     deleteMap();
 }
@@ -70,6 +79,7 @@ void backwardsSearchBWT::deleteMap(){
 }
 
 backwardsSearchBWT::~backwardsSearchBWT(){
+    delete LplusOne;
     deleteMap();
 }
 
@@ -167,11 +177,12 @@ int backwardsSearchBWT::search(int c, int rangeStart, int rangeEnd, int& newRang
     }else return 0; //no valid input
 }
 
-int backwardsSearchBWT::fowawrdTraversal(int index){
+int backwardsSearchBWT::fowawrdTraversal(int index, int& newRangeStart){
     if (index < 0) return -1;
     int letterPos = alphabet.select(1, L[index]);
     int range2Add = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
     int rangeStart = L.rank(index + 1, L[index]) + range2Add - 1;
+    newRangeStart = rangeStart;
     return L[rangeStart]; 
 }
 
@@ -274,17 +285,22 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
     }else{
         if (xy[index] == -2){
             counterMap res = scan(rangeStart, rangeEnd);
+            //uint64_t quantity;
+            //vector<uint64_t> range_distinct_elements = wtIntervalScan(rangeStart, rangeEnd, quantity);
+
             // for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
             //     cout << mapIt->second << " ";
             // }
             // cout << endl;
             for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
+            //for (uint64_t it = 0; it < quantity; it++)
                 if (mapIt->first == 99999) {/*cout << "No 99999 expansion " << endl;*/ continue;}
+                //if (range_distinct_elements[it] == 99999){
                 //cout << mapIt->second << endl;
                 xy[index] = mapIt->first;
                 // for (int item : xy) cout << item << " ";
                 // cout << ">" << endl;
-                if (search(mapIt->first, rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) {/*cout << "NOT FOUND" << endl;*/ return;}
+                if (search(/*range_distinct_elements[it]*/mapIt->first, rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) {/*cout << "NOT FOUND" << endl;*/ return;}
                 //rangeStart = newRangeStart;
                 //rangeEnd = newRangeEnd;
                 // if (index + 1 == xy.size() - 1) {
@@ -351,6 +367,32 @@ void backwardsSearchBWT::getConsequents(vector<int> xy, int index, int rangeStar
         }
     }
     return;
+}
+
+
+void backwardsSearchBWT::getQuickConsequents(int rangeStart, int rangeEnd, vector<vector<int>>& consequentList, int& predictionCount, sdsl::bit_vector* consequentBits){//size should be over or equal to 2
+    for (int i = rangeStart; i <= rangeEnd; i++){
+        if ((*consequentBits)[i] == 1) continue;
+        (*consequentBits)[i] = 1;
+        vector<int> conseq;
+        if (L[i] != 99999){
+            conseq.push_back(L[i]);
+            if (L[(*LplusOne)[i]] != 99999) conseq.push_back(L[(*LplusOne)[i]]);
+            consequentList.push_back(conseq);
+            predictionCount++;
+        }
+    }
+    return;
+}
+
+vector<uint64_t> backwardsSearchBWT::wtIntervalScan(int rangeStart, int rangeEnd, uint64_t& quantity){
+    //uint64_t quantity;                          // quantity of characters in interval
+    std::vector<uint64_t> cs(L.sigma);      // list of characters in the interval
+    std::vector<uint64_t> rank_c_i(L.sigma);    // number of occurrence of character in [0 .. i-1]
+    std::vector<uint64_t> rank_c_j(L.sigma);    // number of occurrence of character in [0 .. j-1]
+
+    interval_symbols(L, rangeStart, rangeEnd + 1, quantity, cs, rank_c_i, rank_c_j);
+    return cs;
 }
 
 counterMap backwardsSearchBWT::scan(int rangeStart, int rangeEnd){
