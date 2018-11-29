@@ -1,3 +1,6 @@
+//Compile with:
+//g++ -std=c++11 -O3 -g -DNDEBUG -I ~/include -L ~/lib wt_distinct_elem_test.cpp -lsdsl -ldivsufsort -ldivsufsort64
+
 #include <sdsl/wavelet_trees.hpp>
 #include <sdsl/int_vector.hpp>
 #include <sdsl/wt_helper.hpp>
