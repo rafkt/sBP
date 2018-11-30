@@ -47,7 +47,6 @@ public:
     void getConsequents(vector<int> xy, int index, int rangeStart, int rangeEnd, int length, int d, vector<vector<int>>&, int&, sdsl::bit_vector*);
     void getQuickConsequents(int, int, vector<vector<int>>&, int&, sdsl::bit_vector*);
     counterMap scan(int, int);
-    vector<uint64_t> wtIntervalScan(int, int, uint64_t&);
     //int* findRange(int*, int);
 	int seqNumber;
     //int countRange(int*, int, int = 0, int = 0);

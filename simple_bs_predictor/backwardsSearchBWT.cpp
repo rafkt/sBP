@@ -284,23 +284,27 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
         return;
     }else{
         if (xy[index] == -2){
-            counterMap res = scan(rangeStart, rangeEnd);
-            //uint64_t quantity;
-            //vector<uint64_t> range_distinct_elements = wtIntervalScan(rangeStart, rangeEnd, quantity);
+            //counterMap res = scan(rangeStart, rangeEnd);
+            
+            uint64_t quantity;
+            std::vector<uint64_t> cs(L.sigma);      // list of characters in the interval
+            std::vector<uint64_t> rank_c_i(L.sigma);    // number of occurrence of character in [0 .. i-1]
+            std::vector<uint64_t> rank_c_j(L.sigma);    // number of occurrence of character in [0 .. j-1]
+            interval_symbols(L, rangeStart, rangeEnd + 1, quantity, cs, rank_c_i, rank_c_j);
 
             // for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
             //     cout << mapIt->second << " ";
             // }
             // cout << endl;
-            for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
-            //for (uint64_t it = 0; it < quantity; it++)
-                if (mapIt->first == 99999) {/*cout << "No 99999 expansion " << endl;*/ continue;}
-                //if (range_distinct_elements[it] == 99999){
+            //for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
+            for (uint64_t it = 0; it < quantity; it++)
+                //if (mapIt->first == 99999) {/*cout << "No 99999 expansion " << endl;*/ continue;}
+                if (cs[it] == 99999){
                 //cout << mapIt->second << endl;
-                xy[index] = mapIt->first;
+                xy[index] = cs[it];//mapIt->first;
                 // for (int item : xy) cout << item << " ";
                 // cout << ">" << endl;
-                if (search(/*range_distinct_elements[it]*/mapIt->first, rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) {/*cout << "NOT FOUND" << endl;*/ return;}
+                if (search(cs[it]/*mapIt->first*/, rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) {/*cout << "NOT FOUND" << endl;*/ return;}
                 //rangeStart = newRangeStart;
                 //rangeEnd = newRangeEnd;
                 // if (index + 1 == xy.size() - 1) {
@@ -383,16 +387,6 @@ void backwardsSearchBWT::getQuickConsequents(int rangeStart, int rangeEnd, vecto
         }
     }
     return;
-}
-
-vector<uint64_t> backwardsSearchBWT::wtIntervalScan(int rangeStart, int rangeEnd, uint64_t& quantity){
-    //uint64_t quantity;                          // quantity of characters in interval
-    std::vector<uint64_t> cs(L.sigma);      // list of characters in the interval
-    std::vector<uint64_t> rank_c_i(L.sigma);    // number of occurrence of character in [0 .. i-1]
-    std::vector<uint64_t> rank_c_j(L.sigma);    // number of occurrence of character in [0 .. j-1]
-
-    interval_symbols(L, rangeStart, rangeEnd + 1, quantity, cs, rank_c_i, rank_c_j);
-    return cs;
 }
 
 counterMap backwardsSearchBWT::scan(int rangeStart, int rangeEnd){
