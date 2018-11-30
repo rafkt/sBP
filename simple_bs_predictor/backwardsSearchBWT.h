@@ -14,6 +14,7 @@
 
 #include <sdsl/wavelet_trees.hpp>
 #include <sdsl/bit_vectors.hpp>
+#include <sdsl/wt_helper.hpp>
 
 using namespace std;
 using namespace sdsl;

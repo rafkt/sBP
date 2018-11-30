@@ -296,15 +296,22 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
             //     cout << mapIt->second << " ";
             // }
             // cout << endl;
+            // cout << " cs: ";
+            // for (int it = quantity - 1; it > -1; it--)cout << cs[it] << " ";
+            // cout << endl;
+            // cout << " map: ";
+            // for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) cout << mapIt->first << " ";
+            // cout << endl;
+
             //for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
-            for (uint64_t it = 0; it < quantity; it++)
+            for (int it = quantity - 1; it > -1; it--){
                 //if (mapIt->first == 99999) {/*cout << "No 99999 expansion " << endl;*/ continue;}
-                if (cs[it] == 99999){
+                if (cs[it] == 99999){ continue; }
                 //cout << mapIt->second << endl;
-                xy[index] = cs[it];//mapIt->first;
+                xy[index] = cs[it]; //mapIt->first;
                 // for (int item : xy) cout << item << " ";
                 // cout << ">" << endl;
-                if (search(cs[it]/*mapIt->first*/, rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) {/*cout << "NOT FOUND" << endl;*/ return;}
+                if (search(cs[it] /*mapIt->first*/, rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) {/*cout << "NOT FOUND" << endl;*/ return;}
                 //rangeStart = newRangeStart;
                 //rangeEnd = newRangeEnd;
                 // if (index + 1 == xy.size() - 1) {
