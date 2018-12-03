@@ -18,7 +18,7 @@
 using namespace suffixArray;
 
 float backwardsSearchBWT::sizeInMegabytes(){
-    return size_in_mega_bytes(L) + size_in_mega_bytes(alphabet) + size_in_mega_bytes(alphabetCounters) + size_in_mega_bytes(*LplusOne);
+    return size_in_mega_bytes(L) + size_in_mega_bytes(alphabet) + size_in_mega_bytes(alphabetCounters) /*+ size_in_mega_bytes(*LplusOne)*/;
 }
 
 
