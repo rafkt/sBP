@@ -385,6 +385,7 @@ void backwardsSearchBWT::getQuickConsequents(int rangeStart, int rangeEnd, vecto
     for (int i = rangeStart; i <= rangeEnd; i++){
         if ((*consequentBits)[i] == 1) continue;
         (*consequentBits)[i] = 1;
+        (*consequentBits)[(*LplusOne)[i]] = 1;
         vector<int> conseq;
         if (L[i] != 99999){
             conseq.push_back(L[i]);
