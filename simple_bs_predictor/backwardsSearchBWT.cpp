@@ -57,8 +57,8 @@ backwardsSearchBWT::backwardsSearchBWT(const string filename){
     assert(this->alphabetCounters.size() == this->L.sigma);
     assert(this->L.sigma == this->alphabet.size());
 
-    LplusOne = new int_vector<>(L.size(), 0, L.size());
-    int newRangeStart = -1;
+    LplusOne = new int_vector<>(L.size(), 0, 64);
+    int newRangeStart = L.size();
     for (int i = 0; i < L.size(); i++){
         int return_val = fowawrdTraversal(i, newRangeStart);
         assert(return_val != -1);
@@ -385,10 +385,12 @@ void backwardsSearchBWT::getQuickConsequents(int rangeStart, int rangeEnd, vecto
     for (int i = rangeStart; i <= rangeEnd; i++){
         if ((*consequentBits)[i] == 1) continue;
         (*consequentBits)[i] = 1;
-        (*consequentBits)[(*LplusOne)[i]] = 1;
         vector<int> conseq;
         if (L[i] != 99999){
             conseq.push_back(L[i]);
+
+            (*consequentBits)[(*LplusOne)[i]] = 1;
+
             if (L[(*LplusOne)[i]] != 99999) conseq.push_back(L[(*LplusOne)[i]]);
             consequentList.push_back(conseq);
             predictionCount++;
