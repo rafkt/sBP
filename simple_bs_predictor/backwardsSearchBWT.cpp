@@ -286,11 +286,11 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
         if (xy[index] == -2){
             //counterMap res = scan(rangeStart, rangeEnd);
             
-            uint64_t quantity;
+            uint64_t quantity = 0;
             std::vector<uint64_t> cs(L.sigma);      // list of characters in the interval
             std::vector<uint64_t> rank_c_i(L.sigma);    // number of occurrence of character in [0 .. i-1]
             std::vector<uint64_t> rank_c_j(L.sigma);    // number of occurrence of character in [0 .. j-1]
-            interval_symbols(L, rangeStart, rangeEnd + 1, quantity, cs, rank_c_i, rank_c_j);
+            if (rangeStart >= 0 || rangeEnd >= 0) interval_symbols(L, rangeStart, rangeEnd + 1, quantity, cs, rank_c_i, rank_c_j);
 
             // for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
             //     cout << mapIt->second << " ";
