@@ -397,6 +397,26 @@ void backwardsSearchBWT::getQuickConsequents(int rangeStart, int rangeEnd, vecto
     return;
 }
 
+void backwardsSearchBWT::getQuickConsequents_noLplus(int rangeStart, int rangeEnd, vector<vector<int>>& consequentList, int& predictionCount, sdsl::bit_vector* consequentBits){//size should be over or equal to 2
+    for (int i = rangeStart; i <= rangeEnd; i++){
+        if ((*consequentBits)[i] == 1) continue;
+        (*consequentBits)[i] = 1;
+        vector<int> conseq;
+        if (L[i] != 99999){
+            conseq.push_back(L[i]);
+
+            int LplusOneIndex = -1;
+            fowawrdTraversal(i, LplusOneIndex);
+            (*consequentBits)[LplusOneIndex] = 1;
+            
+            if (L[LplusOneIndex] != 99999) conseq.push_back(L[LplusOneIndex]);
+            consequentList.push_back(conseq);
+            predictionCount++;
+        }
+    }
+    return;
+}
+
 counterMap backwardsSearchBWT::scan(int rangeStart, int rangeEnd){
     counterMap mostFrequent;
     if (rangeStart < 0 || rangeEnd < 0) return mostFrequent;

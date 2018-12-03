@@ -165,7 +165,7 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 	    for (pair<int, int> it : bs_ranges){
 	    	vector<int> tmp;
 	    	//bSBWT->getConsequents(tmp, 0, it.first, it.second, 2, -1, consequentList, predictionCount, consequentBits);
-	    	bSBWT->getQuickConsequents(it.first, it.second, consequentList, predictionCount, consequentBits);
+	    	bSBWT->getQuickConsequents_noLplus(it.first, it.second, consequentList, predictionCount, consequentBits);
 	    }
 	    //put all ranges into CT
 	    for (vector<int> consequent : consequentList) push(consequent, errors, initialLength, size);
@@ -207,7 +207,7 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 	    for (pair<int, int> it : bs_ranges){
 	    	vector<int> tmp;
 	    	//bSBWT->getConsequents(tmp, 0, it.first, it.second, 2, -1, consequentList, predictionCount, consequentBits);
-	    	bSBWT->getQuickConsequents(it.first, it.second, consequentList, predictionCount, consequentBits);
+	    	bSBWT->getQuickConsequents_noLplus(it.first, it.second, consequentList, predictionCount, consequentBits);
 	    }
 	    //put all ranges into CT
 	    for (vector<int> consequent : consequentList) push(consequent, errors, initialLength, size);
