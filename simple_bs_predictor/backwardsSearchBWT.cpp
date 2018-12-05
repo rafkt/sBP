@@ -17,6 +17,9 @@
 
 using namespace suffixArray;
 
+int scan_average_range_length = 0;
+int ranges_added = 0;
+
 float backwardsSearchBWT::sizeInMegabytes(){
     return size_in_mega_bytes(L) + size_in_mega_bytes(alphabet) + size_in_mega_bytes(alphabetCounters) /*+ size_in_mega_bytes(*LplusOne)*/;
 }
@@ -81,6 +84,8 @@ void backwardsSearchBWT::deleteMap(){
 backwardsSearchBWT::~backwardsSearchBWT(){
     delete LplusOne;
     deleteMap();
+    
+    cout << "Average Length: " << scan_average_range_length / (float)ranges_added << endl;
 }
 
 // int* backwardsSearchBWT::findRange(int* query, int size){
@@ -291,6 +296,9 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
             std::vector<uint64_t> rank_c_i(L.sigma);    // number of occurrence of character in [0 .. i-1]
             std::vector<uint64_t> rank_c_j(L.sigma);    // number of occurrence of character in [0 .. j-1]
             if (rangeStart >= 0 || rangeEnd >= 0) interval_symbols(L, rangeStart, rangeEnd + 1, quantity, cs, rank_c_i, rank_c_j);
+            
+            scan_average_range_length += rangeEnd + 1 - rangeStart;
+            ranges_added++;
 
             // for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
             //     cout << mapIt->second << " ";
