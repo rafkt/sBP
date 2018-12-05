@@ -132,7 +132,7 @@ int main(int argc, const char * argv[])
         // }
         // for (int i : finalQuery) cout << i << " ";
         // cout << endl;
-        cout << pr->start(&query[0], query.size()) << endl;
+        pr->start(&query[0], query.size());
         //break;
     }
     // auto end = clock();

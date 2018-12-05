@@ -298,7 +298,10 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
             if (rangeStart >= 0 || rangeEnd >= 0) interval_symbols(L, rangeStart, rangeEnd + 1, quantity, cs, rank_c_i, rank_c_j);
             
             scan_average_range_length += rangeEnd + 1 - rangeStart;
+            cout << rangeEnd + 1 - rangeStart << endl;
+
             ranges_added++;
+            cout << "-->" << ranges_added << endl;
 
             // for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
             //     cout << mapIt->second << " ";
