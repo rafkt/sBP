@@ -15,6 +15,8 @@
 
 #define MAXPREDICTIONCOUNT 10
 
+int number_of_fow_searches;
+
 float subseqPredictor::get_memory(){
 	return bSBWT->sizeInMegabytes();
 }
@@ -161,11 +163,12 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 
 
 		vector<vector<int>> consequentList;
+
 	    //cout << " : Ranges : " << bs_ranges.size() << endl;
 	    for (pair<int, int> it : bs_ranges){
 	    	vector<int> tmp;
 	    	//bSBWT->getConsequents(tmp, 0, it.first, it.second, 2, -1, consequentList, predictionCount, consequentBits);
-	    	bSBWT->getQuickConsequents_noLplus(it.first, it.second, consequentList, predictionCount, consequentBits);
+	    	bSBWT->getQuickConsequents_noLplus(it.first, it.second, consequentList, predictionCount, consequentBits, number_of_fow_searches, conseq_visits);
 	    }
 	    //put all ranges into CT
 	    for (vector<int> consequent : consequentList) push(consequent, errors, initialLength, size);
@@ -204,10 +207,11 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 	    }
 	    //cout << ": Ranges : " << bs_ranges.size() << endl;
 	    vector<vector<int>> consequentList;
+
 	    for (pair<int, int> it : bs_ranges){
 	    	vector<int> tmp;
 	    	//bSBWT->getConsequents(tmp, 0, it.first, it.second, 2, -1, consequentList, predictionCount, consequentBits);
-	    	bSBWT->getQuickConsequents_noLplus(it.first, it.second, consequentList, predictionCount, consequentBits);
+	    	bSBWT->getQuickConsequents_noLplus(it.first, it.second, consequentList, predictionCount, consequentBits, number_of_fow_searches, conseq_visits);
 	    }
 	    //put all ranges into CT
 	    for (vector<int> consequent : consequentList) push(consequent, errors, initialLength, size);
@@ -268,9 +272,11 @@ int subseqPredictor::getBest(){
 	return prediction;
 }
 
-int subseqPredictor::start(int* query, int size){ // this function will manage deletion of the first items.
+int subseqPredictor::start(int* query, int size, int& conseq_visits_more_than_one, vector<int>* conseq_visits){ // this function will manage deletion of the first items.
 	consequentBits = new bit_vector(bSBWT->L.size(), 0); // I have to delete this at the end of this function or before returning
 	cashed_ranges.clear();
+	this->conseq_visits = conseq_visits;
+	number_of_fow_searches = 0;
 	stop = false;
 	prediction = -1; score = -1.0;
 	predictionCount = 0;
@@ -278,16 +284,17 @@ int subseqPredictor::start(int* query, int size){ // this function will manage d
 	if (size == 2) {
 		predict(query, size, MAXPREDICTIONCOUNT, size, 0);
 		if (!stop) generateSubqueries(query, size);
-	} else if (size < 2) return getBest();
+	} else if (size < 2) return number_of_fow_searches;
 	for (int k = 0; k < size - 1; k++) {
 		predictionCount = 0;
 		predict(&query[k], size - k, MAXPREDICTIONCOUNT, size, 0);
-		if (stop) {delete consequentBits; return getBest();}
+		if (stop) {delete consequentBits; return number_of_fow_searches;}
 		generateSubqueries(&query[k], size - k); 
-		if (stop) {delete consequentBits; return getBest();}
+		if (stop) {delete consequentBits; return number_of_fow_searches;}
 	}
 	delete consequentBits;
-	return getBest();
+
+	return number_of_fow_searches;
 }
 
 void subseqPredictor::generateSubqueries(int* query, int size){

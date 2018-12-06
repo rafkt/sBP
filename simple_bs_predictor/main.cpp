@@ -118,6 +118,11 @@ int main(int argc, const char * argv[])
     vector<vector<int>> testQueries = readTestQueries(argv[2]);
     subseqPredictor* pr = new subseqPredictor(argv[1]);
 
+    int sum = 0;
+    int visits = 0;
+    vector<int>* conseq_visits;
+    cout << "..." << endl;
+
     //auto begin = clock();
     for(vector<int> query : testQueries){
        // if (query.size() < 2) {cout << "short query; do we except this?" << endl; continue;}
@@ -132,9 +137,20 @@ int main(int argc, const char * argv[])
         // }
         // for (int i : finalQuery) cout << i << " ";
         // cout << endl;
-        cout << pr->start(&query[0], query.size()) << endl;
+        conseq_visits = new vector<int>(pr->bSBWT->L.size(), 0);
+        int returnVal = pr->start(&query[0], query.size(), visits, conseq_visits);
+        if (returnVal >= pr->bSBWT->L.size()) cout << "Yes" << endl;
+        sum += returnVal;
+        for (int i : *conseq_visits) 
+            if (i > 1)
+                visits++;
+        //cout << endl;//if (i > 0) conseq_visits_more_than_one++;
+        delete conseq_visits;
+
         //break;
     }
+    cout << "..." << endl;
+    cout << sum / (float) testQueries.size() << " : " << visits / (float) testQueries.size() << endl;
     // auto end = clock();
     // auto duration = ((double)(end - begin))/CLOCKS_PER_SEC;
     // cout << argv[1] << endl;

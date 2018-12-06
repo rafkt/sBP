@@ -25,11 +25,12 @@ public:
     subseqPredictor(const string);
     ~subseqPredictor();
     int getBest();
-    int start(int*, int);
+    int start(int*, int, int&, vector<int>*);
 	double itemConfidence(int);
 	int datasetSeqNumber();
 	float get_memory();
 private:
+	vector<int>* conseq_visits;
 	sdsl::bit_vector* consequentBits;
 	countTable countTable;
 	bool stop;
