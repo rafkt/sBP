@@ -14,8 +14,13 @@
 #include "suffixArray.h"
 #include <stack>
 #include <algorithm>
+#include <math.h>
 
 using namespace suffixArray;
+
+const double min (const double a, const double b) {
+  return !(b<a)?a:b;
+}
 
 float backwardsSearchBWT::sizeInMegabytes(){
     return size_in_mega_bytes(L) + size_in_mega_bytes(alphabet) + size_in_mega_bytes(alphabetCounters) /*+ size_in_mega_bytes(*LplusOne)*/;
@@ -286,12 +291,31 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
         if (xy[index] == -2){
             //counterMap res = scan(rangeStart, rangeEnd);
             
+
+            //set a relay value here
+            // according to Order{\min{\sigma, k \log \sigma}} that inverval_symbols has
             uint64_t quantity = 0;
             std::vector<uint64_t> cs(L.sigma);      // list of characters in the interval
             std::vector<uint64_t> rank_c_i(L.sigma);    // number of occurrence of character in [0 .. i-1]
             std::vector<uint64_t> rank_c_j(L.sigma);    // number of occurrence of character in [0 .. j-1]
-            if (rangeStart >= 0 || rangeEnd >= 0) interval_symbols(L, rangeStart, rangeEnd + 1, quantity, cs, rank_c_i, rank_c_j);
 
+            if (rangeStart >= 0 && rangeEnd >= 0){
+                if (min(L.sigma, (rangeStart - rangeEnd) * log2(L.sigma)) < (rangeStart - rangeEnd)){
+                    interval_symbols(L, rangeStart, rangeEnd + 1, quantity, cs, rank_c_i, rank_c_j);
+                }else{
+                    counterMap res;
+                    pair<counterMap::iterator, bool> ret;
+                    for (int i = rangeStart; i <= rangeEnd; i++){
+                        ret = res.insert(std::pair<int, int>(L[i], 1));
+                        if (ret.second == true){
+                            cs[quantity] = L[i];
+                            quantity++;
+                        }
+                    }
+                } 
+            }
+
+            
             // for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
             //     cout << mapIt->second << " ";
             // }
