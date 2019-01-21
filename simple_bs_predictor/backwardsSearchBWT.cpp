@@ -23,7 +23,7 @@ const double min (const double a, const double b) {
 }
 
 float backwardsSearchBWT::sizeInMegabytes(){
-    return size_in_mega_bytes(L) + size_in_mega_bytes(alphabet) + size_in_mega_bytes(alphabetCounters) /*+ size_in_mega_bytes(*LplusOne)*/;
+    return size_in_mega_bytes(L) + size_in_mega_bytes(alphabet) + size_in_mega_bytes(alphabetCounters) + size_in_mega_bytes(*LplusOne);
 }
 
 
@@ -62,12 +62,13 @@ backwardsSearchBWT::backwardsSearchBWT(const string filename){
     assert(this->alphabetCounters.size() == this->L.sigma);
     assert(this->L.sigma == this->alphabet.size());
 
-    LplusOne = new int_vector<>(L.size(), 0, 64);
+    LplusOne = new int_vector<>(L.size(), 0, 32);
     int newRangeStart = L.size();
     for (int i = 0; i < L.size(); i++){
         int return_val = fowawrdTraversal(i, newRangeStart);
         assert(return_val != -1);
-        (*LplusOne)[i] = newRangeStart;
+        (*LplusOne)[i] = L[newRangeStart];
+        if ((*LplusOne)[i] != L[newRangeStart]) {cout << "something wrong" << endl; exit(1);}
     }
 
     clearALL();
@@ -406,9 +407,9 @@ void backwardsSearchBWT::getQuickConsequents(int rangeStart, int rangeEnd, vecto
         if (L[i] != 99999){
             conseq.push_back(L[i]);
 
-            (*consequentBits)[(*LplusOne)[i]] = 1;
+            //(*consequentBits)[(*LplusOne)[i]] = 1;
 
-            if (L[(*LplusOne)[i]] != 99999) conseq.push_back(L[(*LplusOne)[i]]);
+            if ((*LplusOne)[i] != 99999) conseq.push_back((*LplusOne)[i]);
             consequentList.push_back(conseq);
             predictionCount++;
         }
