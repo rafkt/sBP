@@ -17,6 +17,7 @@
 
 using namespace suffixArray;
 
+
 float backwardsSearchBWT::sizeInMegabytes(){
     return size_in_mega_bytes(L) + size_in_mega_bytes(alphabet) + size_in_mega_bytes(alphabetCounters) /*+ size_in_mega_bytes(*LplusOne)*/;
 }
@@ -28,11 +29,13 @@ backwardsSearchBWT::backwardsSearchBWT(const string filename){
     size_t vector_counter = 0;
     ofstream tmpOutputFile;
     int lastItemcounter = 0;
+    seqNumber =0;
     stop = false;
     ifstream file(filename);
-    seqNumber = initialise(file, 10);
+    sigma_seperator = initialise(file, 10);
     this->L = BWT2WT();
     for (int i = 0; i < this->L.size(); i++) {
+        if (this->L[i] == sigma_seperator) seqNumber++;
         try {
             alphabet_tmp.at(this->L[i])->appears++; //could be avoided though a simple rank call
         } catch (out_of_range e) {
@@ -257,7 +260,7 @@ int backwardsSearchBWT::backwardError(int* xy, int size, set<int>& substitutedIt
         int index = L.select(j + 1, xy[whichIndex]);
         int backtrav_index;
         int item2subst = backwardTraversal(index, backtrav_index);
-        if (item2subst != 99999) substitutedItems.insert(item2subst);
+        if (item2subst != sigma_seperator) substitutedItems.insert(item2subst);
         //else cout << "<-- No 99999 expansion " << endl;
         
     }
@@ -306,7 +309,7 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
             //for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
             for (int it = quantity - 1; it > -1; it--){
                 //if (mapIt->first == 99999) {/*cout << "No 99999 expansion " << endl;*/ continue;}
-                if (cs[it] == 99999){ continue; }
+                if (cs[it] == sigma_seperator){ continue; }
                 //cout << mapIt->second << endl;
                 xy[index] = cs[it]; //mapIt->first;
                 // for (int item : xy) cout << item << " ";
@@ -339,7 +342,7 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
 void backwardsSearchBWT::getConsequents(vector<int> xy, int index, int rangeStart, int rangeEnd, int length, int d, vector<vector<int>>& consequentList, int& predictionCount, sdsl::bit_vector* consequentBits){//size should be over or equal to 2
     int newRangeStart, newRangeEnd;
     if (d > 0) {
-        if (d == 99999) {
+        if (d == sigma_seperator) {
             //cout << "Consequent contains 99999; terminating getting more consequents items" << endl;
             if (xy.size() > 0){consequentList.push_back(xy); predictionCount++;}
             // cout << "getConsequent returns: ";
@@ -386,12 +389,12 @@ void backwardsSearchBWT::getQuickConsequents(int rangeStart, int rangeEnd, vecto
         if ((*consequentBits)[i] == 1) continue;
         (*consequentBits)[i] = 1;
         vector<int> conseq;
-        if (L[i] != 99999){
+        if (L[i] != sigma_seperator){
             conseq.push_back(L[i]);
 
             (*consequentBits)[(*LplusOne)[i]] = 1;
 
-            if (L[(*LplusOne)[i]] != 99999) conseq.push_back(L[(*LplusOne)[i]]);
+            if (L[(*LplusOne)[i]] != sigma_seperator) conseq.push_back(L[(*LplusOne)[i]]);
             consequentList.push_back(conseq);
             predictionCount++;
         }
@@ -404,14 +407,14 @@ void backwardsSearchBWT::getQuickConsequents_noLplus(int rangeStart, int rangeEn
         if ((*consequentBits)[i] == 1) continue;
         (*consequentBits)[i] = 1;
         vector<int> conseq;
-        if (L[i] != 99999){
+        if (L[i] != sigma_seperator){
             conseq.push_back(L[i]);
 
             int LplusOneIndex = -1;
             fowawrdTraversal(i, LplusOneIndex);
             (*consequentBits)[LplusOneIndex] = 1;
             
-            if (L[LplusOneIndex] != 99999) conseq.push_back(L[LplusOneIndex]);
+            if (L[LplusOneIndex] != sigma_seperator) conseq.push_back(L[LplusOneIndex]);
             consequentList.push_back(conseq);
             predictionCount++;
         }

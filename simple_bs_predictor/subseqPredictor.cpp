@@ -78,7 +78,7 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 		// 			// cout << endl;
 
 
-					exclude_query_vector[1] = 99999; // -2 99999 a b c
+					exclude_query_vector[1] = bSBWT->sigma_seperator; // -2 99999 a b c
 					if (bSBWT->searchQuery(&(exclude_query_vector[1]), size - 1, rangeStart, rangeEnd) != -1){
 			    		exclude_bs_ranges.push_back(make_pair(rangeStart, rangeEnd));
 			    	}
@@ -86,7 +86,7 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 					
 
 					
-					exclude_query_vector[0] = 99999;
+					exclude_query_vector[0] = bSBWT->sigma_seperator;
 					exclude_query_vector[1] = -2; // 99999 -2 a b c
 					retrieved_ranges = cashed_ranges[exclude_query_vector];
 					if (retrieved_ranges.size() == 0){
@@ -110,7 +110,7 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 			//cout << item << endl;
 			// query[0] = item;
 
-			exclude_query_vector[0] = 99999;
+			exclude_query_vector[0] = bSBWT->sigma_seperator;
 
 			//repeated code here - should improve it
 			vector<int> query_vector(size - 1);

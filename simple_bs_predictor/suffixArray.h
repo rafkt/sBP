@@ -30,4 +30,5 @@ namespace suffixArray {
     void deleteCreatedFiles();
     wt_int<> BWT2WT();
     void clearALL();
+
 };

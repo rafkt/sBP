@@ -50,7 +50,8 @@ public:
     void getQuickConsequents_noLplus(int, int, vector<vector<int>>&, int&, sdsl::bit_vector*);
     counterMap scan(int, int);
     //int* findRange(int*, int);
-	int seqNumber;
+	int sigma_seperator;
+    int seqNumber;
     //int countRange(int*, int, int = 0, int = 0);
     float sizeInMegabytes();
 private:

@@ -75,11 +75,21 @@ int suffixArray::compare(const void* a, const void* b){
 
 
 int suffixArray::initialise(ifstream &file, int k_fold){ // returns the number of sequences that was red
-	int seqCounter(0);
-	for(string word; file >> word;) {
+
+    int seqCounter;
+    int alphabet_size;
+    int length;
+
+    seqCounter = 0; alphabet_size = 0; length = 0;
+
+    string word; file >> word;
+
+    alphabet_size = atoi(word.c_str());
+	for(; file >> word;) {
 		T.push_back(atoi(word.c_str()));
-		if (atoi(word.c_str()) == 99999) seqCounter++;
-	}
+		if (atoi(word.c_str()) == alphabet_size) seqCounter++;//data have been mapped; the sequences seperator is the number alphabet_size
+        else length++;
+    }
 // code used for k-folding
 //    int s_counter = 0;
 //    for (int i = 0; i < T.size(); i++) if (T[i] == 99999) s_counter++;
@@ -104,7 +114,14 @@ int suffixArray::initialise(ifstream &file, int k_fold){ // returns the number o
     }
     qsort (&sa[0], sa.size(), sizeof(int), compare);
     file.close();
-	return seqCounter;
+
+    // cout << "Finished reading training file" \
+    // << endl << "Dataset Length: " << length \
+    // << endl << "Alphabet size: " << alphabet_size \
+    // << endl << "Sequence count: " << seqCounter \
+    // << endl;
+
+	return alphabet_size;
 }
 
 int suffixArray::getBWT(int i){
