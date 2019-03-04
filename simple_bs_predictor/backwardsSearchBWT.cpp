@@ -25,8 +25,6 @@ float backwardsSearchBWT::sizeInMegabytes(){
 
 backwardsSearchBWT::backwardsSearchBWT(const string filename){
     letterNode l;
-    int counter = 0;
-    size_t vector_counter = 0;
     ofstream tmpOutputFile;
     int lastItemcounter = 0;
     seqNumber =0;
@@ -45,14 +43,21 @@ backwardsSearchBWT::backwardsSearchBWT(const string filename){
             alphabet_tmp.insert({l->c, l});
         }
     }
-    this->alphabetCounters = int_vector<>(L.sigma, 1, 0);
-    int_vector<> tmp_v(alphabet_tmp.size(), 1, 0);
+    this->alphabetCounters = int_vector<>(sigma_seperator, sigma_seperator + 1, 0);
+    int_vector<> tmp_v(sigma_seperator, 1, 0);
     for (myMap::iterator mapIt = alphabet_tmp.begin(); mapIt != alphabet_tmp.end(); mapIt++) {
         l = mapIt->second;
-        tmp_v[counter++] = l->c;
+        //cout << l->c << endl;
+        tmp_v[l->c] = l->c; //alphabet array  - should be deleted
         this->alphabetCounters[vector_counter] = vector_counter == 0 ? l->appears : l->appears + this->alphabetCounters[vector_counter - 1];
-        vector_counter++;
+        cout << this->alphabetCounters[vector_counter] << endl;
     }
+
+    // for (int i = 0; i < tmp_v.size(); i++){
+    //     //if (i != tmp_v[i]) cout << "Alphabet array indexes error" << endl;
+    //     cout << i << ": " << tmp_v[i] << endl;
+    // }
+    exit(0);
     store_to_file(tmp_v, "tmp.txt");
     construct(this->alphabet, "tmp.txt", 0);
     ofstream output("tmp.txt", std::ios::binary | std::ios::trunc);
