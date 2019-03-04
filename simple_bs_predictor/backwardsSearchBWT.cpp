@@ -43,21 +43,40 @@ backwardsSearchBWT::backwardsSearchBWT(const string filename){
             alphabet_tmp.insert({l->c, l});
         }
     }
-    this->alphabetCounters = int_vector<>(sigma_seperator, sigma_seperator + 1, 0);
-    int_vector<> tmp_v(sigma_seperator, 1, 0);
-    for (myMap::iterator mapIt = alphabet_tmp.begin(); mapIt != alphabet_tmp.end(); mapIt++) {
-        l = mapIt->second;
+    this->alphabetCounters = int_vector<>(sigma_seperator + 1, 0, 0);
+    int_vector<> tmp_v(sigma_seperator + 1, 1, 0);
+    for (int i = 0; i <= sigma_seperator; i++) {
+        //myMap::iterator mapIt = alphabet_tmp.begin(); mapIt != alphabet_tmp.end(); mapIt++
+        
+        bool missing = false;
+
+        try {
+            l = alphabet_tmp.at(i);
+        } catch (out_of_range e) {
+            missing = true;
+        }
         //cout << l->c << endl;
-        tmp_v[l->c] = l->c; //alphabet array  - should be deleted
-        this->alphabetCounters[vector_counter] = vector_counter == 0 ? l->appears : l->appears + this->alphabetCounters[vector_counter - 1];
-        cout << this->alphabetCounters[vector_counter] << endl;
+
+        if (i == 0){
+            if (!missing) this->alphabetCounters[l->c] = l->appears;
+            else this->alphabetCounters[i] = 0;
+        }else{
+            if (!missing) this->alphabetCounters[l->c] = l->appears + this->alphabetCounters[l->c - 1];
+            else this->alphabetCounters[i] = this->alphabetCounters[i - 1];
+        }
+
+
+        if (!missing) tmp_v[l->c] = l->c; //alphabet array  - should be deleted
+        else tmp_v[i] = 0;
+        // this->alphabetCounters[l->c] = l->c == 0 ? l->appears : l->appears + this->alphabetCounters[l->c - 1];
+        // cout << this->alphabetCounters[vector_counter] << endl;
     }
 
     // for (int i = 0; i < tmp_v.size(); i++){
-    //     //if (i != tmp_v[i]) cout << "Alphabet array indexes error" << endl;
-    //     cout << i << ": " << tmp_v[i] << endl;
+    // //if (i != tmp_v[i]) cout << "Alphabet array indexes error" << endl;
+    //     cout << i << ": " << tmp_v[i] << ": " << alphabetCounters[i] << endl;
     // }
-    exit(0);
+    // exit(0);
     store_to_file(tmp_v, "tmp.txt");
     construct(this->alphabet, "tmp.txt", 0);
     ofstream output("tmp.txt", std::ios::binary | std::ios::trunc);
