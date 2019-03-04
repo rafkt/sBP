@@ -19,7 +19,7 @@ using namespace suffixArray;
 
 
 float backwardsSearchBWT::sizeInMegabytes(){
-    return size_in_mega_bytes(L) + size_in_mega_bytes(alphabet) + size_in_mega_bytes(alphabetCounters) /*+ size_in_mega_bytes(*LplusOne)*/;
+    return size_in_mega_bytes(L) + size_in_mega_bytes(alphabetCounters) /*+ size_in_mega_bytes(*LplusOne)*/;
 }
 
 
@@ -78,11 +78,11 @@ backwardsSearchBWT::backwardsSearchBWT(const string filename){
     // }
     // exit(0);
     store_to_file(tmp_v, "tmp.txt");
-    construct(this->alphabet, "tmp.txt", 0);
+   // construct(this->alphabet, "tmp.txt", 0);
     ofstream output("tmp.txt", std::ios::binary | std::ios::trunc);
     util::bit_compress(this->alphabetCounters);
     assert(this->alphabetCounters.size() == this->L.sigma);
-    assert(this->L.sigma == this->alphabet.size());
+    //assert(this->L.sigma == this->alphabet.size());
 
     LplusOne = new int_vector<>(L.size(), 0, 64);
     int newRangeStart = L.size();
@@ -196,8 +196,10 @@ int backwardsSearchBWT::search(int c, int rangeStart, int rangeEnd, int& newRang
         int rankStart = L.rank(rangeStart, c);
         int rankEnd = L.rank(rangeEnd + 1, c);
         if (rankEnd - rankStart == 0) return -1; //patern not found
-        int letterPos = alphabet.select(1, c);
-        int range2Add = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
+        // int letterPos = alphabet.select(1, c);
+        // if (letterPos != c) cout << "ERROR2 : " << letterPos << " : " << c << endl;
+
+        int range2Add = c != 0 ? alphabetCounters[c - 1] : 0;
         newRangeStart = rankStart + range2Add;
         newRangeEnd = rankEnd + range2Add - 1;
         return 1;//valid input
@@ -206,8 +208,9 @@ int backwardsSearchBWT::search(int c, int rangeStart, int rangeEnd, int& newRang
 
 int backwardsSearchBWT::fowawrdTraversal(int index, int& newRangeStart){
     if (index < 0) return -1;
-    int letterPos = alphabet.select(1, L[index]);
-    int range2Add = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
+    // int letterPos = alphabet.select(1, L[index]);
+    // if (letterPos != L[index]) cout << "ERROR1 : " << letterPos << " : " << L[index] << endl;
+    int range2Add = L[index] != 0 ? alphabetCounters[L[index] - 1] : 0;
     int rangeStart = L.rank(index + 1, L[index]) + range2Add - 1;
     newRangeStart = rangeStart;
     return L[rangeStart]; 
@@ -247,25 +250,32 @@ int backwardsSearchBWT::backwardTraversal(int index, int& back_index){
 
    // cout << "dif: " << alphabetCounters[f_index] - alphabetCounters[f_index - 1] << endl;
     if (f_index == 0){
-        back_index =  L.select(index + 1, alphabet[f_index]);
+        back_index =  L.select(index + 1, 0/*alphabet[f_index]*/);
     }else{
         //cout << "L posistion: " << L.select(alphabetCounters[f_index] - alphabetCounters[f_index - 1], alphabet[f_index]) << endl;
-        back_index = L.select(alphabetCounters[f_index] - (index + 1) == 0 ? alphabetCounters[f_index] - alphabetCounters[f_index - 1] : alphabetCounters[f_index] - (index + 1), alphabet[f_index]);
+        back_index = L.select(alphabetCounters[f_index] - (index + 1) == 0 ? alphabetCounters[f_index] - alphabetCounters[f_index - 1] : alphabetCounters[f_index] - (index + 1), f_index/*alphabet[f_index]*/);
 
     }
-    return alphabet[f_index];
+    return f_index/*alphabet[f_index]*/;
 }
 
 void backwardsSearchBWT::getRange(int c, int& rangeStart, int& rangeEnd){
-    int letterPos;
-    try {
-        letterPos = alphabet.select(1, c);
-    } catch( std::logic_error ){
-        rangeStart = -1; rangeEnd = -1;
-        return;
+
+    //get the starting range in the F array
+
+    rangeStart = -1; rangeEnd = -1;
+
+    if (c > 0){
+        if (alphabetCounters[c] - alphabetCounters[c - 1] == 0) 
+            return;
     }
-    rangeStart = letterPos != 0 ? alphabetCounters[letterPos - 1] : 0;
-    rangeEnd = alphabetCounters[letterPos] - 1;
+    else if (c == 0){
+        if (alphabetCounters[0] == 0) 
+            return;
+    }
+
+    rangeStart = c != 0 ? alphabetCounters[c - 1] : 0;
+    rangeEnd = alphabetCounters[c] - 1;
 }
 
 int backwardsSearchBWT::backwardError(int* xy, int size, set<int>& substitutedItems){
@@ -452,7 +462,7 @@ counterMap backwardsSearchBWT::scan(int rangeStart, int rangeEnd){
     double threshold = 1.7;
     pair<counterMap::iterator, bool> ret;
     int overallRangeLength = rangeEnd - rangeStart + 1;
-    double relay_value = overallRangeLength / (double)alphabet.size();
+    double relay_value = overallRangeLength / (sigma_seperator + 1);
     if (relay_value <= threshold){ // this threshold was based on research that was done in my master thesis
         for (int i = rangeStart; i <= rangeEnd; i++){
             ret = mostFrequent.insert(std::pair<int, int>(L[i], 1));
@@ -461,9 +471,9 @@ counterMap backwardsSearchBWT::scan(int rangeStart, int rangeEnd){
             }
         }
     }else{
-        for (size_t i = 0; i < alphabet.size(); i++){
-            int counter = countRange(rangeStart, rangeEnd, alphabet[i]);
-            if (counter > 0) mostFrequent.insert({alphabet[i], counter});
+        for (size_t i = 0; i < (sigma_seperator + 1); i++){
+            int counter = countRange(rangeStart, rangeEnd, i);
+            if (counter > 0) mostFrequent.insert({i, counter});
         }
    }
     //mostFrequent.insert({-1, overallRangeLength});
