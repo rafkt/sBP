@@ -32,7 +32,13 @@ int compare(const void* a, const void* b){
 }
 
 double subseqPredictor::itemConfidence(int item){
-	int frequency = bSBWT->L.rank(bSBWT->L.size() - 1, item);
+	//int frequency = bSBWT->L.rank(bSBWT->L.size() - 1, item);
+	int frequency;
+	if (item == 0){
+		frequency = bSBWT->alphabetCounters[0];
+	}else{
+		frequency = bSBWT->alphabetCounters[item] - bSBWT->alphabetCounters[item - 1];
+	}
 	//cout << "Freq " << frequency << " Sequences " << bSBWT->seqNumber << endl;
 	return ((double) frequency / bSBWT->seqNumber);
 }
