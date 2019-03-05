@@ -18,8 +18,8 @@
 using namespace suffixArray;
 
 
-float backwardsSearchBWT::sizeInMegabytes(){
-    return size_in_mega_bytes(L) + size_in_mega_bytes(alphabetCounters) /*+ size_in_mega_bytes(*LplusOne)*/;
+double backwardsSearchBWT::sizeInMegabytes(){
+    return size_in_mega_bytes(L) +  (8 + (sigma_seperator + 1) * 8)* 0.000001/*+ size_in_mega_bytes(*LplusOne)*/;
 }
 
 
@@ -43,7 +43,7 @@ backwardsSearchBWT::backwardsSearchBWT(const string filename){
             alphabet_tmp.insert({l->c, l});
         }
     }
-    this->alphabetCounters = int_vector<>(sigma_seperator + 1, 0, 0);
+    this->alphabetCounters = new uint64_t[sigma_seperator + 1];
     int_vector<> tmp_v(sigma_seperator + 1, 1, 0);
     for (int i = 0; i <= sigma_seperator; i++) {
         //myMap::iterator mapIt = alphabet_tmp.begin(); mapIt != alphabet_tmp.end(); mapIt++
@@ -65,9 +65,6 @@ backwardsSearchBWT::backwardsSearchBWT(const string filename){
             else this->alphabetCounters[i] = this->alphabetCounters[i - 1];
         }
 
-
-        if (!missing) tmp_v[l->c] = l->c; //alphabet array  - should be deleted
-        else tmp_v[i] = 0;
         // this->alphabetCounters[l->c] = l->c == 0 ? l->appears : l->appears + this->alphabetCounters[l->c - 1];
         // cout << this->alphabetCounters[vector_counter] << endl;
     }
@@ -77,13 +74,6 @@ backwardsSearchBWT::backwardsSearchBWT(const string filename){
     //     cout << i << ": " << tmp_v[i] << ": " << alphabetCounters[i] << endl;
     // }
     // exit(0);
-    store_to_file(tmp_v, "tmp.txt");
-   // construct(this->alphabet, "tmp.txt", 0);
-    ofstream output("tmp.txt", std::ios::binary | std::ios::trunc);
-    util::bit_compress(this->alphabetCounters);
-    assert(this->alphabetCounters.size() == this->L.sigma);
-    //assert(this->L.sigma == this->alphabet.size());
-
     LplusOne = new int_vector<>(L.size(), 0, 64);
     int newRangeStart = L.size();
     for (int i = 0; i < L.size(); i++){
@@ -107,6 +97,7 @@ void backwardsSearchBWT::deleteMap(){
 
 backwardsSearchBWT::~backwardsSearchBWT(){
     delete LplusOne;
+    delete[] alphabetCounters;
     deleteMap();
 }
 
@@ -228,7 +219,7 @@ int backwardsSearchBWT::backwardTraversal(int index, int& back_index){
     // }
     //binary search below
 
-    int low = 0, high = alphabetCounters.size(); // numElems is the size of the array i.e arr.size() 
+    int low = 0, high = sigma_seperator + 1; // numElems is the size of the array i.e arr.size() 
     while (low != high) {
         int mid = (low + high) / 2; // Or a fancy way to avoid int overflow
         if (alphabetCounters[mid] < index + 1) {

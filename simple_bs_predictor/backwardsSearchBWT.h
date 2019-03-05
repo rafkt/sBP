@@ -32,7 +32,7 @@ class backwardsSearchBWT{
 public:
     wt_int<> L;
     int_vector<>* LplusOne;
-    int_vector<> alphabetCounters;
+    uint64_t* alphabetCounters;
     bool stop;
     backwardsSearchBWT(const string);
     ~backwardsSearchBWT();
@@ -53,7 +53,7 @@ public:
 	int sigma_seperator;
     int seqNumber;
     //int countRange(int*, int, int = 0, int = 0);
-    float sizeInMegabytes();
+    double sizeInMegabytes();
 private:
     void deleteMap();
 //    int rank(const char &, const int &);
