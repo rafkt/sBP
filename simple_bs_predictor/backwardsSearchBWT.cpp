@@ -201,8 +201,9 @@ int backwardsSearchBWT::fowawrdTraversal(int index, int& newRangeStart){
     if (index < 0) return -1;
     // int letterPos = alphabet.select(1, L[index]);
     // if (letterPos != L[index]) cout << "ERROR1 : " << letterPos << " : " << L[index] << endl;
-    int range2Add = L[index] != 0 ? alphabetCounters[L[index] - 1] : 0;
-    int rangeStart = L.rank(index + 1, L[index]) + range2Add - 1;
+    int symbol = L[index];
+    int range2Add = symbol != 0 ? alphabetCounters[symbol - 1] : 0;
+    int rangeStart = L.rank(index + 1, symbol) + range2Add - 1;
     newRangeStart = rangeStart;
     return L[rangeStart]; 
 }
@@ -400,9 +401,10 @@ void backwardsSearchBWT::getConsequents(vector<int> xy, int index, int rangeStar
         for (int i = rangeStart; i <= rangeEnd; i++){
             if ((*consequentBits)[i] == 1) continue;
             (*consequentBits)[i] = 1;
-            search(L[i], i, i, newRangeStart, newRangeEnd);
+            int symbol = L[i];
+            search(symbol, i, i, newRangeStart, newRangeEnd);
             //search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd);
-            getConsequents(xy, index + 1, newRangeStart, newRangeEnd, length, /*mapIt->second*/ L[i], consequentList, predictionCount, consequentBits);
+            getConsequents(xy, index + 1, newRangeStart, newRangeEnd, length, /*mapIt->second*/ symbol, consequentList, predictionCount, consequentBits);
         }
     }
     return;
@@ -414,12 +416,13 @@ void backwardsSearchBWT::getQuickConsequents(int rangeStart, int rangeEnd, vecto
         if ((*consequentBits)[i] == 1) continue;
         (*consequentBits)[i] = 1;
         vector<int> conseq;
-        if (L[i] != sigma_seperator){
-            conseq.push_back(L[i]);
+        int symbol = L[i];
+        if (symbol != sigma_seperator){
+            conseq.push_back(symbol);
 
             (*consequentBits)[(*LplusOne)[i]] = 1;
-
-            if (L[(*LplusOne)[i]] != sigma_seperator) conseq.push_back(L[(*LplusOne)[i]]);
+            symbol = L[(*LplusOne)[i]];
+            if (symbol != sigma_seperator) conseq.push_back(symbol);
             consequentList.push_back(conseq);
             predictionCount++;
         }
@@ -432,14 +435,15 @@ void backwardsSearchBWT::getQuickConsequents_noLplus(int rangeStart, int rangeEn
         if ((*consequentBits)[i] == 1) continue;
         (*consequentBits)[i] = 1;
         vector<int> conseq;
-        if (L[i] != sigma_seperator){
-            conseq.push_back(L[i]);
+        int symbol = L[i];
+        if (symbol != sigma_seperator){
+            conseq.push_back(symbol);
 
             int LplusOneIndex = -1;
             fowawrdTraversal(i, LplusOneIndex);
             (*consequentBits)[LplusOneIndex] = 1;
-            
-            if (L[LplusOneIndex] != sigma_seperator) conseq.push_back(L[LplusOneIndex]);
+            symbol = L[LplusOneIndex];
+            if (symbol != sigma_seperator) conseq.push_back(symbol);
             consequentList.push_back(conseq);
             predictionCount++;
         }
