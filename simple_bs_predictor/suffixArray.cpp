@@ -12,6 +12,10 @@
 vector<int> suffixArray::sa;
 vector<int> suffixArray::T;
 
+int suffixArray::seqCounter;
+int suffixArray::alphabet_size;
+int suffixArray::length;
+
 void suffixArray::clearALL(){
     deleteCreatedFiles();
     sa.erase(sa.begin(), sa.end());
@@ -76,9 +80,7 @@ int suffixArray::compare(const void* a, const void* b){
 
 int suffixArray::initialise(ifstream &file, int k_fold){ // returns the number of sequences that was red
 
-    int seqCounter;
-    int alphabet_size;
-    int length;
+
 
     seqCounter = 0; alphabet_size = 0; length = 0;
 
@@ -131,7 +133,6 @@ int suffixArray::getBWT(int i){
 wt_int<> suffixArray::BWT2WT(){
     wt_int<> wt;
     int_vector<> v(sa.size(), 1, 0);
-    
     for (int i = 0; i < sa.size(); i++) {
         v[i] = getBWT(i);
         //cout << v[i] << " ";
