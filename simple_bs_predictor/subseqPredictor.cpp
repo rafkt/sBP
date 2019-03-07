@@ -13,7 +13,7 @@
 #include <time.h>
 #include <set>
 
-#define MAXPREDICTIONCOUNT 10
+#define MAXPREDICTIONCOUNT 0
 
 float subseqPredictor::get_memory(){
 	return bSBWT->sizeInMegabytes();
@@ -83,24 +83,24 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 		// 			// }
 		// 			// cout << endl;
 
-
-					exclude_query_vector[1] = bSBWT->sigma_seperator; // -2 99999 a b c
-					if (bSBWT->searchQuery(&(exclude_query_vector[1]), size - 1, rangeStart, rangeEnd) != -1){
-			    		exclude_bs_ranges.push_back(make_pair(rangeStart, rangeEnd));
-			    	}
-
-					
+//
+//					exclude_query_vector[1] = bSBWT->sigma_seperator; // -2 99999 a b c
+//					if (bSBWT->searchQuery(&(exclude_query_vector[1]), size - 1, rangeStart, rangeEnd) != -1){
+//			    		exclude_bs_ranges.push_back(make_pair(rangeStart, rangeEnd));
+//			    	}
 
 					
-					exclude_query_vector[0] = bSBWT->sigma_seperator;
-					exclude_query_vector[1] = -2; // 99999 -2 a b c
-					retrieved_ranges = cashed_ranges[exclude_query_vector];
-					if (retrieved_ranges.size() == 0){
-						bSBWT->getRange(exclude_query_vector[0], rangeStart, rangeEnd);
-						bSBWT->neighborExpansion(exclude_query_vector, 1, rangeStart, rangeEnd, retrieved_ranges);
-						cashed_ranges[exclude_query_vector] = retrieved_ranges;
-					}
-					exclude_bs_ranges.insert(exclude_bs_ranges.end(), retrieved_ranges.begin(), retrieved_ranges.end());
+
+					
+//					exclude_query_vector[0] = bSBWT->sigma_seperator;
+//					exclude_query_vector[1] = -2; // 99999 -2 a b c
+//					retrieved_ranges = cashed_ranges[exclude_query_vector];
+//					if (retrieved_ranges.size() == 0){
+//						bSBWT->getRange(exclude_query_vector[0], rangeStart, rangeEnd);
+//						bSBWT->neighborExpansion(exclude_query_vector, 1, rangeStart, rangeEnd, retrieved_ranges);
+//						cashed_ranges[exclude_query_vector] = retrieved_ranges;
+//					}
+//					exclude_bs_ranges.insert(exclude_bs_ranges.end(), retrieved_ranges.begin(), retrieved_ranges.end());
 
 
 					int finalStartRange, finalEndRange;
@@ -123,13 +123,13 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 			copy(&(query[1]), query + size, query_vector.begin());
 		    if (errors > 1){
 
-				if (cashed_ranges[exclude_query_vector].size() == 0) {
-					bSBWT->getRange(exclude_query_vector[0], rangeStart, rangeEnd);
-					bSBWT->neighborExpansion(exclude_query_vector, 1, rangeStart, rangeEnd, exclude_bs_ranges);
-					cashed_ranges[exclude_query_vector] = exclude_bs_ranges;
-				}else{
-					exclude_bs_ranges = cashed_ranges[exclude_query_vector];
-				}
+//				if (cashed_ranges[exclude_query_vector].size() == 0) {
+					//bSBWT->getRange(exclude_query_vector[0], rangeStart, rangeEnd);
+					//bSBWT->neighborExpansion(exclude_query_vector, 1, rangeStart, rangeEnd, exclude_bs_ranges);
+					//cashed_ranges[exclude_query_vector] = exclude_bs_ranges;
+//				}else{
+					//exclude_bs_ranges = cashed_ranges[exclude_query_vector];
+//				}
 
 				if (cashed_ranges[query_vector].size() == 0){
 					bSBWT->getRange(query[1], rangeStart, rangeEnd); // -2 a b  -2 c
@@ -140,9 +140,9 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 				}
 		    	
 		    }else{
-				if (bSBWT->searchQuery(&(exclude_query_vector[0]), size, rangeStart, rangeEnd) != -1){
-		    		exclude_bs_ranges.push_back(make_pair(rangeStart, rangeEnd));
-		    	}
+				//if (bSBWT->searchQuery(&(exclude_query_vector[0]), size, rangeStart, rangeEnd) != -1){
+		    		//exclude_bs_ranges.push_back(make_pair(rangeStart, rangeEnd));
+		    	//}
 
 		  //   	cout << "..Current query: ";
 				// for (int i = 0; i < size; i++){
