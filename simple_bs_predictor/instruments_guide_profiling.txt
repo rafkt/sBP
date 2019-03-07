@@ -1,0 +1,30 @@
+command:
+
+instruments -l 20000 -t "Time Profiler" ./program 
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/FIFA.fold.5.training.mapped.txt 
+/Users/rafaelktistakis/Repositories/Predictors_tests_another_git_clone/Predictors_tests/outputs/FIFA.fold.5.queries.mapped.txt
+
+Look more at: https://watson.hatenablog.com/entry/2017/10/03/235305
+
+or below:
+
+instruments -s
+...
+Known Templates:
+"Activity Monitor"
+"Allocations"
+"Blank"
+"Cocoa Layout"
+"Core Animation"
+"Core Data"
+"Counters"
+"Energy Log"
+"File Activity"
+"Leaks"
+"Metal System Trace"
+"Network"
+"SceneKit"
+"System Trace"
+"System Usage"
+"Time Profiler"
+"Zombies"
