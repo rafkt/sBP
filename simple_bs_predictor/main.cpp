@@ -136,15 +136,15 @@ int main(int argc, const char * argv[])
         // }
         // for (int i : finalQuery) cout << i << " ";
         // cout << endl;
-        pr->start(&query[0], query.size());
+        cout << pr->start(&query[0], query.size()) << endl;
         //break;
     }
     auto stop = high_resolution_clock::now();
-    cout << "Duration (ms) = " << duration_cast<milliseconds>(stop-start).count()/(double)1000 << endl;
-    // auto end = clock();
-    // auto duration = ((double)(end - begin))/CLOCKS_PER_SEC;
-    cout << argv[1] << endl;
-    cout << "Memory: " << pr->get_memory() << endl;
+    // cout << "Duration (ms) = " << duration_cast<milliseconds>(stop-start).count()/(double)1000 << endl;
+    // // auto end = clock();
+    // // auto duration = ((double)(end - begin))/CLOCKS_PER_SEC;
+    // cout << argv[1] << endl;
+    // cout << "Memory: " << pr->get_memory() << endl;
     // cout << "Duration: " << duration << endl;
 
 

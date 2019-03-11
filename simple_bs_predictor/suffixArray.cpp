@@ -138,8 +138,10 @@ wt_int<> suffixArray::BWT2WT(){
         //cout << v[i] << " ";
     }
     //cout << endl;
-    store_to_file(v, "sdb.sdsl");
+    //store_to_file(v, "sdb.sdsl");
+    construct_im(wt, v, 0);
+    //construct(wt, "sdb.sdsl", 0);
     util::clear(v);
-    construct(wt, "sdb.sdsl", 0);
+    
     return wt;
 }
