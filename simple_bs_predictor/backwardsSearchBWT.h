@@ -31,7 +31,7 @@ typedef map<int, int> counterMap;
 class backwardsSearchBWT{
 public:
     wt_int<> L;
-    int_vector<>* LplusOne;
+    //int_vector<>* LplusOne;
     uint64_t* alphabetCounters;
     bool stop;
     backwardsSearchBWT(const string);

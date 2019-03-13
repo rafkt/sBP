@@ -1,0 +1,30 @@
+../../Predictors_tests/outputs/QUEST_05.sigma.seq.567438.training.txt
+Train Duration (s): 4.38607
+Memory: 6.47444
+Test Duration (s): 0.47706
+---------------------------------------
+../../Predictors_tests/outputs/QUEST_1.sigma.seq.567539.training.txt
+Train Duration (s): 4.63043
+Memory: 7.23089
+Test Duration (s): 0.701091
+---------------------------------------
+../../Predictors_tests/outputs/QUEST_15.sigma.seq.567712.training.txt
+Train Duration (s): 4.58214
+Memory: 7.95774
+Test Duration (s): 0.831888
+---------------------------------------
+../../Predictors_tests/outputs/QUEST_2.sigma.seq.567495.training.txt
+Train Duration (s): 4.72741
+Memory: 7.9334
+Test Duration (s): 0.761154
+---------------------------------------
+../../Predictors_tests/outputs/QUEST_25.sigma.seq.567646.training.txt
+Train Duration (s): 4.51452
+Memory: 7.93036
+Test Duration (s): 1.02167
+---------------------------------------
+../../Predictors_tests/outputs/QUEST_3.sigma.seq.567888.training.txt
+Train Duration (s): 4.57865
+Memory: 8.70336
+Test Duration (s): 0.977306
+---------------------------------------
