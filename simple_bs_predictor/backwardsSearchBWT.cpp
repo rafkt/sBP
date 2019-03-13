@@ -74,13 +74,13 @@ backwardsSearchBWT::backwardsSearchBWT(const string filename){
     //     cout << i << ": " << tmp_v[i] << ": " << alphabetCounters[i] << endl;
     // }
     // exit(0);
-    LplusOne = new int_vector<>(L.size(), 0, 64);
-    int newRangeStart = L.size();
-    for (int i = 0; i < L.size(); i++){
-        int return_val = fowawrdTraversal(i, newRangeStart);
-        assert(return_val != -1);
-        (*LplusOne)[i] = newRangeStart;
-    }
+//    LplusOne = new int_vector<>(L.size(), 0, 64);
+//    int newRangeStart = L.size();
+//    for (int i = 0; i < L.size(); i++){
+//        int return_val = fowawrdTraversal(i, newRangeStart);
+//        assert(return_val != -1);
+//        (*LplusOne)[i] = newRangeStart;
+//    }
 
     clearALL();
     deleteMap();
@@ -96,7 +96,7 @@ void backwardsSearchBWT::deleteMap(){
 }
 
 backwardsSearchBWT::~backwardsSearchBWT(){
-    delete LplusOne;
+   // delete LplusOne;
     delete[] alphabetCounters;
     deleteMap();
 }
@@ -411,24 +411,24 @@ void backwardsSearchBWT::getConsequents(vector<int> xy, int index, int rangeStar
 }
 
 
-void backwardsSearchBWT::getQuickConsequents(int rangeStart, int rangeEnd, vector<vector<int>>& consequentList, int& predictionCount, sdsl::bit_vector* consequentBits){//size should be over or equal to 2
-    for (int i = rangeStart; i <= rangeEnd; i++){
-        if ((*consequentBits)[i] == 1) continue;
-        (*consequentBits)[i] = 1;
-        vector<int> conseq;
-        int symbol = L[i];
-        if (symbol != sigma_seperator){
-            conseq.push_back(symbol);
-
-            (*consequentBits)[(*LplusOne)[i]] = 1;
-            symbol = L[(*LplusOne)[i]];
-            if (symbol != sigma_seperator) conseq.push_back(symbol);
-            consequentList.push_back(conseq);
-            predictionCount++;
-        }
-    }
-    return;
-}
+//void backwardsSearchBWT::getQuickConsequents(int rangeStart, int rangeEnd, vector<vector<int>>& consequentList, int& predictionCount, sdsl::bit_vector* consequentBits){//size should be over or equal to 2
+//    for (int i = rangeStart; i <= rangeEnd; i++){
+//        if ((*consequentBits)[i] == 1) continue;
+//        (*consequentBits)[i] = 1;
+//        vector<int> conseq;
+//        int symbol = L[i];
+//        if (symbol != sigma_seperator){
+//            conseq.push_back(symbol);
+//
+//           (*consequentBits)[(*LplusOne)[i]] = 1;
+//            symbol = L[(*LplusOne)[i]];
+//            if (symbol != sigma_seperator) conseq.push_back(symbol);
+//            consequentList.push_back(conseq);
+//            predictionCount++;
+//        }
+//    }
+//    return;
+//}
 
 void backwardsSearchBWT::getQuickConsequents_noLplus(int rangeStart, int rangeEnd, vector<vector<int>>& consequentList, int& predictionCount, sdsl::bit_vector* consequentBits){//size should be over or equal to 2
     for (int i = rangeStart; i <= rangeEnd; i++){

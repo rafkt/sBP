@@ -117,12 +117,17 @@ int main(int argc, const char * argv[])
 //    reverse(x.begin(), x.end()); //query should be given reversed since we want to count after.
 //    cout << c.countBeforeString(1000, &x[0], x.size()) << endl;
 
-    
+    cout << argv[1] << endl;
     vector<vector<int>> testQueries = readTestQueries(argv[2]);
+    auto begin= clock();
     subseqPredictor* pr = new subseqPredictor(argv[1]);
+    auto end = clock();
+    auto duration = ((double)(end - begin))/CLOCKS_PER_SEC;
+    cout << "Train Duration (s): " << duration << endl;
 
-    //auto begin = clock();
-    auto start = high_resolution_clock::now();
+
+    begin = clock();
+    //auto start = high_resolution_clock::now();
     for(vector<int> query : testQueries){
        // if (query.size() < 2) {cout << "short query; do we except this?" << endl; continue;}
         // int size = query.size() - 1;// our offset is 1 for now
@@ -136,17 +141,16 @@ int main(int argc, const char * argv[])
         // }
         // for (int i : finalQuery) cout << i << " ";
         // cout << endl;
-        cout << pr->start(&query[0], query.size()) << endl;
+        pr->start(&query[0], query.size());
         //break;
     }
-    auto stop = high_resolution_clock::now();
+    //auto stop = high_resolution_clock::now();
     // cout << "Duration (ms) = " << duration_cast<milliseconds>(stop-start).count()/(double)1000 << endl;
-    // // auto end = clock();
-    // // auto duration = ((double)(end - begin))/CLOCKS_PER_SEC;
-    // cout << argv[1] << endl;
-    // cout << "Memory: " << pr->get_memory() << endl;
-    // cout << "Duration: " << duration << endl;
-
+    end = clock();
+    duration = ((double)(end - begin))/CLOCKS_PER_SEC;
+    cout << "Memory: " << pr->get_memory() << endl;
+    cout << "Test Duration (s): " << duration << endl;
+    cout << "---------------------------------------" << endl;
 
    //vector<int> x = {1, 2};//FIFA: 114 133 148 212 256 300 582 610 - 114 133 148 212 256 300 582 610 30 626 647 99999
    //Answer 30

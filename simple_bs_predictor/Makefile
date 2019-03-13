@@ -15,7 +15,7 @@
 
 CC=g++ -std=c++11
 
-FLAGS=-O3 -g -DNDEBUG
+FLAGS=-O3 -g -DNDEBUG -fpermissive
 FLAGS_SDSL_I=-I ~/include
 FLAGS_SDSL_L=-L ~/lib
 OFLAGS=-c

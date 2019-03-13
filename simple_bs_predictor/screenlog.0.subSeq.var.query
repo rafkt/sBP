@@ -1,0 +1,15 @@
+../../Predictors_tests/outputs/QUEST.query.3.training.txt
+Train Duration (s): 0.260648
+Memory: 0.259878
+Test Duration (s): 0.056392
+---------------------------------------
+../../Predictors_tests/outputs/QUEST.query.6.training.txt
+Train Duration (s): 0.233517
+Memory: 0.259947
+Test Duration (s): 0.39712
+---------------------------------------
+../../Predictors_tests/outputs/QUEST.query.12.training.txt
+Train Duration (s): 0.271386
+Memory: 0.259985
+Test Duration (s): 1.08475
+---------------------------------------

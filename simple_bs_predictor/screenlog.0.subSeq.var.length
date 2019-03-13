@@ -1,0 +1,20 @@
+../../Predictors_tests/outputs/QUEST_5_1200.length.seq.872372.training.txt
+Train Duration (s): 4.37457
+Memory: 6.69271
+Test Duration (s): 0.072504
+---------------------------------------
+../../Predictors_tests/outputs/QUEST_10_600.length.seq.567539.training.txt
+Train Duration (s): 4.22387
+Memory: 7.21799
+Test Duration (s): 0.36715
+---------------------------------------
+../../Predictors_tests/outputs/QUEST_20_300.length.seq.299744.training.txt
+Train Duration (s): 4.11413
+Memory: 7.07735
+Test Duration (s): 0.735254
+---------------------------------------
+../../Predictors_tests/outputs/QUEST_40_150.length.seq.149900.training.txt
+Train Duration (s): 4.2885
+Memory: 6.96333
+Test Duration (s): 1.09302
+---------------------------------------
