@@ -187,7 +187,7 @@ int backwardsSearchBWT::search(int c, int rangeStart, int rangeEnd, int& newRang
         rankCounter += 2;
         int rankStart = L.rank(rangeStart, c);
         int rankEnd = L.rank(rangeEnd + 1, c);
-        cout << "c " << rankStart << " " << rangeEnd << endl;
+        cout << c << " " << rankStart << " " << rangeEnd << endl;
         if (rankEnd - rankStart == 0) return -1; //patern not found
         // int letterPos = alphabet.select(1, c);
         // if (letterPos != c) cout << "ERROR2 : " << letterPos << " : " << c << endl;
@@ -208,7 +208,7 @@ int backwardsSearchBWT::fowawrdTraversal(int index, int& newRangeStart){
     int range2Add = symbol != 0 ? alphabetCounters[symbol - 1] : 0;
     rankCounter++;
     int rangeStart = L.rank(index + 1, symbol) + range2Add - 1;
-    cout << "c " << 0 << " " << index + 1 << endl;
+    cout << symbol << " " << 0 << " " << index + 1 << endl;
     newRangeStart = rangeStart;
     return L[rangeStart]; 
 }
