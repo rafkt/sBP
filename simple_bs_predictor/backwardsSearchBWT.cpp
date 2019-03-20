@@ -23,7 +23,7 @@ double backwardsSearchBWT::sizeInMegabytes(){
 }
 
 
-backwardsSearchBWT::backwardsSearchBWT(const string filename){
+backwardsSearchBWT::backwardsSearchBWT(const string filename): rankCounter(0), L_accesses(0), intervalScans(0){
     letterNode l;
     ofstream tmpOutputFile;
     int lastItemcounter = 0;
@@ -184,8 +184,10 @@ int backwardsSearchBWT::searchQuery(int* xy, int size, int& finalStartRange, int
 
 int backwardsSearchBWT::search(int c, int rangeStart, int rangeEnd, int& newRangeStart, int& newRangeEnd){
     if (rangeEnd - rangeStart >= 0 && rangeEnd != -1 && rangeStart != -1){
+        rankCounter += 2;
         int rankStart = L.rank(rangeStart, c);
         int rankEnd = L.rank(rangeEnd + 1, c);
+        cout << "c " << rankStart << " " << rangeEnd << endl;
         if (rankEnd - rankStart == 0) return -1; //patern not found
         // int letterPos = alphabet.select(1, c);
         // if (letterPos != c) cout << "ERROR2 : " << letterPos << " : " << c << endl;
@@ -202,8 +204,11 @@ int backwardsSearchBWT::fowawrdTraversal(int index, int& newRangeStart){
     // int letterPos = alphabet.select(1, L[index]);
     // if (letterPos != L[index]) cout << "ERROR1 : " << letterPos << " : " << L[index] << endl;
     int symbol = L[index];
+    L_accesses += 2;
     int range2Add = symbol != 0 ? alphabetCounters[symbol - 1] : 0;
+    rankCounter++;
     int rangeStart = L.rank(index + 1, symbol) + range2Add - 1;
+    cout << "c " << 0 << " " << index + 1 << endl;
     newRangeStart = rangeStart;
     return L[rangeStart]; 
 }
@@ -319,6 +324,7 @@ void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeS
             std::vector<uint64_t> cs(L.sigma);      // list of characters in the interval
             std::vector<uint64_t> rank_c_i(L.sigma);    // number of occurrence of character in [0 .. i-1]
             std::vector<uint64_t> rank_c_j(L.sigma);    // number of occurrence of character in [0 .. j-1]
+            intervalScans++;
             if (rangeStart >= 0 || rangeEnd >= 0) interval_symbols(L, rangeStart, rangeEnd + 1, quantity, cs, rank_c_i, rank_c_j);
 
             // for (counterMap::reverse_iterator mapIt = res.rbegin(); mapIt != res.rend(); mapIt++) {
@@ -402,6 +408,7 @@ void backwardsSearchBWT::getConsequents(vector<int> xy, int index, int rangeStar
             if ((*consequentBits)[i] == 1) continue;
             (*consequentBits)[i] = 1;
             int symbol = L[i];
+            L_accesses++;
             search(symbol, i, i, newRangeStart, newRangeEnd);
             //search(mapIt->second, rangeStart, rangeEnd, newRangeStart, newRangeEnd);
             getConsequents(xy, index + 1, newRangeStart, newRangeEnd, length, /*mapIt->second*/ symbol, consequentList, predictionCount, consequentBits);
@@ -436,6 +443,7 @@ void backwardsSearchBWT::getQuickConsequents_noLplus(int rangeStart, int rangeEn
         (*consequentBits)[i] = 1;
         vector<int> conseq;
         int symbol = L[i];
+        L_accesses += 2;
         if (symbol != sigma_seperator){
             conseq.push_back(symbol);
 
@@ -460,6 +468,7 @@ counterMap backwardsSearchBWT::scan(int rangeStart, int rangeEnd){
     double relay_value = overallRangeLength / (sigma_seperator + 1);
     if (relay_value <= threshold){ // this threshold was based on research that was done in my master thesis
         for (int i = rangeStart; i <= rangeEnd; i++){
+            L_accesses++;
             ret = mostFrequent.insert(std::pair<int, int>(L[i], 1));
             if (ret.second == false){
                 ret.first->second = ret.first->second + 1;

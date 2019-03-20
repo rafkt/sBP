@@ -54,6 +54,8 @@ public:
     int seqNumber;
     //int countRange(int*, int, int = 0, int = 0);
     double sizeInMegabytes();
+
+    int rankCounter, L_accesses, intervalScans;
 private:
     void deleteMap();
 //    int rank(const char &, const int &);
