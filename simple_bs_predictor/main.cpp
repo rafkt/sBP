@@ -128,27 +128,29 @@ int main(int argc, const char * argv[])
 
     //auto begin = clock();
     // auto start = high_resolution_clock::now();
-    for(vector<int> query : testQueries){
-       // if (query.size() < 2) {cout << "short query; do we except this?" << endl; continue;}
-        // int size = query.size() - 1;// our offset is 1 for now
-        // vector<int> finalQuery;
-        // if (5 > size){ //our query length should be 5 for now
-        //     vector<int> q(query.begin(), query.begin() + size);
-        //     finalQuery = q;
-        // }else{
-        //     vector<int> q(query.begin() + (size - 5), query.begin() + size);
-        //     finalQuery = q;
-        // }
-        // for (int i : finalQuery) cout << i << " ";
-        // cout << endl;
-        pr->start(&query[0], query.size());
-        //break;
-    }
+    // for(vector<int> query : testQueries){
+    //    // if (query.size() < 2) {cout << "short query; do we except this?" << endl; continue;}
+    //     // int size = query.size() - 1;// our offset is 1 for now
+    //     // vector<int> finalQuery;
+    //     // if (5 > size){ //our query length should be 5 for now
+    //     //     vector<int> q(query.begin(), query.begin() + size);
+    //     //     finalQuery = q;
+    //     // }else{
+    //     //     vector<int> q(query.begin() + (size - 5), query.begin() + size);
+    //     //     finalQuery = q;
+    //     // }
+    //     // for (int i : finalQuery) cout << i << " ";
+    //     // cout << endl;
+    //     pr->start(&query[0], query.size());
+    //     //break;
+    // }
+    //cout << "Errors 1 count,Errors 2 count" << endl;
+    // cout << pr->errors_1_count / (float) testQueries.size() << "," << pr->errors_2_count / (float) testQueries.size() << endl;
     //cout << "#ranks, #L[], #sdsl::wt::interval_scans" << endl;
     // cout << pr->bSBWT->rankCounter << "," \
     // << pr->bSBWT->L_accesses << "," \
     // <<pr->bSBWT->intervalScans << endl;
-    //cout << endl << endl << "=AVERAGE(A2:A15),=AVERAGE(B2:B15),=AVERAGE(C2:C15)" << endl;
+    cout << endl << endl << "=AVERAGE(A1:A14),=AVERAGE(B1:B14)" << endl;
     // auto stop = high_resolution_clock::now();
     // cout << "Duration (ms) = " << duration_cast<milliseconds>(stop-start).count()/(double)1000 << endl;
     // auto end = clock();

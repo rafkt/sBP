@@ -19,7 +19,7 @@ float subseqPredictor::get_memory(){
 	return bSBWT->sizeInMegabytes();
 }
 
-subseqPredictor::subseqPredictor(const string filename){
+subseqPredictor::subseqPredictor(const string filename) : errors_2_count(0), errors_1_count(0){
     bSBWT = new backwardsSearchBWT(filename);
 }
 
@@ -298,6 +298,7 @@ int subseqPredictor::start(int* query, int size){ // this function will manage d
 
 void subseqPredictor::generateSubqueries(int* query, int size){
 	int initialLength = size;
+	errors_1_count++;
 	for (int i = 0; i < size; i++){
         //cout << i << endl;
         int old_item = query[i];
@@ -313,6 +314,7 @@ void subseqPredictor::generateSubqueries(int* query, int size){
     }
     if (stop) return;
     if (size > 2){
+    	errors_2_count++;
         for (int i = 0; i < size; i++){
             for (int j = i + 1; j < size; j++){
                 //cout << i << j << endl;
