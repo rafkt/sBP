@@ -187,7 +187,7 @@ int backwardsSearchBWT::search(int c, int rangeStart, int rangeEnd, int& newRang
         rankCounter += 2;
         int rankStart = L.rank(rangeStart, c);
         int rankEnd = L.rank(rangeEnd + 1, c);
-        cout << c << " " << rankStart << " " << rangeEnd << endl;
+        cout << c << " " << rangeStart << " " << rangeEnd << endl;
         if (rankEnd - rankStart == 0) return -1; //patern not found
         // int letterPos = alphabet.select(1, c);
         // if (letterPos != c) cout << "ERROR2 : " << letterPos << " : " << c << endl;
