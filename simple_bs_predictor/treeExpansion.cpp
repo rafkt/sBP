@@ -88,42 +88,101 @@ using namespace std;
 //Either way, even if you could replicate the same behaviour recursively, you have to go to the root again which
 //defies the whole purpose
 
-void treeExpansion(vector<int> xy, int index, int expansions){
+void treeExpansion(vector<int> xy, int index, int expansions, int rangeStart,vector<int>& ranges){
+	int newRangeStart;
+	if (index == xy.size()) {
+		ranges.push_back(rangeStart);
+		return;
+	}
+	else{
 
-	for (int k = 0; k < index + 1; k++){
-			if (xy[k] == -100) continue;
-			cout << xy[k] << " ";
-		}
-		cout << endl;
-
-	if (index == xy.size() - 1) {
-		cout << "End reached: " << " :";
+		cout << "Searching for: ";
 		for (int k = 0; k < index + 1; k++){
 			if (xy[k] == -100) continue;
 			cout << xy[k] << " ";
 		}
 		cout << endl;
-		return;
-	}
-	else{
-		treeExpansion(xy, index + 1, expansions);
-		//cout << "successful" << endl;
+		
+		cout << "Successful? 1/0 ";
+		int answer; cin >> answer; if (answer == 0) return;
+		cout << "give range (one number): "; cin >> rangeStart;
+		
 
-		if (expansions == 0) return;
-		int previous = xy[index + 1];
-		xy[index + 1] = -2;
-		treeExpansion(xy, index + 1, expansions - 1);
+		treeExpansion(xy, index + 1, expansions, rangeStart, ranges);
+
+		if (index + 1 == xy.size()) return;
+		else if (expansions == 0) return;
+			
+
+			int previous = xy[index + 1];
+			//this is the place that we treat the index as a ?
+
+			for (int k = 0; k < index + 1; k++){
+				if (xy[k] == -100) continue;
+				cout << xy[k] << " ";
+			}
+			cout << endl;
+			cout << "Expanding, how many symbols are there? ";
+			int quantity; vector<int> cs;
+			cin >> quantity; cout << endl;
+			int counter = 0;
+			do{
+				cout << "Give distinct symbol " << endl;
+				int symbol;
+				cin >> symbol;
+				cs.push_back(symbol);
+				counter++;
+			}while(counter < quantity);
+
+		for (int smb : cs){
+			xy[index + 1] = smb;
+			treeExpansion(xy, index + 1, expansions - 1, rangeStart, ranges);
+		}
 		xy[index + 1] = previous;
-
 	}
 }
 
 
+// if (expansions == 0) return;
+// 		int previous = xy[index + 1];
+// 		xy[index + 1] = -2;
+// 		treeExpansion(xy, index + 1, expansions - 1);
+// 		xy[index + 1] = previous;
+
+
+// if (expansions == 0) return;
+// 		int previous = xy[index + 1];
+// 		//this is the place that we treat the index as a ?
+
+// 			cout << "Expanding, how many symbols are there? ";
+// 			int quantity; vector<int> cs;
+// 			cin >> quantity; cout << endl;
+// 			int counter = 0;
+// 			do{
+// 				cout << "Give distinct symbol " << endl;
+// 				int symbol;
+// 				cin >> symbol;
+// 				cs.push_back(symbol);
+// 				counter++;
+// 			}while(counter < quantity);
+
+// 		for (int smb : cs){
+// 			xy[index + 1] = smb;
+// 			treeExpansion(xy, index + 1, expansions - 1);
+// 		}
+// 		xy[index + 1] = previous;
+
+
 int main(){
 
-	vector<int> x = {-100, 5, 4, 3, 2, 1};
+	vector<int> ranges;
 
-	treeExpansion(x, 0, 2);
+	vector<int> x = {1, 2, 3, 4, 5};
+
+	treeExpansion(x, 0, 1, 0, ranges);
+
+	for (int i : ranges) cout << i << " ";
+	cout << endl;
 	
 	return 0;
 }
