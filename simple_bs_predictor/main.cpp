@@ -141,7 +141,7 @@ int main(int argc, const char * argv[])
         // }
         // for (int i : finalQuery) cout << i << " ";
         // cout << endl;
-        pr->start(&query[0], query.size());
+        pr->startFaster(&query[0], query.size());
         //break;
     }
     //auto stop = high_resolution_clock::now();

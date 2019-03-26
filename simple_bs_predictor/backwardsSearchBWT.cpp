@@ -194,7 +194,7 @@ int backwardsSearchBWT::search(int c, int rangeStart, int rangeEnd, int& newRang
         newRangeStart = rankStart + range2Add;
         newRangeEnd = rankEnd + range2Add - 1;
         return 1;//valid input
-    }else return 0; //no valid input
+    }else return -1; //no valid input
 }
 
 int backwardsSearchBWT::fowawrdTraversal(int index, int& newRangeStart){
@@ -295,6 +295,44 @@ int backwardsSearchBWT::backwardError(int* xy, int size, set<int>& substitutedIt
     // cout << endl;
 
     return 1;
+}
+
+void backwardsSearchBWT::treeExpansion(vector<int> xy, int index, int expansions, int rangeStart, int rangeEnd, vector<pair<int, int>>& ranges){
+    int newRangeStart, newRangeEnd;
+    if (index == xy.size()) {
+        ranges.push_back(make_pair(rangeStart, rangeEnd));
+        return;
+    }
+    else{
+
+        if (search(xy[index], rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) return;
+        
+
+        treeExpansion(xy, index + 1, expansions, newRangeStart, newRangeEnd,ranges);
+
+        if (index + 1 == xy.size()) return;
+        else if (expansions == 0) return;
+            
+
+        int previous = xy[index + 1];
+        //this is the place that we treat the index as a ?
+
+        //getting distinct symbols through sdsl::interval_symbols
+
+        uint64_t quantity = 0;
+        std::vector<uint64_t> cs(L.sigma);      // list of characters in the interval
+        std::vector<uint64_t> rank_c_i(L.sigma);    // number of occurrence of character in [0 .. i-1]
+        std::vector<uint64_t> rank_c_j(L.sigma);    // number of occurrence of character in [0 .. j-1]
+        if (rangeStart >= 0 || rangeEnd >= 0) interval_symbols(L, newRangeStart, newRangeEnd + 1, quantity, cs, rank_c_i, rank_c_j);
+
+
+
+        for (int it = quantity - 1; it > -1; it--){
+            xy[index + 1] = cs[it];
+            treeExpansion(xy, index + 1, expansions - 1, newRangeStart, newRangeEnd, ranges);
+        }
+        xy[index + 1] = previous;
+    }
 }
 
 

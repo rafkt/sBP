@@ -44,6 +44,7 @@ public:
     int fowawrdTraversal(int, int&);
     int backwardTraversal(int index, int&);
     void getRange(int, int&, int&);
+    void treeExpansion(vector<int>, int, int, int, int, vector<pair<int, int>>&);
     void neighborExpansion(vector<int>, int, int, int, vector<pair<int, int>>&);
     void getConsequents(vector<int> xy, int index, int rangeStart, int rangeEnd, int length, int d, vector<vector<int>>&, int&, sdsl::bit_vector*);
     void getQuickConsequents(int, int, vector<vector<int>>&, int&, sdsl::bit_vector*);
@@ -54,6 +55,7 @@ public:
     int seqNumber;
     //int countRange(int*, int, int = 0, int = 0);
     double sizeInMegabytes();
+
 private:
     void deleteMap();
 //    int rank(const char &, const int &);

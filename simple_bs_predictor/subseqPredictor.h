@@ -26,6 +26,7 @@ public:
     ~subseqPredictor();
     int getBest();
     int start(int*, int);
+    int startFaster(int*, int);
 	double itemConfidence(int);
 	int datasetSeqNumber();
 	float get_memory();
@@ -41,4 +42,10 @@ private:
     int predictionCount;
 	bool threashold;
 	cashed_ranges_map cashed_ranges;
+
+
+	void getAndPushConsequents(vector<pair<int, int>>, pair<int, int>, int, int);
+    void generate2ErrorsOnly(int*, int, int);
+
+
 };
