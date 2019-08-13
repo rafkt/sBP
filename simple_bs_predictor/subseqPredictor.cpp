@@ -13,7 +13,7 @@
 #include <time.h>
 #include <set>
 
-#define MAXPREDICTIONCOUNT 0
+#define MAXPREDICTIONCOUNT 200
 
 float subseqPredictor::get_memory(){
 	return bSBWT->sizeInMegabytes();
@@ -61,133 +61,14 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 	set<int> firstItemPossibleReplacements, secondItemPossibleReplacements;
 	vector<pair<int, int>> bs_ranges;
 	vector<pair<int, int>> exclude_bs_ranges;
-	if (query[0] == -2){
-		
-		vector<int> exclude_query_vector(size);
-		copy(query, query + size, exclude_query_vector.begin());
 
-
-		if (errors > 1 && query[1] == -2){
-		// 	bSBWT->backwardError(query, size, secondItemPossibleReplacements);
-		// 	for (int item : secondItemPossibleReplacements){
-		// 		//cout << item << endl;
-		// 		query[1] = item;
-		// 		bSBWT->backwardError(query, size, firstItemPossibleReplacements);
-		// 		for (int Fitem : firstItemPossibleReplacements){
-		// 			//cout << Fitem << endl;
-		// 			query[0] = Fitem;
-
-		// 			// cout << ".Current query: ";
-		// 			// for (int i = 0; i < size; i++){
-		// 			// 	cout << query[i] << " ";
-		// 			// }
-		// 			// cout << endl;
-
-//
-//					exclude_query_vector[1] = bSBWT->sigma_seperator; // -2 99999 a b c
-//					if (bSBWT->searchQuery(&(exclude_query_vector[1]), size - 1, rangeStart, rangeEnd) != -1){
-//			    		exclude_bs_ranges.push_back(make_pair(rangeStart, rangeEnd));
-//			    	}
-
-					
-
-					
-//					exclude_query_vector[0] = bSBWT->sigma_seperator;
-//					exclude_query_vector[1] = -2; // 99999 -2 a b c
-//					retrieved_ranges = cashed_ranges[exclude_query_vector];
-//					if (retrieved_ranges.size() == 0){
-//						bSBWT->getRange(exclude_query_vector[0], rangeStart, rangeEnd);
-//						bSBWT->neighborExpansion(exclude_query_vector, 1, rangeStart, rangeEnd, retrieved_ranges);
-//						cashed_ranges[exclude_query_vector] = retrieved_ranges;
-//					}
-//					exclude_bs_ranges.insert(exclude_bs_ranges.end(), retrieved_ranges.begin(), retrieved_ranges.end());
-
-
-					int finalStartRange, finalEndRange;
-			    	if (bSBWT->searchQuery(&(query[2]), size - 2, finalStartRange, finalEndRange) != -1){
-			    		bs_ranges.push_back(make_pair(finalStartRange, finalEndRange));
-			    	}
-			    		
-		// 		}
-		// 	}
-		// 	firstItemPossibleReplacements.clear(); secondItemPossibleReplacements.clear();
-		}else{ //bSBWT->backwardError(query, size, firstItemPossibleReplacements);
-		//for (int item : firstItemPossibleReplacements){
-			//cout << item << endl;
-			// query[0] = item;
-
-			exclude_query_vector[0] = bSBWT->sigma_seperator;
-
-			//repeated code here - should improve it
-			vector<int> query_vector(size - 1);
-			copy(&(query[1]), query + size, query_vector.begin());
-		    if (errors > 1){
-
-//				if (cashed_ranges[exclude_query_vector].size() == 0) {
-					//bSBWT->getRange(exclude_query_vector[0], rangeStart, rangeEnd);
-					//bSBWT->neighborExpansion(exclude_query_vector, 1, rangeStart, rangeEnd, exclude_bs_ranges);
-					//cashed_ranges[exclude_query_vector] = exclude_bs_ranges;
-//				}else{
-					//exclude_bs_ranges = cashed_ranges[exclude_query_vector];
-//				}
-
-				if (cashed_ranges[query_vector].size() == 0){
-					bSBWT->getRange(query[1], rangeStart, rangeEnd); // -2 a b  -2 c
-		    		bSBWT->neighborExpansion(query_vector, 1, rangeStart, rangeEnd, bs_ranges); // a b -2 c
-		    		cashed_ranges[query_vector] = bs_ranges;
-				}else{
-					bs_ranges = cashed_ranges[query_vector];
-				}
-		    	
-		    }else{
-				//if (bSBWT->searchQuery(&(exclude_query_vector[0]), size, rangeStart, rangeEnd) != -1){
-		    		//exclude_bs_ranges.push_back(make_pair(rangeStart, rangeEnd));
-		    	//}
-
-		  //   	cout << "..Current query: ";
-				// for (int i = 0; i < size; i++){
-				// 	cout << query[i] << " ";
-				// }
-				// cout << endl;
-
-		    	//should do a search; if search returns anything then I should add it in the bs_ranges
-		    	int finalStartRange, finalEndRange;
-		    	if (bSBWT->searchQuery(&(query[1]), size - 1, finalStartRange, finalEndRange) != -1){
-		    		bs_ranges.push_back(make_pair(finalStartRange, finalEndRange));
-		    	}
-		    }
-			//end of repeated code
-		}
-
-		//excluding ranges
-		for (pair<int, int> range : exclude_bs_ranges){
-			for (int r = range.first; r <= range.second; r++) { (*consequentBits)[r] = 1;}
-		}
-		//end of excluding ranges
-
-
-		vector<vector<int>> consequentList;
-	    //cout << " : Ranges : " << bs_ranges.size() << endl;
-	    for (pair<int, int> it : bs_ranges){
-	    	vector<int> tmp;
-	    	//bSBWT->getConsequents(tmp, 0, it.first, it.second, 2, -1, consequentList, predictionCount, consequentBits);
-	    	bSBWT->getQuickConsequents_noLplus(it.first, it.second, consequentList, predictionCount, consequentBits);
-	    }
-	    //put all ranges into CT
-	    for (vector<int> consequent : consequentList) push(consequent, errors, initialLength, size);
-	    
-	    if (predictionCount > MAXPREDICTIONCOUNT) {
-	    	stop = true;
-	    	return;
-		}
-	}else{
 		vector<int> query_vector(size);
 		copy(query, query + size, query_vector.begin());
 	    if (errors > 0){
 	    	bSBWT->getRange(query[0], rangeStart, rangeEnd);
 	    	if (rangeStart != -1 && rangeEnd != -1){
 	    		if (cashed_ranges[query_vector].size() == 0){
-	    			bSBWT->neighborExpansion(query_vector, 1, rangeStart, rangeEnd, bs_ranges);
+	    			bSBWT->treeExpansion(query_vector, 1, errors, rangeStart, rangeEnd, bs_ranges);
 	    			cashed_ranges[query_vector] = bs_ranges;
 	    		}else{
 	    			bs_ranges = cashed_ranges[query_vector];
@@ -222,7 +103,7 @@ void subseqPredictor::predict(int* query, int size, int maxPredictionCount, int 
 	    	stop = true;
 	    	return;
 		}
-	}
+	
 
 	//for every range that I have found
 		//get the consequent of length 2; this can be something like L[x], L[y]
@@ -298,39 +179,42 @@ int subseqPredictor::start(int* query, int size){ // this function will manage d
 
 void subseqPredictor::generateSubqueries(int* query, int size){
 	int initialLength = size;
-	for (int i = 0; i < size; i++){
-        //cout << i << endl;
-        int old_item = query[i];
-        query[i] = -2;
-        // for (int item : y) cout << item << " ";
-        // cout << endl;
-        //for (int q = 0; q < size; q++) cout << query[q] << " ";
-        //cout << endl;
-        predict(query, size, MAXPREDICTIONCOUNT, initialLength, 1);
-        //predict; if permanent stop abbort and return answer
-        query[i] = old_item;
-        //if (stop) return;
-    }
-    if (stop) return;
-    if (size > 2){
-        for (int i = 0; i < size; i++){
-            for (int j = i + 1; j < size; j++){
-                //cout << i << j << endl;
-                int old_item_1 = query[i];
-                int old_item_2 = query[j];
-                query[i] = -2;
-                query[j] = -2;
-                // for (int item : y) cout << item << " ";
-                // cout << endl;
-                //for (int q = 0; q < size; q++) cout << query[q] << " ";
-        		//cout << endl;
-                predict(query, size, MAXPREDICTIONCOUNT, initialLength, 2);
-                //predict; if permanent stop abbort and return answer
+	// for (int i = 0; i < size; i++){
+ //        //cout << i << endl;
+ //        int old_item = query[i];
+ //        query[i] = -2;
+ //        // for (int item : y) cout << item << " ";
+ //        // cout << endl;
+ //        //for (int q = 0; q < size; q++) cout << query[q] << " ";
+ //        //cout << endl;
+ //        predict(query, size, MAXPREDICTIONCOUNT, initialLength, 1);
+ //        //predict; if permanent stop abbort and return answer
+ //        query[i] = old_item;
+ //        //if (stop) return;
+ //    }
+ //    if (stop) return;
+ //    if (size > 2){
+ //        for (int i = 0; i < size; i++){
+ //            for (int j = i + 1; j < size; j++){
+ //                //cout << i << j << endl;
+ //                int old_item_1 = query[i];
+ //                int old_item_2 = query[j];
+ //                query[i] = -2;
+ //                query[j] = -2;
+ //                // for (int item : y) cout << item << " ";
+ //                // cout << endl;
+ //                //for (int q = 0; q < size; q++) cout << query[q] << " ";
+ //        		//cout << endl;
+ //                predict(query, size, MAXPREDICTIONCOUNT, initialLength, 2);
+ //                //predict; if permanent stop abbort and return answer
 
-                query[i] = old_item_1;
-                query[j] = old_item_2;
-                //if (stop) return;
-            }
-        }
-    }
+ //                query[i] = old_item_1;
+ //                query[j] = old_item_2;
+ //                //if (stop) return;
+ //            }
+ //        }
+ //    }
+		predict(query, size, MAXPREDICTIONCOUNT, initialLength, 1);
+		if (stop) return;
+		predict(query, size, MAXPREDICTIONCOUNT, initialLength, 2);
 }

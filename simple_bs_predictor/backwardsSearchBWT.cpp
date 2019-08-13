@@ -297,6 +297,71 @@ int backwardsSearchBWT::backwardError(int* xy, int size, set<int>& substitutedIt
     return 1;
 }
 
+void backwardsSearchBWT::treeExpansion(vector<int> xy, int index, int expansions, int rangeStart, int rangeEnd, vector<pair<int, int>>& ranges){
+    int newRangeStart;
+    if (index == xy.size()) {
+        ranges.push_back(make_pair(rangeStart, rangeEnd));
+        return;
+    }
+    else{
+
+        // cout << "Searching for: ";
+        // for (int k = 0; k < index + 1; k++){
+        //     if (xy[k] == -100) continue;
+        //     cout << xy[k] << " ";
+        // }
+        // cout << endl;
+        
+        // cout << "Successful? 1/0 ";
+        // int answer; cin >> answer; if (answer == 0) return;
+        // cout << "give range (one number): "; cin >> rangeStart;
+
+        int newRangeStart, newRangeEnd;
+        if (search(xy[index], rangeStart, rangeEnd, newRangeStart, newRangeEnd) == -1) return;
+        rangeStart = newRangeStart;
+        rangeEnd = newRangeEnd;
+        
+
+        treeExpansion(xy, index + 1, expansions, rangeStart, rangeEnd, ranges);
+
+        if (index + 1 == xy.size()) return;
+        else if (expansions == 0) return;
+            
+
+            int previous = xy[index + 1];
+            //this is the place that we treat the index as a ?
+
+            // for (int k = 0; k < index + 1; k++){
+            //     if (xy[k] == -100) continue;
+            //     cout << xy[k] << " ";
+            // }
+            // cout << endl;
+            // cout << "Expanding, how many symbols are there? ";
+            // int quantity; vector<int> cs;
+            // cin >> quantity; cout << endl;
+            // int counter = 0;
+            // do{
+            //     cout << "Give distinct symbol " << endl;
+            //     int symbol;
+            //     cin >> symbol;
+            //     cs.push_back(symbol);
+            //     counter++;
+            // }while(counter < quantity);
+            uint64_t quantity = 0;
+            std::vector<uint64_t> cs(L.sigma);      // list of characters in the interval
+            std::vector<uint64_t> rank_c_i(L.sigma);    // number of occurrence of character in [0 .. i-1]
+            std::vector<uint64_t> rank_c_j(L.sigma);    // number of occurrence of character in [0 .. j-1]
+            if (rangeStart >= 0 || rangeEnd >= 0) interval_symbols(L, rangeStart, rangeEnd + 1, quantity, cs, rank_c_i, rank_c_j);
+
+
+        for (int smb : cs){
+            xy[index + 1] = smb;
+            treeExpansion(xy, index + 1, expansions - 1, rangeStart, rangeEnd, ranges);
+        }
+        xy[index + 1] = previous;
+    }
+}
+
 
 void backwardsSearchBWT::neighborExpansion(vector<int> xy, int index, int rangeStart, int rangeEnd, vector<pair<int, int>>& ranges){//size should be over or equal to 2
     int newRangeStart, newRangeEnd;
