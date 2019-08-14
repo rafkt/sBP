@@ -141,7 +141,7 @@ int main(int argc, const char * argv[])
         // }
         // for (int i : finalQuery) cout << i << " ";
         // cout << endl;
-        pr->start(&query[0], query.size());
+        cout << pr->start(query, query.size()) << endl;
         //break;
     }
     //auto stop = high_resolution_clock::now();
@@ -149,7 +149,7 @@ int main(int argc, const char * argv[])
     end = clock();
     duration = ((double)(end - begin))/CLOCKS_PER_SEC;
     // cout << "Memory: " << pr->get_memory() << endl;
-    cout << "Test Duration (s): " << duration << endl;
+    // cout << duration << endl;
     // cout << "---------------------------------------" << endl;
 
    //vector<int> x = {1, 2};//FIFA: 114 133 148 212 256 300 582 610 - 114 133 148 212 256 300 582 610 30 626 647 99999

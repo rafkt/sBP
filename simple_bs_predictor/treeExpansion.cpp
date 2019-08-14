@@ -179,7 +179,7 @@ int main(){
 
 	vector<int> x = {1, 2, 3, 4, 5};
 
-	treeExpansion(x, 0, 1, 0, ranges);
+	treeExpansion(x, 0, 2, 0, ranges);
 
 	for (int i : ranges) cout << i << " ";
 	cout << endl;

@@ -297,10 +297,11 @@ int backwardsSearchBWT::backwardError(int* xy, int size, set<int>& substitutedIt
     return 1;
 }
 
-void backwardsSearchBWT::treeExpansion(vector<int> xy, int index, int expansions, int rangeStart, int rangeEnd, vector<pair<int, int>>& ranges){
+void backwardsSearchBWT::treeExpansion(vector<int> xy, int index, int expansions, int rangeStart, int rangeEnd, vector<pair<int, int>>& ranges, vector<vector<int>>& consequentList, int& predictionCount, sdsl::bit_vector* consequentBits, int maxPredictionCount){
     int newRangeStart;
     if (index == xy.size()) {
-        ranges.push_back(make_pair(rangeStart, rangeEnd));
+        // ranges.push_back(make_pair(rangeStart, rangeEnd));
+        getQuickConsequents_noLplus(rangeStart, rangeEnd, consequentList, predictionCount, consequentBits);
         return;
     }
     else{
@@ -322,9 +323,9 @@ void backwardsSearchBWT::treeExpansion(vector<int> xy, int index, int expansions
         rangeEnd = newRangeEnd;
         
 
-        treeExpansion(xy, index + 1, expansions, rangeStart, rangeEnd, ranges);
-
-        if (index + 1 == xy.size()) return;
+        treeExpansion(xy, index + 1, expansions, rangeStart, rangeEnd, ranges, consequentList, predictionCount, consequentBits, maxPredictionCount);
+        if (predictionCount >= maxPredictionCount) return;
+        else if (index + 1 == xy.size()) return;
         else if (expansions == 0) return;
             
 
@@ -356,7 +357,7 @@ void backwardsSearchBWT::treeExpansion(vector<int> xy, int index, int expansions
 
         for (int smb : cs){
             xy[index + 1] = smb;
-            treeExpansion(xy, index + 1, expansions - 1, rangeStart, rangeEnd, ranges);
+            treeExpansion(xy, index + 1, expansions - 1, rangeStart, rangeEnd, ranges, consequentList, predictionCount, consequentBits, maxPredictionCount);
         }
         xy[index + 1] = previous;
     }

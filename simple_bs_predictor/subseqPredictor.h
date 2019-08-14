@@ -25,7 +25,7 @@ public:
     subseqPredictor(const string);
     ~subseqPredictor();
     int getBest();
-    int start(int*, int);
+    int start(vector<int>, int);
 	double itemConfidence(int);
 	int datasetSeqNumber();
 	float get_memory();
@@ -36,8 +36,8 @@ private:
 	int prediction;
 	double score;
 	void push(vector<int>, int, int, int);
-	void predict(int*, int, int, int, int);
-    void generateSubqueries(int*, int);
+	void predict(vector<int>, int, int, int, int);
+    void generateSubqueries(vector<int>, int);
     int predictionCount;
 	bool threashold;
 	cashed_ranges_map cashed_ranges;
