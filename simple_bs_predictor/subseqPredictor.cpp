@@ -59,11 +59,12 @@ void subseqPredictor::predict(vector<int> query, int size, int maxPredictionCoun
 	int rangeStart = - 1, rangeEnd = -1;
 	vector<pair<int, int>> bs_ranges;
 	vector<vector<int>> consequentList;
+	vector<int> consequentList_corresponding_errors;
 
 
 	    	bSBWT->getRange(query[0], rangeStart, rangeEnd);
 	    	if (rangeStart != -1 && rangeEnd != -1){
-	    		bSBWT->treeExpansion(query, 1, errors, rangeStart, rangeEnd, bs_ranges, consequentList, predictionCount, consequentBits, MAXPREDICTIONCOUNT);
+	    		bSBWT->treeExpansion(query, 1, errors, errors, rangeStart, rangeEnd, bs_ranges, consequentList, consequentList_corresponding_errors, predictionCount, consequentBits, MAXPREDICTIONCOUNT);
 	    	}
 
 	    //cout << ": Ranges : " << bs_ranges.size() << endl;
@@ -73,7 +74,10 @@ void subseqPredictor::predict(vector<int> query, int size, int maxPredictionCoun
 	    // 	bSBWT->getQuickConsequents_noLplus(it.first, it.second, consequentList, predictionCount, consequentBits);
 	    // }
 	    //put all ranges into CT
-	    for (vector<int> consequent : consequentList) push(consequent, errors, initialLength, size);
+	    for (int i = 0; i < consequentList.size(); i++){
+
+	    	push(consequentList[i], consequentList_corresponding_errors[i], initialLength, size);
+	    }
 	    
 	    if (predictionCount >= MAXPREDICTIONCOUNT) {
 	    	stop = true;
