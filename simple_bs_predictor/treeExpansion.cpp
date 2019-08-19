@@ -177,7 +177,7 @@ int main(){
 
 	vector<int> ranges;
 
-	vector<int> x = {1, 2, 3, 4, 5};
+	vector<int> x = {1, 2};
 
 	treeExpansion(x, 0, 2, 0, ranges);
 
