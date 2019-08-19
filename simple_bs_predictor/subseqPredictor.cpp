@@ -74,6 +74,7 @@ void subseqPredictor::predict(vector<int> query, int size, int maxPredictionCoun
 	    // 	bSBWT->getQuickConsequents_noLplus(it.first, it.second, consequentList, predictionCount, consequentBits);
 	    // }
 	    //put all ranges into CT
+	    cout << consequentList.size() << " " << consequentList_corresponding_errors.size() << endl;
 	    for (int i = 0; i < consequentList.size(); i++){
 
 	    	push(consequentList[i], consequentList_corresponding_errors[i], initialLength, size);
