@@ -117,7 +117,7 @@ int main(int argc, const char * argv[])
 //    reverse(x.begin(), x.end()); //query should be given reversed since we want to count after.
 //    cout << c.countBeforeString(1000, &x[0], x.size()) << endl;
 
-    // cout << argv[1] << endl;
+    cout << argv[1] << endl;
     vector<vector<int>> testQueries = readTestQueries(argv[2]);
     auto begin= clock();
     subseqPredictor* pr = new subseqPredictor(argv[1]);
@@ -141,7 +141,7 @@ int main(int argc, const char * argv[])
         // }
         // for (int i : finalQuery) cout << i << " ";
         // cout << endl;
-        cout << pr->start(query, query.size()) << endl;
+        /* cout <<  */pr->start(query, query.size()) /* << endl */;
         //break;
     }
     //auto stop = high_resolution_clock::now();
@@ -149,8 +149,8 @@ int main(int argc, const char * argv[])
     end = clock();
     duration = ((double)(end - begin))/CLOCKS_PER_SEC;
     // cout << "Memory: " << pr->get_memory() << endl;
-    // cout << duration << endl;
-    // cout << "---------------------------------------" << endl;
+    cout << duration << endl;
+    cout << "---------------------------------------" << endl;
 
    //vector<int> x = {1, 2};//FIFA: 114 133 148 212 256 300 582 610 - 114 133 148 212 256 300 582 610 30 626 647 99999
    //Answer 30

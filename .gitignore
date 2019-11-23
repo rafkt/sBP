@@ -33,3 +33,4 @@ simple_bs_predictor/ranksExports/rankPrintOuts/*
 *.out
 *.app
 .DS_Store
+.vscode
