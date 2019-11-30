@@ -355,8 +355,8 @@ void backwardsSearchBWT::treeExpansion(vector<int> xy, int index, int expansions
             if (rangeStart >= 0 || rangeEnd >= 0) interval_symbols(L, rangeStart, rangeEnd + 1, quantity, cs, rank_c_i, rank_c_j);
 
 
-        for (int smb : cs){
-            xy[index + 1] = smb;
+        for (int i = 0; i < quantity; i++){
+            xy[index + 1] = cs[i];
             treeExpansion(xy, index + 1, expansions - 1, errors, rangeStart, rangeEnd, ranges, consequentList, consequentList_corresponding_errors, predictionCount, consequentBits, maxPredictionCount);
         }
         xy[index + 1] = previous;
