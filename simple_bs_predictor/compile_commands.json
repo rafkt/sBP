@@ -1,0 +1,75 @@
+[
+ {
+  "directory": "/Users/rafaelktistakis/Repositories/sBP/simple_bs_predictor", 
+  "arguments": [
+   "g++", 
+   "-std=c++11", 
+   "-c", 
+   "-O3", 
+   "-g", 
+   "-DNDEBUG", 
+   "-fpermissive", 
+   "-I", 
+   "~/include", 
+   "backwardsSearchBWT.cpp"
+  ], 
+  "file": "backwardsSearchBWT.cpp"
+ }, 
+ {
+  "directory": "/Users/rafaelktistakis/Repositories/sBP/simple_bs_predictor", 
+  "arguments": [
+   "g++", 
+   "-std=c++11", 
+   "-c", 
+   "-O3", 
+   "-g", 
+   "-DNDEBUG", 
+   "-fpermissive", 
+   "-I", 
+   "~/include", 
+   "subseqPredictor.cpp"
+  ], 
+  "file": "subseqPredictor.cpp"
+ }, 
+ {
+  "directory": "/Users/rafaelktistakis/Repositories/sBP/simple_bs_predictor", 
+  "arguments": [
+   "g++", 
+   "-std=c++11", 
+   "-c", 
+   "-O3", 
+   "-g", 
+   "-DNDEBUG", 
+   "-fpermissive", 
+   "-I", 
+   "~/include", 
+   "suffixArray.cpp"
+  ], 
+  "file": "suffixArray.cpp"
+ }, 
+ {
+  "directory": "/Users/rafaelktistakis/Repositories/sBP/simple_bs_predictor", 
+  "arguments": [
+   "g++", 
+   "-std=c++11", 
+   "-O3", 
+   "-g", 
+   "-DNDEBUG", 
+   "-fpermissive", 
+   "-I", 
+   "~/include", 
+   "-L", 
+   "~/lib", 
+   "suffixArray.o", 
+   "backwardsSearchBWT.o", 
+   "subseqPredictor.o", 
+   "main.cpp", 
+   "-o", 
+   "./program", 
+   "-lsdsl", 
+   "-ldivsufsort", 
+   "-ldivsufsort64"
+  ], 
+  "file": "main.cpp"
+ }
+]
