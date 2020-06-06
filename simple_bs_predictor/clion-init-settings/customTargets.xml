@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CLionExternalBuildManager">
+    <target id="44f553d4-0112-4b36-8c91-5106716831ca" name="SUBSEQ" projectName="simple_bs_predictor">
+      <configuration id="fd584bce-2df3-4b6f-b889-37dce7925d82" name="SUBSEQ" toolchainName="Default">
+        <build type="TOOL">
+          <tool actionId="Tool_External Tools_build_with_make" />
+        </build>
+        <clean type="TOOL">
+          <tool actionId="Tool_External Tools_clean_with_make" />
+        </clean>
+      </configuration>
+    </target>
+  </component>
+</project>
