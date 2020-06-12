@@ -123,7 +123,7 @@ int main(int argc, const char * argv[])
     subseqPredictor* pr = new subseqPredictor(argv[1]);
     auto end = clock();
     auto duration = ((double)(end - begin))/CLOCKS_PER_SEC;
-    // cout << "Train Duration (s): " << duration << endl;
+    cout << "Train Duration (s): " << duration << endl;
 
 
     begin = clock();
@@ -148,8 +148,8 @@ int main(int argc, const char * argv[])
     // cout << "Duration (ms) = " << duration_cast<milliseconds>(stop-start).count()/(double)1000 << endl;
     end = clock();
     duration = ((double)(end - begin))/CLOCKS_PER_SEC;
-    // cout << "Memory: " << pr->get_memory() << endl;
-    cout << duration << endl;
+    cout << "Memory: " << pr->get_memory() << endl;
+    cout << "Test Duration (s): " <<  duration << endl;
     cout << "---------------------------------------" << endl;
 
    //vector<int> x = {1, 2};//FIFA: 114 133 148 212 256 300 582 610 - 114 133 148 212 256 300 582 610 30 626 647 99999
