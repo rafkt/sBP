@@ -1,5 +1,6 @@
 simple_bs_predictor/ranksExports/error_counts/*
 simple_bs_predictor/ranksExports/rankPrintOuts/*
+.idea
 # Prerequisites
 *.d
 
